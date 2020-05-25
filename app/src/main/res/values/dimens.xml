@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="normal_margin">16dp</dimen>
+    <dimen name="small_margin">8dp</dimen>
+    <dimen name="large_margin">32dp</dimen>
+    <dimen name="big_margin">64dp</dimen>
+
+    <dimen name="title_size">60sp</dimen>
+    <dimen name="subtitle_size">30sp</dimen>
+    <dimen name="footer_size">15sp</dimen>
+    <dimen name="medium_size">17sp</dimen>
+    <dimen name="normal_size">20sp</dimen>
+</resources>

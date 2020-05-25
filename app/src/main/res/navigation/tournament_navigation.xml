@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tournament_navigation"
+    app:startDestination="@id/tournamentFavoritesFragment">
+
+    <fragment
+        android:id="@+id/tournamentFavoritesFragment"
+        android:name="com.android.ipca.prematch.main.TournamentFavoritesFragment"
+        android:label="fragment_tournament_favorites"
+        tools:layout="@layout/fragment_tournament_favorites" >
+        <action
+            android:id="@+id/action_tournamentFavoritesFragment_to_newTournamentFragment"
+            app:destination="@id/newTournamentFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTournamentFragment"
+        android:name="com.android.ipca.prematch.main.NewTournamentFragment"
+        android:label="fragment_new_tournament"
+        tools:layout="@layout/fragment_new_tournament" >
+        <action
+            android:id="@+id/action_newTournamentFragment_to_tournamentFavoritesFragment"
+            app:destination="@id/tournamentFavoritesFragment" />
+    </fragment>
+</navigation>

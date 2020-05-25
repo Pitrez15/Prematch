@@ -1,0 +1,2 @@
+rootProject.name='Prematch'
+include ':app'

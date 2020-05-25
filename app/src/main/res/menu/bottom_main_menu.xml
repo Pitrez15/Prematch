@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_tournament_main"
+        android:icon="@drawable/ic_bookmark_border_black_24dp"
+        android:title="Tournament" />
+
+    <item
+        android:id="@+id/menu_team_main"
+        android:icon="@drawable/ic_group_black_24dp"
+        android:title="Team" />
+
+    <item
+        android:id="@+id/menu_player_main"
+        android:icon="@drawable/ic_person_black_24dp"
+        android:title="Player" />
+
+    <item
+        android:id="@+id/menu_settings_main"
+        android:icon="@drawable/ic_settings_black_24dp"
+        android:title="Settings" />
+</menu>
