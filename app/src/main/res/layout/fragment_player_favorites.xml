@@ -18,7 +18,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/normal_margin"
             android:fontFamily="@font/roboto_black"
-            android:text="FAVORITES"
+            android:text="FAVORITE PLAYERS"
             android:textColor="@color/colorPrimary"
             android:textSize="@dimen/subtitle_size"
             app:layout_constraintEnd_toEndOf="parent"
