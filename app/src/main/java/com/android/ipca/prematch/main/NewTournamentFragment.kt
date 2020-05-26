@@ -18,7 +18,7 @@ class NewTournamentFragment : Fragment() {
 
         val binding = DataBindingUtil.inflate<FragmentNewTournamentBinding>(inflater, R.layout.fragment_new_tournament, container, false)
 
-        binding.backButton.setOnClickListener {
+        binding.backTournamentButton.setOnClickListener {
 
             view?.findNavController()?.navigate(NewTournamentFragmentDirections.actionNewTournamentFragmentToTournamentFavoritesFragment())
         }

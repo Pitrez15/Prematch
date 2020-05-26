@@ -33,7 +33,7 @@
             android:layout_marginStart="@dimen/normal_margin"
             android:layout_marginEnd="@dimen/normal_margin"
             android:paddingBottom="@dimen/large_margin"
-            app:layout_constraintBottom_toTopOf="@+id/backButton"
+            app:layout_constraintBottom_toTopOf="@+id/backTournamentButton"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/newTournamentTextView">
@@ -59,7 +59,7 @@
                     android:textSize="@dimen/medium_size" />
 
                 <EditText
-                    android:id="@+id/enterImageEditText"
+                    android:id="@+id/enterTournamentImageEditText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="@dimen/large_margin"
@@ -119,7 +119,7 @@
                     android:textSize="@dimen/medium_size" />
 
                 <EditText
-                    android:id="@+id/enterContactEmailEditText"
+                    android:id="@+id/tournamentContactEmailEditText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="@dimen/large_margin"
@@ -134,7 +134,7 @@
                     android:textSize="@dimen/medium_size" />
 
                 <EditText
-                    android:id="@+id/enterContactPhoneEditText"
+                    android:id="@+id/tournamentContactPhoneEditText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="@dimen/large_margin"
@@ -197,7 +197,7 @@
         </ScrollView>
 
         <ImageButton
-            android:id="@+id/backButton"
+            android:id="@+id/backTournamentButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_arrow_back_black_24dp"

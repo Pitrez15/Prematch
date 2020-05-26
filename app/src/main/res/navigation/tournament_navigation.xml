@@ -24,4 +24,40 @@
             android:id="@+id/action_newTournamentFragment_to_tournamentFavoritesFragment"
             app:destination="@id/tournamentFavoritesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/teamFavoritesFragment"
+        android:name="com.android.ipca.prematch.main.TeamFavoritesFragment"
+        android:label="fragment_team_favorites"
+        tools:layout="@layout/fragment_team_favorites" >
+        <action
+            android:id="@+id/action_teamFavoritesFragment_to_newTeamFragment"
+            app:destination="@id/newTeamFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newTeamFragment"
+        android:name="com.android.ipca.prematch.main.NewTeamFragment"
+        android:label="fragment_new_team"
+        tools:layout="@layout/fragment_new_team" >
+        <action
+            android:id="@+id/action_newTeamFragment_to_teamFavoritesFragment"
+            app:destination="@id/teamFavoritesFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/playerFavoritesFragment"
+        android:name="com.android.ipca.prematch.main.PlayerFavoritesFragment"
+        android:label="fragment_player_favorites"
+        tools:layout="@layout/fragment_player_favorites" >
+        <action
+            android:id="@+id/action_playerFavoritesFragment_to_newPlayerFragment"
+            app:destination="@id/newPlayerFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPlayerFragment"
+        android:name="com.android.ipca.prematch.main.NewPlayerFragment"
+        android:label="fragment_new_player"
+        tools:layout="@layout/fragment_new_player" >
+        <action
+            android:id="@+id/action_newPlayerFragment_to_playerFavoritesFragment"
+            app:destination="@id/playerFavoritesFragment" />
+    </fragment>
 </navigation>

@@ -11,6 +11,7 @@ import androidx.appcompat.view.menu.MenuView
 import androidx.databinding.DataBindingUtil
 import androidx.drawerlayout.widget.DrawerLayout
 import androidx.fragment.app.Fragment
+import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
@@ -18,6 +19,7 @@ import androidx.navigation.ui.NavigationUI
 import androidx.navigation.ui.setupWithNavController
 import androidx.viewpager.widget.ViewPager
 import com.android.ipca.prematch.R
+import com.android.ipca.prematch.R.id.bottomNavMenu
 import com.android.ipca.prematch.databinding.ActivityTournamentMainBinding
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.navigation.NavigationView
@@ -29,12 +31,18 @@ class TournamentMainActivity : AppCompatActivity() {
 
     private lateinit var bottomNav : BottomNavigationView
 
+    //private lateinit var navController: NavController
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tournament_main)
 
-        val binding = DataBindingUtil.setContentView<ActivityTournamentMainBinding>(this, R.layout.activity_tournament_main)
+        //navController = Navigation.findNavController(this, R.id.nav_host_fragment)
+        //bottomNavMenu.setupWithNavController(navController)
 
-        bottomNav = binding.bottomNavMenu
+        //NavigationUI.setupActionBarWithNavController(this, navController)
+
+        bottomNav = findViewById(R.id.bottomNavMenu)
         bottomNav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         if (savedInstanceState == null) {
@@ -79,6 +87,4 @@ class TournamentMainActivity : AppCompatActivity() {
         }
         false
     }
-
-
 }
