@@ -31,60 +31,82 @@ class TournamentMainActivity : AppCompatActivity() {
 
     private lateinit var bottomNav : BottomNavigationView
 
-    //private lateinit var navController: NavController
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_main)
 
-        //navController = Navigation.findNavController(this, R.id.nav_host_fragment)
-        //bottomNavMenu.setupWithNavController(navController)
-
-        //NavigationUI.setupActionBarWithNavController(this, navController)
-
         bottomNav = findViewById(R.id.bottomNavMenu)
-        bottomNav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
+        //bottomNav.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener)
 
         if (savedInstanceState == null) {
 
             val fragment = TournamentFavoritesFragment()
             supportFragmentManager.beginTransaction().replace(R.id.nav_host_fragment, fragment, fragment.javaClass.getSimpleName()).commit()
         }
+
+        when (bottomNav.selectedItemId){
+
+            R.id.menu_tournament_main -> {
+
+                val fragment = TournamentFavoritesFragment()
+                supportFragmentManager.beginTransaction() 
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
+                    .commit()
+            }
+            R.id.menu_team_main -> {
+                val fragment = TeamFavoritesFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
+                    .commit()
+            }
+            R.id.menu_player_main -> {
+                val fragment = PlayerFavoritesFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
+                    .commit()
+            }
+            R.id.menu_settings_main -> {
+                val fragment = TournamentSearchFragment()
+                supportFragmentManager.beginTransaction()
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
+                    .commit()
+            }
+        }
     }
 
-    private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {menuItem ->
+    /*private val mOnNavigationItemSelectedListener = BottomNavigationView.OnNavigationItemSelectedListener {menuItem ->
 
         when (menuItem.itemId) {
 
             R.id.menu_tournament_main -> {
                 val fragment = TournamentFavoritesFragment()
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.getSimpleName())
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_team_main -> {
                 val fragment = TeamFavoritesFragment()
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.getSimpleName())
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_player_main -> {
                 val fragment = PlayerFavoritesFragment()
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.getSimpleName())
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
             R.id.menu_settings_main -> {
                 val fragment = TournamentSearchFragment()
                 supportFragmentManager.beginTransaction()
-                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.getSimpleName())
+                    .replace(R.id.nav_host_fragment, fragment, fragment.javaClass.simpleName)
                     .commit()
                 return@OnNavigationItemSelectedListener true
             }
         }
         false
-    }
+    }*/
 }
