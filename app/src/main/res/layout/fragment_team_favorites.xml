@@ -34,7 +34,7 @@
             android:layout_marginEnd="@dimen/normal_margin"
             android:paddingStart="@dimen/normal_margin"
             android:paddingEnd="@dimen/normal_margin"
-            app:layout_constraintBottom_toTopOf="@+id/addButton"
+            app:layout_constraintBottom_toTopOf="@+id/addTeamButton"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/teamFavoritesTextView" />

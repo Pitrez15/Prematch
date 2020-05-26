@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -24,81 +25,39 @@
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <!--<LinearLayout
-            android:id="@+id/topMenuLinearLayout"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/normal_margin"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tournamentFavoritesTextView">
-
-            <Button
-                android:id="@+id/favoritesButton"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:text="Favorites"
-                android:textColor="@color/colorLight"
-                android:textSize="@dimen/footer_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" />
-
-            <Button
-                android:id="@+id/searchButton"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:text="Search"
-                android:textColor="@color/colorLight"
-                android:textSize="@dimen/footer_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" />
-
-            <Button
-                android:id="@+id/newButton"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:text="New"
-                android:textColor="@color/colorLight"
-                android:textSize="@dimen/footer_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" />
-
-            <Button
-                android:id="@+id/myButton"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:text="My"
-                android:textColor="@color/colorLight"
-                android:textSize="@dimen/footer_size"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" />
-        </LinearLayout> -->
-
         <ListView
-            android:id="@+id/favorites"
+            android:id="@+id/favoritePlayers"
             android:layout_width="match_parent"
-            android:layout_height="630dp"
+            android:layout_height="570dp"
             android:layout_marginTop="@dimen/normal_margin"
-            android:layout_marginBottom="@dimen/normal_margin"
             android:layout_marginStart="@dimen/normal_margin"
             android:layout_marginEnd="@dimen/normal_margin"
             android:paddingStart="@dimen/normal_margin"
             android:paddingEnd="@dimen/normal_margin"
+            app:layout_constraintBottom_toTopOf="@+id/addPlayerButton"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/playerFavoritesTextView" />
+
+        <ImageButton
+            android:id="@+id/searchPlayerButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginEnd="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:src="@drawable/ic_search_black_24dp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/topMenuLinearLayout" />
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <ImageButton
+            android:id="@+id/addPlayerButton"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:layout_marginStart="@dimen/big_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
+            android:src="@drawable/ic_add_black_24dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

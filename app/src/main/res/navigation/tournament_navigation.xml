@@ -60,4 +60,9 @@
             android:id="@+id/action_newPlayerFragment_to_playerFavoritesFragment"
             app:destination="@id/playerFavoritesFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/settingsFragment"
+        android:name="com.android.ipca.prematch.main.SettingsFragment"
+        android:label="fragment_settings"
+        tools:layout="@layout/fragment_settings" />
 </navigation>
