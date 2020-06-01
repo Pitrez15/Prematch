@@ -12,9 +12,12 @@
         >
 
         <ImageView
-            android:id="@+id/tournamentImageView"
+            android:id="@+id/tournamentRowImageView"
             android:layout_width="80dp"
             android:layout_height="80dp"
+            android:layout_marginTop="@dimen/normal_margin"
+            android:layout_marginStart="@dimen/normal_margin"
+            android:layout_marginBottom="@dimen/normal_margin"
             app:srcCompat="@mipmap/ic_launcher" />
 
         <LinearLayout
@@ -25,8 +28,9 @@
             android:layout_marginStart="@dimen/normal_margin"
             android:layout_marginEnd="@dimen/normal_margin"
             android:layout_gravity="center_vertical" >
+
             <TextView
-                android:id="@+id/titleTextView"
+                android:id="@+id/tournamentTitleRowTextView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/roboto_black"
@@ -34,25 +38,107 @@
                 android:textColor="@color/colorSecondary"
                 android:textSize="@dimen/medium_size"
                 android:textAlignment="center"/>
-            <TextView
-                android:id="@+id/locationTextView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
-                android:textSize="@dimen/footer_size"
-                android:text="Location"
-                android:textColor="@color/colorLight"
-                android:textAlignment="center"/>
 
-            <TextView
-                android:id="@+id/dateTextView"
+            <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/roboto"
-                android:textSize="@dimen/footer_size"
-                android:text="Start Date"
-                android:textColor="@color/colorLight"
-                android:textAlignment="center"/>
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tournamentStartDateRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="Start Date"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tournamentFinishDateRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="Finish Date"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tournamentTeamsNumberRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="Teams"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tournamentTypeRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="Type"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tournamentCityRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="City"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center_vertical" >
+
+                <TextView
+                    android:id="@+id/tournamentContactEmailRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="E-mail"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+                <TextView
+                    android:id="@+id/tournamentContactPhoneRowTextView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:fontFamily="@font/roboto"
+                    android:textSize="@dimen/footer_size"
+                    android:text="Phone"
+                    android:textColor="@color/colorLight"
+                    android:textAlignment="center"/>
+
+            </LinearLayout>
 
         </LinearLayout>
     </LinearLayout>

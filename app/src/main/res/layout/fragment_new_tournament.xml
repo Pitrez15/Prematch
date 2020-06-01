@@ -58,7 +58,7 @@
                     android:textColorHint="@color/colorLight"
                     android:textSize="@dimen/medium_size" />
 
-                <EditText
+                <!--<EditText
                     android:id="@+id/enterTournamentImageEditText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -71,7 +71,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorLight"
                     android:textColorHint="@color/colorLight"
-                    android:textSize="@dimen/medium_size" />
+                    android:textSize="@dimen/medium_size" />-->
 
                 <EditText
                     android:id="@+id/enterTournamentCityEditText"
@@ -104,7 +104,7 @@
                     android:textSize="@dimen/medium_size" />
 
                 <EditText
-                    android:id="@+id/enterEndDateEditText"
+                    android:id="@+id/enterFinishDateEditText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
                     android:layout_marginTop="@dimen/large_margin"
@@ -112,7 +112,7 @@
                     android:layout_marginEnd="@dimen/normal_margin"
                     android:background="@drawable/edit_text_border"
                     android:fontFamily="@font/roboto"
-                    android:hint="End Date (dd-mm-yyyy)"
+                    android:hint="Finish Date (dd-mm-yyyy)"
                     android:textAlignment="center"
                     android:textColor="@color/colorLight"
                     android:textColorHint="@color/colorLight"
@@ -178,7 +178,7 @@
                     android:textColorHint="@color/colorLight"
                     android:textSize="@dimen/medium_size" />
 
-                <EditText
+                <!--<EditText
                     android:id="@+id/enterSelectTeamsEditText"
                     android:layout_width="match_parent"
                     android:layout_height="40dp"
@@ -191,7 +191,7 @@
                     android:textAlignment="center"
                     android:textColor="@color/colorLight"
                     android:textColorHint="@color/colorLight"
-                    android:textSize="@dimen/medium_size" />
+                    android:textSize="@dimen/medium_size" />-->
 
             </LinearLayout>
         </ScrollView>
@@ -207,7 +207,7 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <ImageButton
-            android:id="@+id/Button"
+            android:id="@+id/confirmTournamentButton"
             android:layout_width="60dp"
             android:layout_height="60dp"
             android:src="@drawable/ic_check_black_24dp"
