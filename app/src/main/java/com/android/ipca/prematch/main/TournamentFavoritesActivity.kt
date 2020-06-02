@@ -2,77 +2,56 @@ package com.android.ipca.prematch.main
 
 import android.app.Activity
 import android.content.Intent
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
-import androidx.databinding.DataBindingUtil
-import androidx.navigation.findNavController
-
 import com.android.ipca.prematch.R
-import com.android.ipca.prematch.databinding.FragmentTournamentFavoritesBinding
 import com.android.ipca.prematch.models.TournamentModel
-import kotlinx.android.synthetic.main.fragment_tournament_favorites.*
+import kotlinx.android.synthetic.main.activity_tournament_favorites.*
 
-private const val ARG_TOURNAMENT_NAME = "Tournament Name"
-private const val ARG_TOURNAMENT_CITY = "Tournament City"
-private const val ARG_START_DATE = "Start Date"
-private const val ARG_FINISH_DATE = "Finish Date"
-private const val ARG_CONTACT_EMAIL = "Contact Email"
-private const val ARG_CONTACT_PHONE = "Contact Phone"
-private const val ARG_TEAMS_NUMBER = "Teams Number"
-private const val ARG_TOURNAMENT_TYPE = "Tournament Type"
-
-class TournamentFavoritesFragment : Fragment() {
-
-    private var tournamentName: String? = null
-    private var tournamentCity: String? = null
-    private var startDate: String? = null
-    private var finishDate: String? = null
-    private var contactEmail: String? = null
-    private var contactPhone: String? = null
-    private var teamsNumber: String? = null
-    private var tournamentType: String? = null
+class TournamentFavoritesActivity : AppCompatActivity() {
 
     var tournaments : MutableList<TournamentModel> = ArrayList<TournamentModel>()
-    private var tournamentsAdapter : TournamentsAdapter? = null
+    private var tournamentAdapter : TournamentAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setContentView(R.layout.activity_tournament_favorites)
 
-        arguments?.let {
+        tournamentAdapter = TournamentAdapter()
+        favoriteTournamentsListView.adapter = tournamentAdapter
 
-            tournamentName = it.getString(ARG_TOURNAMENT_NAME)
-            tournamentCity = it.getString(ARG_TOURNAMENT_CITY)
-            startDate = it.getString(ARG_START_DATE)
-            finishDate = it.getString(ARG_FINISH_DATE)
-            contactEmail = it.getString(ARG_CONTACT_EMAIL)
-            contactPhone = it.getString(ARG_CONTACT_PHONE)
-            teamsNumber = it.getString(ARG_TEAMS_NUMBER)
-            tournamentType = it.getString(ARG_TOURNAMENT_TYPE)
+        tournamentHomeTournamentButton.setBackgroundResource(R.color.colorSecondary)
+
+        addTournamentButton.setOnClickListener {
+
+            val intent = Intent(this, TournamentNewActivity::class.java)
+            startActivityForResult(intent, 1002)
+        }
+
+        teamHomeTournamentButton.setOnClickListener {
+
+            val intent = Intent(this, TeamFavoritesActivity::class.java)
+            startActivity(intent)
+        }
+
+        playerHomeTournamentButton.setOnClickListener {
+
+            val intent = Intent(this, PlayerFavoritesActivity::class.java)
+            startActivity(intent)
+        }
+
+        settingsTournamentButton.setOnClickListener {
+
+            val intent = Intent(this, SettingsActivity::class.java)
+            startActivity(intent)
         }
     }
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
-                              savedInstanceState: Bundle?): View? {
-
-        val binding = DataBindingUtil.inflate<FragmentTournamentFavoritesBinding>(inflater, R.layout.fragment_tournament_favorites, container, false)
-
-        tournamentsAdapter = TournamentsAdapter()
-        favoriteTournamentsListView?.adapter = tournamentsAdapter
-
-        binding.addTournamentButton.setOnClickListener {
-
-            view?.findNavController()?.navigate(TournamentFavoritesFragmentDirections.actionTournamentFavoritesFragmentToNewTournamentFragment())
-        }
-
-        return binding.root
-    }
-
-    inner class TournamentsAdapter : BaseAdapter() {
+    inner class TournamentAdapter : BaseAdapter() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
@@ -161,7 +140,7 @@ class TournamentFavoritesFragment : Fragment() {
 
                     tournaments.add(tournament)
 
-                    tournamentsAdapter?.notifyDataSetChanged()
+                    tournamentAdapter?.notifyDataSetChanged()
                 }
             }
         }

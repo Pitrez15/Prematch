@@ -11,7 +11,7 @@ import androidx.navigation.findNavController
 
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.databinding.FragmentLoginBinding
-import com.android.ipca.prematch.main.TournamentMainActivity
+import com.android.ipca.prematch.main.TournamentFavoritesActivity
 
 class LoginFragment : Fragment() {
 
@@ -22,7 +22,7 @@ class LoginFragment : Fragment() {
 
         binding.loginButton.setOnClickListener {
 
-            val intent = Intent(context, TournamentMainActivity::class.java)
+            val intent = Intent(context, TournamentFavoritesActivity::class.java)
             startActivity(intent)
         }
 
