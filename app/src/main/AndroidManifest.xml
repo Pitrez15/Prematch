@@ -9,16 +9,7 @@
         android:roundIcon="@mipmap/prematch_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.SettingsActivity"></activity>
-        <activity android:name=".main.PlayerNewActivity" />
-        <activity android:name=".main.PlayerFavoritesActivity" />
-        <activity android:name=".main.TeamNewActivity" />
-        <activity android:name=".main.TeamFavoritesActivity" />
-        <activity android:name=".main.TournamentNewActivity" />
-        <activity android:name=".main.TournamentFavoritesActivity" />
-        <activity android:name=".main.TournamentMainActivity" />
-        <activity
-            android:name=".login.LoginMainActivity"
+        <activity android:name=".login.IntroActivity">
             android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +17,21 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".login.TermsAndConditionsActivity" />
+        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".login.LoginActivity" />
+        <activity android:name=".main.SettingsActivity" />
+        <activity android:name=".main.PlayerNewActivity" />
+        <activity android:name=".main.PlayerFavoritesActivity" />
+        <activity android:name=".main.TeamNewActivity" />
+        <activity android:name=".main.TeamFavoritesActivity" />
+        <activity android:name=".main.TournamentNewActivity" />
+        <activity android:name=".main.TournamentFavoritesActivity" />
+        <activity android:name=".main.TournamentMainActivity" />
+        <activity android:name=".login.LoginMainActivity"/>
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
-
 </manifest>

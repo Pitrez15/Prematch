@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:paddingStart="@dimen/normal_margin"
+    android:paddingEnd="@dimen/normal_margin"
+    tools:context=".login.TermsAndConditionsActivity"
+    android:background="@color/colorDark">
+
+    <TextView
+        android:id="@+id/termsAndConditionsTitleTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/roboto_black"
+        android:text="@string/terms_and_conditions_title"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/subtitle_size"
+        android:textAlignment="center"
+        android:layout_marginTop="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/termsScrollView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:layout_marginTop="@dimen/normal_margin" >
+
+        <TextView
+            android:id="@+id/termsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/terms_and_conditions"
+            android:fontFamily="@font/roboto"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size"/>
+
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/companyTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight="0"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:text="@string/company_name_year"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/footer_size"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</LinearLayout>
