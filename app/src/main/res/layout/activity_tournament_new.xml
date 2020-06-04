@@ -73,22 +73,6 @@
                 android:textSize="@dimen/medium_size" />-->
 
             <EditText
-                android:id="@+id/enterTournamentCityEditText"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:hint="Tournament City"
-                android:singleLine="true"
-                android:textAlignment="center"
-                android:textColor="@color/colorLight"
-                android:textColorHint="@color/colorLight"
-                android:textSize="@dimen/medium_size" />
-
-            <EditText
                 android:id="@+id/enterStartDateEditText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"

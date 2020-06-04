@@ -97,17 +97,6 @@
                     android:textColor="@color/colorLight"
                     android:textAlignment="center"/>
 
-                <TextView
-                    android:id="@+id/tournamentCityRowTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:fontFamily="@font/roboto"
-                    android:textSize="@dimen/footer_size"
-                    android:text="City"
-                    android:textColor="@color/colorLight"
-                    android:textAlignment="center"/>
-
             </LinearLayout>
 
             <LinearLayout

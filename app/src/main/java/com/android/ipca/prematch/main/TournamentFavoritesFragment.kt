@@ -79,7 +79,6 @@ class TournamentFavoritesFragment : Fragment() {
             var rowView = layoutInflater.inflate(R.layout.row_tournament, parent, false)
 
             val textViewTournamentName = rowView.findViewById<TextView>(R.id.tournamentTitleRowTextView)
-            val textViewTournamentCity = rowView.findViewById<TextView>(R.id.tournamentCityRowTextView)
             val textViewTournamentStartDate = rowView.findViewById<TextView>(R.id.tournamentStartDateRowTextView)
             val textViewTournamentFinishDate = rowView.findViewById<TextView>(R.id.tournamentFinishDateRowTextView)
             val textViewTournamentTeamsNumber = rowView.findViewById<TextView>(R.id.tournamentTeamsNumberRowTextView)
@@ -88,7 +87,6 @@ class TournamentFavoritesFragment : Fragment() {
             val textViewTournamentContactPhone = rowView.findViewById<TextView>(R.id.tournamentContactPhoneRowTextView)
 
             textViewTournamentName.text = tournaments[position].tournamentName
-            textViewTournamentCity.text = tournaments[position].tournamentCity
             textViewTournamentStartDate.text = tournaments[position].startDate
             textViewTournamentFinishDate.text = tournaments[position].finishDate
             textViewTournamentTeamsNumber.text = tournaments[position].teamsNumber
@@ -140,7 +138,6 @@ class TournamentFavoritesFragment : Fragment() {
                 data?.extras?.let {
 
                     val tournamentName : String? = it.getString(NewTournamentFragment.TOURNAMENT_NAME)
-                    val tournamentCity = it.getString(NewTournamentFragment.TOURNAMENT_CITY)
                     val tournamentStartDate = it.getString(NewTournamentFragment.START_DATE)
                     val tournamentFinishDate : String? = it.getString(NewTournamentFragment.FINISH_DATE)
                     val tournamentContactEmail = it.getString(NewTournamentFragment.CONTACT_EMAIL)
@@ -151,7 +148,6 @@ class TournamentFavoritesFragment : Fragment() {
                     val tournament = TournamentModel()
 
                     tournament.tournamentName = tournamentName
-                    tournament.tournamentCity = tournamentCity
                     tournament.startDate = tournamentStartDate
                     tournament.finishDate = tournamentFinishDate
                     tournament.contactEmail = tournamentContactEmail

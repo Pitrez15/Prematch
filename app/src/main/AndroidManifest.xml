@@ -9,8 +9,8 @@
         android:roundIcon="@mipmap/prematch_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".main.TournamentDetailActivity"></activity>
         <activity android:name=".login.IntroActivity">
-            android:label="@string/app_name">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -28,10 +28,11 @@
         <activity android:name=".main.TournamentNewActivity" />
         <activity android:name=".main.TournamentFavoritesActivity" />
         <activity android:name=".main.TournamentMainActivity" />
-        <activity android:name=".login.LoginMainActivity"/>
+        <activity android:name=".login.LoginMainActivity" />
 
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
     </application>
+
 </manifest>

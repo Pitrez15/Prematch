@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.TournamentDetailActivity"
+    android:background="@color/colorDark">
+
+    <TextView
+        android:id="@+id/detailTournamentTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:fontFamily="@font/roboto_black"
+        android:text="DETAIL TOURNAMENT"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/subtitle_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/detailTournamentTextView">
+
+        <TextView
+            android:id="@+id/startDateTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Start Date"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/finishDateTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Finish Date"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
+
+        <TextView
+            android:id="@+id/startDateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="dd/mm/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/finishDateTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="dd/mm/yyyy"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear2">
+
+        <TextView
+            android:id="@+id/tournamentTypeTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Type"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/teamsNumberTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Number of Teams"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear3">
+
+        <TextView
+            android:id="@+id/tournamentTypeTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="type"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/teamsNumberTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="00"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/big_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear4">
+
+        <TextView
+            android:id="@+id/emailTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="E-Mail"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/phoneNumberTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Phone"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear5">
+
+        <TextView
+            android:id="@+id/contactEmailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="text@text.com"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/contactPhoneTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="910 000 000"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/tournamentDetailBottomMenuLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_size"
+        android:layout_marginEnd="@dimen/normal_size"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <ImageButton
+            android:id="@+id/tournamentDetailTeamsButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_group_black_24dp" />
+
+        <ImageButton
+            android:id="@+id/tournamentDetailGamesButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_calendar_today_24" />
+
+        <ImageButton
+            android:id="@+id/tournamentDetailStatsButton"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_weight="1"
+            android:src="@drawable/ic_baseline_equalizer_24" />
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

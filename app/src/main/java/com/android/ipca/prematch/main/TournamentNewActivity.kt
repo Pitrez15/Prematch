@@ -22,10 +22,10 @@ class TournamentNewActivity : AppCompatActivity() {
 
         confirmTournamentButton.setOnClickListener {
 
-            if(enterTournamentNameEditText.text.toString() == "" || enterTournamentCityEditText.text.toString() == "" ||
-                enterStartDateEditText.text.toString() == "" || enterFinishDateEditText.text.toString() == "" ||
-                tournamentContactEmailEditText.toString() == "" || tournamentContactPhoneEditText.text.toString() == "" ||
-                enterTeamNumberEditText.text.toString() == "" || enterTournamentTypeEditText.text.toString() == "") {
+            if(enterTournamentNameEditText.text.toString() == "" || enterStartDateEditText.text.toString() == "" ||
+                enterFinishDateEditText.text.toString() == "" || tournamentContactEmailEditText.toString() == "" ||
+                tournamentContactPhoneEditText.text.toString() == "" || enterTeamNumberEditText.text.toString() == "" ||
+                enterTournamentTypeEditText.text.toString() == "") {
 
                 Toast.makeText(applicationContext,"Tournament Information is Missing !",Toast.LENGTH_SHORT).show()
             }
@@ -35,7 +35,6 @@ class TournamentNewActivity : AppCompatActivity() {
                 val intentResult = Intent(this, TournamentFavoritesActivity::class.java)
 
                 intentResult.putExtra(TOURNAMENT_NAME, enterTournamentNameEditText.text.toString())
-                intentResult.putExtra(TOURNAMENT_CITY, enterTournamentCityEditText.text.toString())
                 intentResult.putExtra(START_DATE, enterStartDateEditText.text.toString())
                 intentResult.putExtra(FINISH_DATE, enterFinishDateEditText.text.toString())
                 intentResult.putExtra(CONTACT_EMAIL, tournamentContactEmailEditText.text.toString())
@@ -52,7 +51,6 @@ class TournamentNewActivity : AppCompatActivity() {
     companion object {
 
         var TOURNAMENT_NAME: String? = "Tournament Name"
-        var TOURNAMENT_CITY: String? = "Tournament City"
         var START_DATE: String? = "Start Date"
         var FINISH_DATE: String? = "Finish Date"
         var CONTACT_EMAIL: String? = "Contact Email"

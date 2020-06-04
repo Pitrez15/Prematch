@@ -71,7 +71,7 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
-            android:src="@drawable/ic_bookmark_border_black_24dp"
+            android:src="@drawable/ic_baseline_emoji_events_24"
             />
 
         <ImageButton
