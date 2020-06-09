@@ -3,6 +3,7 @@ package com.android.ipca.prematch.models
 class TeamModel {
 
     var teamName : String? = null
+    var teamInitials : String? = null
     var teamCity : String? = null
     var teamPrimaryColor : String? = null
     var teamSecondaryColor : String? = null

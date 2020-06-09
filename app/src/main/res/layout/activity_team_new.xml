@@ -54,6 +54,21 @@
                 android:textColorHint="@color/colorLight"
                 android:textSize="@dimen/medium_size" />
 
+            <EditText
+                android:id="@+id/enterTeamInitialsEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:layout_marginEnd="@dimen/normal_margin"
+                android:layout_marginTop="@dimen/large_margin"
+                android:background="@drawable/edit_text_border"
+                android:fontFamily="@font/roboto"
+                android:hint="Team Initials"
+                android:textAlignment="center"
+                android:textColor="@color/colorLight"
+                android:textColorHint="@color/colorLight"
+                android:textSize="@dimen/medium_size" />
+
             <!--<EditText
                 android:id="@+id/enterTeamImageEditText"
                 android:layout_width="match_parent"
@@ -115,7 +130,7 @@
                 android:textSize="@dimen/medium_size" />
 
             <EditText
-                android:id="@+id/teamContactEmailEditText"
+                android:id="@+id/enterTeamContactEmailEditText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="@dimen/large_margin"
@@ -130,7 +145,7 @@
                 android:textSize="@dimen/medium_size" />
 
             <EditText
-                android:id="@+id/teamContactPhoneEditText"
+                android:id="@+id/enterTeamContactPhoneEditText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="@dimen/large_margin"

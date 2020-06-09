@@ -9,7 +9,8 @@
         android:roundIcon="@mipmap/prematch_launcher"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".main.TournamentDetailActivity"></activity>
+        <activity android:name=".main.TournamentDetailTeamsActivity"></activity>
+        <activity android:name=".main.TournamentDetailActivity" />
         <activity android:name=".login.IntroActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

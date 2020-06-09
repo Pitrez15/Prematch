@@ -40,5 +40,11 @@ class TournamentDetailActivity : AppCompatActivity() {
         contactEmailTextView.text = CONTACT_EMAIL.toString()
         contactPhoneTextView.text = CONTACT_PHONE.toString()
 
+        tournamentDetailTeamsButton.setOnClickListener {
+
+            val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
+            intent.putExtra("Teams Number", TEAMS_NUMBER)
+            startActivity(intent)
+        }
     }
 }

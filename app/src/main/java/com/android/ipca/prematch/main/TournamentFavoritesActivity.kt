@@ -115,13 +115,13 @@ class TournamentFavoritesActivity : AppCompatActivity() {
 
                 data?.extras?.let {
 
-                    val tournamentName : String? = it.getString(NewTournamentFragment.TOURNAMENT_NAME)
-                    val tournamentStartDate = it.getString(NewTournamentFragment.START_DATE)
-                    val tournamentFinishDate : String? = it.getString(NewTournamentFragment.FINISH_DATE)
-                    val tournamentContactEmail = it.getString(NewTournamentFragment.CONTACT_EMAIL)
-                    val tournamentContactPhone = it.getString(NewTournamentFragment.CONTACT_PHONE)
-                    val tournamentTeamsNumber = it.getString(NewTournamentFragment.TEAMS_NUMBER)
-                    val tournamentType = it.getString(NewTournamentFragment.TOURNAMENT_TYPE)
+                    val tournamentName = it.getString(TournamentNewActivity.TOURNAMENT_NAME)
+                    val tournamentStartDate = it.getString(TournamentNewActivity.START_DATE)
+                    val tournamentFinishDate = it.getString(TournamentNewActivity.FINISH_DATE)
+                    val tournamentContactEmail = it.getString(TournamentNewActivity.CONTACT_EMAIL)
+                    val tournamentContactPhone = it.getString(TournamentNewActivity.CONTACT_PHONE)
+                    val tournamentTeamsNumber = it.getString(TournamentNewActivity.TEAMS_NUMBER)
+                    val tournamentType = it.getString(TournamentNewActivity.TOURNAMENT_TYPE)
 
                     val tournament = TournamentModel()
 
