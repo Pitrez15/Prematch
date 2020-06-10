@@ -102,7 +102,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/enterEmailEditText" />
 
-    <EditText
+    <!--<EditText
         android:id="@+id/enterRepeatPasswordEditText"
         android:layout_width="270dp"
         android:layout_height="40dp"
@@ -116,7 +116,7 @@
         android:textSize="@dimen/medium_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" /> -->
 
     <LinearLayout
         android:id="@+id/termsLinearLayout"
@@ -128,7 +128,7 @@
         app:layout_constraintBottom_toTopOf="@+id/createAccountButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterRepeatPasswordEditText">
+        app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText">
 
         <CheckBox
             android:id="@+id/termsCheckBox"
