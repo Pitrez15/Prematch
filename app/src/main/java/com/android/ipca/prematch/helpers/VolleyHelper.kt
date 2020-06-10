@@ -39,6 +39,7 @@ class VolleyHelper {
                 Response.Listener {
 
                     userEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
                 },
                 Response.ErrorListener {
 
@@ -46,7 +47,7 @@ class VolleyHelper {
                 }
             ) {
 
-                override fun getHeaders(): MutableMap<String, String> {
+                override fun getHeaders() : MutableMap<String, String> {
 
                     val map : MutableMap<String, String> = mutableMapOf()
 
@@ -76,6 +77,7 @@ class VolleyHelper {
                 jsonObject,
                 Response.Listener {
 
+                    Log.d("VolleyHelper", it.toString())
                     if (it.getBoolean("auth") == true) {
 
                         token = it.getString("token")
@@ -94,7 +96,6 @@ class VolleyHelper {
             queue!!.add(jsonObjectRequest)
         }
     }
-
 
     companion object {
 

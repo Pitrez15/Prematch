@@ -5,7 +5,6 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.EditText
 import android.widget.Toast
-import androidx.navigation.findNavController
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.main.TournamentFavoritesActivity
@@ -21,9 +20,6 @@ class LoginActivity : AppCompatActivity() {
 
         loginButton.setOnClickListener {
 
-            //val intent = Intent(this, TournamentFavoritesActivity::class.java)
-            //startActivity(intent)
-
             VolleyHelper.instance.userLogin(
 
                 this@LoginActivity,
@@ -32,8 +28,8 @@ class LoginActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    val intent = Intent(this@LoginActivity, TournamentFavoritesActivity::class.java)
-                    intent.putExtra("username", username.text.toString())
+                    val intent = Intent(this, TournamentFavoritesActivity::class.java)
+                    intent.putExtra("USERNAME", username.text.toString())
                     startActivity(intent)
                 }
                 else {
