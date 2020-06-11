@@ -6,11 +6,10 @@ apply plugin: 'androidx.navigation.safeargs'
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.3"
-    dataBinding {
 
+    dataBinding {
         enabled = true
     }
-
     defaultConfig {
         applicationId "com.android.ipca.prematch"
         minSdkVersion 19

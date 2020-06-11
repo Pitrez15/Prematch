@@ -3,48 +3,95 @@ package com.android.ipca.prematch.main
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
+import android.view.ViewGroup
+import android.widget.BaseAdapter
+import android.widget.TextView
 import com.android.ipca.prematch.R
+import com.android.ipca.prematch.helpers.VolleyHelper
+import com.android.ipca.prematch.models.TournamentModel
 import kotlinx.android.synthetic.main.activity_tournament_detail.*
-
-private var TOURNAMENT_NAME: String? = null
-private var START_DATE: String? = null
-private var FINISH_DATE: String? = null
-private var CONTACT_EMAIL: String? = null
-private var CONTACT_PHONE: String? = null
-private var TEAMS_NUMBER: String? = null
-private var TOURNAMENT_TYPE: String? = null
+import org.json.JSONObject
 
 class TournamentDetailActivity : AppCompatActivity() {
+
+    var tournamentID : Int? = null
+    var tournament : MutableList<TournamentModel> = ArrayList()
+    var tournamentAdapter : TournamentAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_detail)
 
+        tournamentAdapter = TournamentAdapter()
+        tournamentDetailsListView.adapter = tournamentAdapter
+
         val bundle = intent.extras
         bundle?.let {
 
-            TOURNAMENT_NAME = it.getString("Tournament Name")
-            START_DATE = it.getString("Start Date")
-            FINISH_DATE = it.getString("Finish Date")
-            CONTACT_EMAIL = it.getString("Contact Email")
-            CONTACT_PHONE = it.getString("Contact Phone")
-            TEAMS_NUMBER = it.getString("Teams Number")
-            TOURNAMENT_TYPE = it.getString("Tournament Type")
+            tournamentID = it.getInt("Tournament ID")
         }
 
-        detailTournamentTextView.text = TOURNAMENT_NAME.toString()
-        startDateTextView.text = START_DATE.toString()
-        finishDateTextView.text = FINISH_DATE.toString()
-        tournamentTypeTextView.text = TOURNAMENT_TYPE.toString()
-        teamsNumberTextView.text = TEAMS_NUMBER.toString()
-        contactEmailTextView.text = CONTACT_EMAIL.toString()
-        contactPhoneTextView.text = CONTACT_PHONE.toString()
+        VolleyHelper.instance.getTournamentByID(this, tournamentID!!.toInt()) {response ->
+
+            response?.let {
+
+                for(index in 0 until it.length()){
+
+                    val tournamentsJSON : JSONObject = it[index] as JSONObject
+                    tournament.add(TournamentModel.parseJSON(tournamentsJSON))
+                }
+                tournamentAdapter?.notifyDataSetChanged()
+            }
+        }
 
         tournamentDetailTeamsButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
-            intent.putExtra("Teams Number", TEAMS_NUMBER)
+            //intent.putExtra("Teams Number", TEAMS_NUMBER)
             startActivity(intent)
+        }
+    }
+
+    inner class TournamentAdapter : BaseAdapter() {
+
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+
+            val rowTournamentDetail = layoutInflater.inflate(R.layout.row_tournament_detail, parent, false)
+
+            val tournamentName = findViewById<TextView>(R.id.detailTournamentTextView)
+            val startDate = rowTournamentDetail.findViewById<TextView>(R.id.startDateTextView)
+            val finishDate = rowTournamentDetail.findViewById<TextView>(R.id.finishDateTextView)
+            val tournamentType = rowTournamentDetail.findViewById<TextView>(R.id.tournamentTypeTextView)
+            val teamsNumber = rowTournamentDetail.findViewById<TextView>(R.id.teamsNumberTextView)
+            val contactEmail = rowTournamentDetail.findViewById<TextView>(R.id.contactEmailTextView)
+            val contactPhone = rowTournamentDetail.findViewById<TextView>(R.id.contactPhoneTextView)
+
+
+            tournamentName.text = tournament[position].tournamentName
+            startDate.text = tournament[position].startDate
+            finishDate.text = tournament[position].finishDate
+            tournamentType.text = tournament[position].tournamentType
+            teamsNumber.text = tournament[position].teamsNumber.toString()
+            contactEmail.text = tournament[position].contactEmail
+            contactPhone.text = tournament[position].contactPhone.toString()
+
+            return rowTournamentDetail
+        }
+
+        override fun getItem(position: Int): Any {
+
+            return tournament[position]
+        }
+
+        override fun getItemId(position: Int): Long {
+
+            return 0
+        }
+
+        override fun getCount(): Int {
+
+            return tournament.size
         }
     }
 }

@@ -23,24 +23,6 @@ class RegisterActivity : AppCompatActivity() {
 
         createAccountButton.setOnClickListener {
 
-            /*VolleyHelper.instance.createNewUser (
-
-                this@RegisterActivity, firstName.text.toString(), lastName.text.toString(),
-                username.text.toString(), userEmail.text.toString(),
-                userPassword.text.toString()) {
-
-                if (it) {
-
-                    val intent = Intent(this, LoginActivity::class.java)
-                    Toast.makeText(applicationContext, "Registry Confirmed!", Toast.LENGTH_LONG).show()
-                    startActivity(intent)
-                }
-                else {
-
-                    Toast.makeText(applicationContext,"Failed Registration!",Toast.LENGTH_SHORT).show()
-                }
-            }*/
-
             if (firstName.text.toString() == "" || lastName.text.toString() == "" || username.text.toString() == "" ||
                 userEmail.text.toString() == "" || userPassword.text.toString() == "" || !termsCheckBox.isChecked) {
 

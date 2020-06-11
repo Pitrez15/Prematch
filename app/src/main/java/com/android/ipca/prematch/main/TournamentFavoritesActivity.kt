@@ -9,26 +9,42 @@ import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
 import com.android.ipca.prematch.R
+import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.TournamentModel
 import kotlinx.android.synthetic.main.activity_tournament_favorites.*
+import org.json.JSONObject
 
 class TournamentFavoritesActivity : AppCompatActivity() {
 
-    var tournaments : MutableList<TournamentModel> = ArrayList<TournamentModel>()
-    private var tournamentAdapter : TournamentAdapter? = null
+    var tournaments : MutableList<TournamentModel> = ArrayList()
+    var tournamentAdapter : TournamentAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_favorites)
 
+        tournamentHomeTournamentButton.setBackgroundResource(R.drawable.button_border_selected)
+
         tournamentAdapter = TournamentAdapter()
         favoriteTournamentsListView.adapter = tournamentAdapter
 
-        tournamentHomeTournamentButton.setBackgroundResource(R.color.colorSecondary)
+        VolleyHelper.instance.getTournaments(this) { response ->
+
+            response?.let {
+
+                for (index in 0 until it.length()) {
+
+                    val tournamentsJSON : JSONObject = it[index] as JSONObject
+                    tournaments.add(TournamentModel.parseJSON(tournamentsJSON))
+                }
+                tournamentAdapter?.notifyDataSetChanged()
+            }
+        }
 
         addTournamentButton.setOnClickListener {
 
             val intent = Intent(this, TournamentNewActivity::class.java)
+            intent.putExtra("Tournament ID", tournaments.size)
             startActivityForResult(intent, 1002)
         }
 
@@ -55,35 +71,38 @@ class TournamentFavoritesActivity : AppCompatActivity() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-            var rowView = layoutInflater.inflate(R.layout.row_tournament, parent, false)
+            val rowView = layoutInflater.inflate(R.layout.row_tournament, parent, false)
 
             val textViewTournamentName = rowView.findViewById<TextView>(R.id.tournamentTitleRowTextView)
             val textViewTournamentStartDate = rowView.findViewById<TextView>(R.id.tournamentStartDateRowTextView)
             val textViewTournamentFinishDate = rowView.findViewById<TextView>(R.id.tournamentFinishDateRowTextView)
             val textViewTournamentTeamsNumber = rowView.findViewById<TextView>(R.id.tournamentTeamsNumberRowTextView)
             val textViewTournamentType = rowView.findViewById<TextView>(R.id.tournamentTypeRowTextView)
-            val textViewTournamentContactEmail = rowView.findViewById<TextView>(R.id.tournamentContactEmailRowTextView)
-            val textViewTournamentContactPhone = rowView.findViewById<TextView>(R.id.tournamentContactPhoneRowTextView)
+            //val textViewTournamentContactEmail = rowView.findViewById<TextView>(R.id.tournamentContactEmailRowTextView)
+            //val textViewTournamentContactPhone = rowView.findViewById<TextView>(R.id.tournamentContactPhoneRowTextView)
 
             textViewTournamentName.text = tournaments[position].tournamentName
             textViewTournamentStartDate.text = tournaments[position].startDate
             textViewTournamentFinishDate.text = tournaments[position].finishDate
-            textViewTournamentTeamsNumber.text = tournaments[position].teamsNumber
+            textViewTournamentTeamsNumber.text = tournaments[position].teamsNumber.toString()
             textViewTournamentType.text = tournaments[position].tournamentType
-            textViewTournamentContactEmail.text = tournaments[position].contactEmail
-            textViewTournamentContactPhone.text = tournaments[position].contactPhone
+            //textViewTournamentContactEmail.text = tournaments[position].contactEmail
+            //textViewTournamentContactPhone.text = tournaments[position].contactPhone.toString()
 
             rowView.setOnClickListener {
 
                 val intent = Intent(this@TournamentFavoritesActivity, TournamentDetailActivity::class.java)
 
-                intent.putExtra("Tournament Name", tournaments[position].tournamentName)
+                /*intent.putExtra("Tournament Name", tournaments[position].tournamentName)
                 intent.putExtra("Start Date", tournaments[position].startDate)
                 intent.putExtra("Finish Date", tournaments[position].finishDate)
-                intent.putExtra("Contact Email", tournaments[position].contactEmail)
-                intent.putExtra("Contact Phone", tournaments[position].contactPhone)
+                //intent.putExtra("Contact Email", tournaments[position].contactEmail)
+                //intent.putExtra("Contact Phone", tournaments[position].contactPhone)
                 intent.putExtra("Teams Number", tournaments[position].teamsNumber)
-                intent.putExtra("Tournament Type", tournaments[position].tournamentType)
+                intent.putExtra("Tournament Type", tournaments[position].tournamentType)*/
+
+                intent.putExtra("Tournament ID", position + 1)
+
                 startActivity(intent)
             }
 
@@ -106,7 +125,7 @@ class TournamentFavoritesActivity : AppCompatActivity() {
         }
     }
 
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
 
         if (resultCode === Activity.RESULT_OK) {
@@ -119,8 +138,8 @@ class TournamentFavoritesActivity : AppCompatActivity() {
                     val tournamentStartDate = it.getString(TournamentNewActivity.START_DATE)
                     val tournamentFinishDate = it.getString(TournamentNewActivity.FINISH_DATE)
                     val tournamentContactEmail = it.getString(TournamentNewActivity.CONTACT_EMAIL)
-                    val tournamentContactPhone = it.getString(TournamentNewActivity.CONTACT_PHONE)
-                    val tournamentTeamsNumber = it.getString(TournamentNewActivity.TEAMS_NUMBER)
+                    val tournamentContactPhone = it.getInt(TournamentNewActivity.CONTACT_PHONE)
+                    val tournamentTeamsNumber = it.getInt(TournamentNewActivity.TEAMS_NUMBER)
                     val tournamentType = it.getString(TournamentNewActivity.TOURNAMENT_TYPE)
 
                     val tournament = TournamentModel()
@@ -139,5 +158,5 @@ class TournamentFavoritesActivity : AppCompatActivity() {
                 }
             }
         }
-    }
+    }*/
 }

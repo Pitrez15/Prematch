@@ -43,6 +43,7 @@
         android:layout_height="60dp"
         android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
         android:src="@drawable/ic_search_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -53,6 +54,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

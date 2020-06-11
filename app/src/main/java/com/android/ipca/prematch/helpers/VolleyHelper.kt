@@ -11,6 +11,7 @@ import com.android.volley.toolbox.Volley
 import org.jetbrains.anko.doAsync
 import org.json.JSONArray
 import org.json.JSONObject
+import kotlin.contracts.contract
 
 class VolleyHelper {
 
@@ -97,11 +98,126 @@ class VolleyHelper {
         }
     }
 
+    fun getTournaments (context: Context, tournamentsEvent : ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_TOURNAMENTS,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                    tournamentsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+    fun getTournamentByID (context: Context, tournamentID : Int, tournamentsEvent: ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_TOURNAMENTS + "/" + tournamentID,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("Volley Helper", it.toString())
+                    tournamentsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue?.add(stringRequest)
+        }
+    }
+
+    fun createNewTournament (context: Context, tournamentID : Int, tournamentName : String,
+                             startDate : String, finishDate : String, tournamentEmail : String,
+                             tournamentPhone : Int, teamsNumber : Int, tournamentType : String,
+                             tournamentsEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+
+            jsonObject.put("TOURNAMENT_ID", tournamentID)
+            jsonObject.put("TOURNAMENT_NAME", tournamentName)
+            jsonObject.put("START_DATE", startDate)
+            jsonObject.put("FINISH_DATE", finishDate)
+            jsonObject.put("TOURNAMENT_EMAIL", tournamentEmail)
+            jsonObject.put("TOURNAMENT_PHONE", tournamentPhone)
+            jsonObject.put("TEAMS_NUMBER", teamsNumber)
+            jsonObject.put("TOURNAMENT_TYPE", tournamentType)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.POST,
+                BASE_API + NEW_TOURNAMENT,
+                jsonObject,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(jsonObjectRequest)
+        }
+    }
+
     companion object {
 
         const val BASE_API = "http://192.168.1.66:3000"
         const val REGISTER = "/user/registry"
         const val LOGIN = "/user/login"
+        const val GET_TOURNAMENTS = "/api/tournaments"
+        const val NEW_TOURNAMENT = "/api/new_tournament"
 
         var token = ""
 

@@ -42,6 +42,7 @@
         android:layout_height="60dp"
         android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
         android:src="@drawable/ic_search_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomMenuLayout"
         app:layout_constraintEnd_toEndOf="parent" />
@@ -52,6 +53,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomMenuLayout"
         app:layout_constraintStart_toStartOf="parent" />
@@ -71,6 +73,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_baseline_emoji_events_24"
             />
 
@@ -79,6 +84,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_group_black_24dp"
             />
 
@@ -87,6 +95,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_person_black_24dp"
             />
 
@@ -95,6 +106,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_settings_black_24dp"
             />
 

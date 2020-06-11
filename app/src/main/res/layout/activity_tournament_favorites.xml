@@ -1,4 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -12,9 +13,9 @@
         android:id="@+id/tournamentFavoritesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:fontFamily="@font/roboto_black"
-        android:text="FAVORITE TOURNAMENTS"
+        android:text="Tournaments"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,20 +39,22 @@
 
     <ImageButton
         android:id="@+id/searchTournamentButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
         android:src="@drawable/ic_search_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomMenuLayout"
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
         android:id="@+id/addTournamentButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_constraintBottom_toTopOf="@+id/bottomMenuLayout"
         app:layout_constraintStart_toStartOf="parent" />
@@ -61,8 +64,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/normal_margin"
-        android:layout_marginStart="@dimen/normal_size"
-        android:layout_marginEnd="@dimen/normal_size"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -73,6 +76,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:background="@drawable/button_border"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
             android:src="@drawable/ic_baseline_emoji_events_24" />
 
         <ImageButton
@@ -80,6 +86,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_group_black_24dp" />
 
         <ImageButton
@@ -87,6 +96,9 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_person_black_24dp" />
 
         <ImageButton
@@ -94,8 +106,10 @@
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
             android:src="@drawable/ic_settings_black_24dp" />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

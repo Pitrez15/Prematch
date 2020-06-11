@@ -24,7 +24,7 @@ class TeamFavoritesActivity : AppCompatActivity() {
         //teamAdapter = TeamAdapter()
         //favoriteTeamsListView.adapter = teamAdapter
 
-        teamHomeTeamButton.setBackgroundResource(R.color.colorSecondary)
+        teamHomeTeamButton.setBackgroundResource(R.drawable.button_border_selected)
 
         addTeamButton.setOnClickListener {
 

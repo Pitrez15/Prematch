@@ -13,7 +13,7 @@ class SettingsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_settings)
 
-        settingsSettingsButton.setBackgroundResource(R.color.colorSecondary)
+        settingsSettingsButton.setBackgroundResource(R.drawable.button_border_selected)
 
         tournamentHomeSettingsButton.setOnClickListener {
 

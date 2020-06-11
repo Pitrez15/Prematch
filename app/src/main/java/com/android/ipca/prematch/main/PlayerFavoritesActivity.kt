@@ -18,7 +18,7 @@ class PlayerFavoritesActivity : AppCompatActivity() {
         //playerAdapter = PlayerAdapter()
         //favoritePlayersListView.adapter = playerAdapter
 
-        playerHomePlayerButton.setBackgroundResource(R.color.colorSecondary)
+        playerHomePlayerButton.setBackgroundResource(R.drawable.button_border_selected)
 
         addPlayerButton.setOnClickListener {
 
