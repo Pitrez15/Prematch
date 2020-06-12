@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:background="@color/colorDark">
+
+    <LinearLayout
+        android:id="@+id/attributesLinearLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        android:layout_gravity="center_vertical" >
+
+        <TextView
+            android:id="@+id/playerNameRowTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/small_margin"
+            android:fontFamily="@font/roboto_black"
+            android:text="Player Name"
+            android:textColor="@color/colorSecondary"
+            android:textSize="@dimen/medium_size"
+            android:textAlignment="center"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/small_margin">
+
+            <TextView
+                android:id="@+id/playerPositionRowTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/footer_size"
+                android:text="Player Position"
+                android:textColor="@color/colorLight"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/playerTeamRowTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/footer_size"
+                android:text="Team City"
+                android:textColor="@color/colorLight"
+                android:textAlignment="center"/>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

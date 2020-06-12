@@ -1,12 +1,28 @@
 package com.android.ipca.prematch.models
 
+import org.json.JSONObject
+
 class PlayerModel {
 
+    var playerID : Int? = null
     var playerFirstName : String? = null
     var playerLastName : String? = null
-    var playerBirthDate : String? = null
-    var playerContactEmail : String? = null
-    var playerContactPhone : String? = null
     var playerPosition : String? = null
-    var playerTeam : String? = null
+    var playerTeamID : Int? = null
+
+    companion object {
+
+        fun parseJSON (jsonArticle : JSONObject) : PlayerModel {
+
+            val player = PlayerModel()
+
+            player.playerID = jsonArticle.getInt("PLAYER_ID")
+            player.playerFirstName = jsonArticle.getString("PLAYER_FIRST_NAME")
+            player.playerLastName = jsonArticle.getString("PLAYER_LAST_NAME")
+            player.playerPosition = jsonArticle.getString("POSITION")
+            player.playerTeamID = jsonArticle.getInt("TEAM_ID")
+
+            return player
+        }
+    }
 }

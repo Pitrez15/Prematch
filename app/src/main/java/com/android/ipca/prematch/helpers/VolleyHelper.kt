@@ -211,6 +211,74 @@ class VolleyHelper {
         }
     }
 
+
+    fun getTeams (context: Context, teamsEvent : ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_TEAMS,
+                Response.Listener {
+
+                    teamsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                    teamsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun getPlayers (context: Context, playersEvent : ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_PLAYERS,
+                Response.Listener {
+
+                    playersEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                    playersEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
     companion object {
 
         const val BASE_API = "http://192.168.1.66:3000"
@@ -218,6 +286,8 @@ class VolleyHelper {
         const val LOGIN = "/user/login"
         const val GET_TOURNAMENTS = "/api/tournaments"
         const val NEW_TOURNAMENT = "/api/new_tournament"
+        const val GET_TEAMS = "/api/teams"
+        const val GET_PLAYERS = "/api/players"
 
         var token = ""
 

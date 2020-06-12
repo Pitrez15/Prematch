@@ -6,29 +6,46 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.TextView
 import com.android.ipca.prematch.R
+import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.TeamModel
 import com.android.ipca.prematch.models.TournamentModel
 import kotlinx.android.synthetic.main.activity_team_favorites.*
 import kotlinx.android.synthetic.main.activity_tournament_favorites.*
+import org.json.JSONObject
 
 class TeamFavoritesActivity : AppCompatActivity() {
 
-    //var teams : MutableList<TeamModel> = ArrayList<TeamModel>()
-    //var teamAdapter : TeamFavoritesActivity.TeamAdapter? = null
+    var teams : MutableList<TeamModel> = ArrayList()
+    var teamAdapter : TeamFavoritesActivity.TeamAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_favorites)
 
-        //teamAdapter = TeamAdapter()
-        //favoriteTeamsListView.adapter = teamAdapter
-
         teamHomeTeamButton.setBackgroundResource(R.drawable.button_border_selected)
+
+        teamAdapter = TeamAdapter()
+        favoriteTeamsListView.adapter = teamAdapter
+
+        VolleyHelper.instance.getTeams(this) { response ->
+
+            response?.let {
+
+                for (index in 0 until it.length()) {
+
+                    val teamJSON : JSONObject = it[index] as JSONObject
+                    teams.add(TeamModel.parseJSON(teamJSON))
+                }
+                teamAdapter?.notifyDataSetChanged()
+            }
+        }
 
         addTeamButton.setOnClickListener {
 
             val intent = Intent(this, TeamNewActivity::class.java)
+            intent.putExtra("Team ID", teams.size)
             startActivityForResult(intent, 1002)
         }
 
@@ -51,22 +68,37 @@ class TeamFavoritesActivity : AppCompatActivity() {
         }
     }
 
-    /*inner class TeamAdapter : BaseAdapter() {
+    inner class TeamAdapter : BaseAdapter() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
+            val rowView = layoutInflater.inflate(R.layout.row_team, parent, false)
+
+            val textViewTeamName = rowView.findViewById<TextView>(R.id.tournamentDetailTeamNameRowTextView)
+            val textViewTeamInitials = rowView.findViewById<TextView>(R.id.tournamentDetailTeamInitialsRowTextView)
+            val textViewTeamCity = rowView.findViewById<TextView>(R.id.tournamentDetailTeamCityRowTextView)
+            val textViewTeamPrimaryColor = rowView.findViewById<TextView>(R.id.tournamentDetailTeamPrimaryRowTextView)
+            val textViewTeamSecondaryColor = rowView.findViewById<TextView>(R.id.tournamentDetailTeamSecondaryRowTextView)
+
+            textViewTeamName.text = teams[position].teamName
+            textViewTeamInitials.text = teams[position].teamInitials
+            textViewTeamCity.text = teams[position].teamCity
+            textViewTeamPrimaryColor.text = teams[position].teamPrimaryColor
+            textViewTeamSecondaryColor.text = teams[position].teamSecondaryColor
+
+            return rowView
         }
 
         override fun getItem(position: Int): Any {
-            TODO("Not yet implemented")
+            return teams[position]
         }
 
         override fun getItemId(position: Int): Long {
-            TODO("Not yet implemented")
+            return 0
         }
 
         override fun getCount(): Int {
-            TODO("Not yet implemented")
+            return teams.size
         }
-    }*/
+    }
 }

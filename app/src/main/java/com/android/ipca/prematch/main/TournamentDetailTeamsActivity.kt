@@ -62,16 +62,16 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
             val textViewTournamentDetailTeamCity = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamCityRowTextView)
             val textViewTournamentDetailTeamPrimaryColor = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamPrimaryRowTextView)
             val textViewTournamentDetailTeamSecondaryColor = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamSecondaryRowTextView)
-            val textViewTournamentDetailTeamContactEmail = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamContactEmailRowTextView)
-            val textViewTournamentDetailTeamContactPhone = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamContactPhoneRowTextView)
+            //val textViewTournamentDetailTeamContactEmail = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamContactEmailRowTextView)
+            //val textViewTournamentDetailTeamContactPhone = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamContactPhoneRowTextView)
 
             textViewTournamentDetailTeamName.text = teams[position].teamName
             textViewTournamentDetailTeamInitials.text = teams[position].teamInitials
             textViewTournamentDetailTeamCity.text = teams[position].teamCity
             textViewTournamentDetailTeamPrimaryColor.text = teams[position].teamPrimaryColor
             textViewTournamentDetailTeamSecondaryColor.text = teams[position].teamSecondaryColor
-            textViewTournamentDetailTeamContactEmail.text = teams[position].teamContactEmail
-            textViewTournamentDetailTeamContactPhone.text = teams[position].teamContactPhone
+            //textViewTournamentDetailTeamContactEmail.text = teams[position].teamContactEmail
+            //textViewTournamentDetailTeamContactPhone.text = teams[position].teamContactPhone
 
             /*rowTeamView.setOnClickListener {
 
@@ -131,7 +131,7 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
                     team.teamPrimaryColor = teamPrimaryColor
                     team.teamSecondaryColor = teamSecondaryColor
                     team.teamContactEmail = teamContactEmail
-                    team.teamContactPhone = teamContactPhone
+                    //team.teamContactPhone = teamContactPhone
 
                     teams.add(team)
 

@@ -36,20 +36,6 @@ class TournamentNewActivity : AppCompatActivity() {
 
             else {
 
-                /*val intentResult = Intent(this, TournamentFavoritesActivity::class.java)
-
-                intentResult.putExtra(TOURNAMENT_NAME, enterTournamentNameEditText.text.toString())
-                intentResult.putExtra(START_DATE, enterStartDateEditText.text.toString())
-                intentResult.putExtra(FINISH_DATE, enterFinishDateEditText.text.toString())
-                intentResult.putExtra(CONTACT_EMAIL, tournamentContactEmailEditText.text.toString())
-                intentResult.putExtra(CONTACT_PHONE, tournamentContactPhoneEditText.text.toString())
-                intentResult.putExtra(TEAMS_NUMBER, enterTeamNumberEditText.text.toString())
-                intentResult.putExtra(TOURNAMENT_TYPE, enterTournamentTypeEditText.text.toString())
-
-                setResult(Activity.RESULT_OK, intentResult)
-                finish()*/
-
-
                 val intentResult = Intent()
 
                 var tournamentName = findViewById<EditText>(R.id.enterTournamentNameEditText)
@@ -90,15 +76,4 @@ class TournamentNewActivity : AppCompatActivity() {
             }
         }
     }
-
-    /*companion object {
-
-        var TOURNAMENT_NAME: String? = "Tournament Name"
-        var START_DATE: String? = "Start Date"
-        var FINISH_DATE: String? = "Finish Date"
-        var CONTACT_EMAIL: String? = "Contact Email"
-        var CONTACT_PHONE: String? = "Contact Phone"
-        var TEAMS_NUMBER: String? = "Teams Number"
-        var TOURNAMENT_TYPE: String? = "Tournament Type"
-    }*/
 }

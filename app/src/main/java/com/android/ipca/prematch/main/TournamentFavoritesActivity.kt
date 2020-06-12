@@ -78,31 +78,17 @@ class TournamentFavoritesActivity : AppCompatActivity() {
             val textViewTournamentFinishDate = rowView.findViewById<TextView>(R.id.tournamentFinishDateRowTextView)
             val textViewTournamentTeamsNumber = rowView.findViewById<TextView>(R.id.tournamentTeamsNumberRowTextView)
             val textViewTournamentType = rowView.findViewById<TextView>(R.id.tournamentTypeRowTextView)
-            //val textViewTournamentContactEmail = rowView.findViewById<TextView>(R.id.tournamentContactEmailRowTextView)
-            //val textViewTournamentContactPhone = rowView.findViewById<TextView>(R.id.tournamentContactPhoneRowTextView)
 
             textViewTournamentName.text = tournaments[position].tournamentName
             textViewTournamentStartDate.text = tournaments[position].startDate
             textViewTournamentFinishDate.text = tournaments[position].finishDate
             textViewTournamentTeamsNumber.text = tournaments[position].teamsNumber.toString()
             textViewTournamentType.text = tournaments[position].tournamentType
-            //textViewTournamentContactEmail.text = tournaments[position].contactEmail
-            //textViewTournamentContactPhone.text = tournaments[position].contactPhone.toString()
 
             rowView.setOnClickListener {
 
                 val intent = Intent(this@TournamentFavoritesActivity, TournamentDetailActivity::class.java)
-
-                /*intent.putExtra("Tournament Name", tournaments[position].tournamentName)
-                intent.putExtra("Start Date", tournaments[position].startDate)
-                intent.putExtra("Finish Date", tournaments[position].finishDate)
-                //intent.putExtra("Contact Email", tournaments[position].contactEmail)
-                //intent.putExtra("Contact Phone", tournaments[position].contactPhone)
-                intent.putExtra("Teams Number", tournaments[position].teamsNumber)
-                intent.putExtra("Tournament Type", tournaments[position].tournamentType)*/
-
                 intent.putExtra("Tournament ID", position + 1)
-
                 startActivity(intent)
             }
 
@@ -124,39 +110,4 @@ class TournamentFavoritesActivity : AppCompatActivity() {
             return tournaments.size
         }
     }
-
-    /*override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (resultCode === Activity.RESULT_OK) {
-
-            if (requestCode == 1002) {
-
-                data?.extras?.let {
-
-                    val tournamentName = it.getString(TournamentNewActivity.TOURNAMENT_NAME)
-                    val tournamentStartDate = it.getString(TournamentNewActivity.START_DATE)
-                    val tournamentFinishDate = it.getString(TournamentNewActivity.FINISH_DATE)
-                    val tournamentContactEmail = it.getString(TournamentNewActivity.CONTACT_EMAIL)
-                    val tournamentContactPhone = it.getInt(TournamentNewActivity.CONTACT_PHONE)
-                    val tournamentTeamsNumber = it.getInt(TournamentNewActivity.TEAMS_NUMBER)
-                    val tournamentType = it.getString(TournamentNewActivity.TOURNAMENT_TYPE)
-
-                    val tournament = TournamentModel()
-
-                    tournament.tournamentName = tournamentName
-                    tournament.startDate = tournamentStartDate
-                    tournament.finishDate = tournamentFinishDate
-                    tournament.contactEmail = tournamentContactEmail
-                    tournament.contactPhone = tournamentContactPhone
-                    tournament.teamsNumber = tournamentTeamsNumber
-                    tournament.tournamentType = tournamentType
-
-                    tournaments.add(tournament)
-
-                    tournamentAdapter?.notifyDataSetChanged()
-                }
-            }
-        }
-    }*/
 }
