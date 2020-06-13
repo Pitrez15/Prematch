@@ -65,6 +65,7 @@ class TournamentNewActivity : AppCompatActivity() {
                             Toast.makeText(applicationContext,"Tournament Created !",Toast.LENGTH_SHORT).show()
                             startActivity(intent)
                         }
+
                         else {
 
                             Toast.makeText(applicationContext,"Failed to Create Tournament !",Toast.LENGTH_SHORT).show()

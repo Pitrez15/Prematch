@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-
-<manifest
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.android.ipca.prematch">
 
     <uses-permission android:name="android.permission.INTERNET" />
@@ -15,8 +13,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-
-        <activity android:name=".main.TournamentDetailTeamsActivity"/>
+        <activity android:name=".main.TeamDetailActivity"></activity>
+        <activity android:name=".main.TournamentDetailTeamsActivity" />
         <activity android:name=".main.TournamentDetailActivity" />
         <activity android:name=".login.IntroActivity">
             <intent-filter>

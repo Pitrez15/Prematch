@@ -10,35 +10,67 @@ import android.widget.BaseAdapter
 import android.widget.TextView
 import android.widget.Toast
 import com.android.ipca.prematch.R
+import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.TeamModel
 import kotlinx.android.synthetic.main.activity_tournament_detail_teams.*
-
-private var TEAMS_NUMBER: String? = null
+import org.json.JSONObject
 
 class TournamentDetailTeamsActivity : AppCompatActivity() {
 
-    var teams : MutableList<TeamModel> = ArrayList<TeamModel>()
+    var tournamentID : Int? = null
+    //var teamsNumber : Int? = null
+
+    var allTeams : MutableList<TeamModel> = ArrayList()
+    var teams : MutableList<TeamModel> = ArrayList()
     private var teamsAdapter : TeamsAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_detail_teams)
 
+        teamsAdapter = TeamsAdapter()
+        tournamentDetailTeamsListView.adapter = teamsAdapter
+
         val bundle = intent.extras
         bundle?.let {
 
-            TEAMS_NUMBER = it.getString("Team Number")
+            tournamentID = it.getInt("Tournament ID")
+            //teamsNumber = it.getInt("Team Number")
         }
 
-        teamsAdapter = TeamsAdapter()
-        tournamentDetailTeamsListView.adapter = teamsAdapter
+        VolleyHelper.instance.getTeamsByTournamentID(this, tournamentID!!.toInt()) { response ->
+
+            response?.let {
+
+                for (index in 0 until it.length()) {
+
+                    val teamJSON : JSONObject = it[index] as JSONObject
+                    teams.add(TeamModel.parseJSON(teamJSON))
+                }
+                teamsAdapter?.notifyDataSetChanged()
+            }
+        }
+
+        VolleyHelper.instance.getTeams(this) { response ->
+
+            response?.let {
+
+                for (index in 0 until it.length()) {
+
+                    val teamJSON : JSONObject = it[index] as JSONObject
+                    allTeams.add(TeamModel.parseJSON(teamJSON))
+                }
+            }
+        }
 
         tournamentDetailAddTeamButton.setOnClickListener {
 
             val intent = Intent(this, TeamNewActivity::class.java)
-            startActivityForResult(intent, 1002)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Team ID", allTeams.size)
+            startActivity(intent)
 
-            /*if (teams.size >= TEAMS_NUMBER?.toInt()!!) {
+            /*if (teams.size >= teamsNumber!!) {
 
                 Toast.makeText(applicationContext,"You can't add more teams !",Toast.LENGTH_SHORT).show()
             }
@@ -46,7 +78,9 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
             else {
 
                 val intent = Intent(this, TeamNewActivity::class.java)
-                startActivityForResult(intent, 1002)
+                intent.putExtra("Tournament ID", tournamentID!!.toInt())
+                intent.putExtra("Team ID", allTeams.size)
+                startActivity(intent)
             }*/
         }
     }
@@ -55,39 +89,35 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
-            var rowTeamView = layoutInflater.inflate(R.layout.row_team, parent, false)
+            val rowView = layoutInflater.inflate(R.layout.row_team, parent, false)
 
-            val textViewTournamentDetailTeamName = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamNameRowTextView)
-            val textViewTournamentDetailTeamInitials = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamInitialsRowTextView)
-            val textViewTournamentDetailTeamCity = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamCityRowTextView)
-            val textViewTournamentDetailTeamPrimaryColor = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamPrimaryRowTextView)
-            val textViewTournamentDetailTeamSecondaryColor = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamSecondaryRowTextView)
-            //val textViewTournamentDetailTeamContactEmail = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamContactEmailRowTextView)
-            //val textViewTournamentDetailTeamContactPhone = rowTeamView.findViewById<TextView>(R.id.tournamentDetailTeamContactPhoneRowTextView)
+            val textViewTeamName = rowView.findViewById<TextView>(R.id.tournamentDetailTeamNameRowTextView)
+            val textViewTeamInitials = rowView.findViewById<TextView>(R.id.tournamentDetailTeamInitialsRowTextView)
+            val textViewTeamCity = rowView.findViewById<TextView>(R.id.tournamentDetailTeamCityRowTextView)
+            val textViewTeamPrimaryColor = rowView.findViewById<TextView>(R.id.tournamentDetailTeamPrimaryRowTextView)
+            val textViewTeamSecondaryColor = rowView.findViewById<TextView>(R.id.tournamentDetailTeamSecondaryRowTextView)
 
-            textViewTournamentDetailTeamName.text = teams[position].teamName
-            textViewTournamentDetailTeamInitials.text = teams[position].teamInitials
-            textViewTournamentDetailTeamCity.text = teams[position].teamCity
-            textViewTournamentDetailTeamPrimaryColor.text = teams[position].teamPrimaryColor
-            textViewTournamentDetailTeamSecondaryColor.text = teams[position].teamSecondaryColor
-            //textViewTournamentDetailTeamContactEmail.text = teams[position].teamContactEmail
-            //textViewTournamentDetailTeamContactPhone.text = teams[position].teamContactPhone
+            textViewTeamName.text = teams[position].teamName
+            textViewTeamInitials.text = teams[position].teamInitials
+            textViewTeamCity.text = teams[position].teamCity
+            textViewTeamPrimaryColor.text = teams[position].teamPrimaryColor
+            textViewTeamSecondaryColor.text = teams[position].teamSecondaryColor
 
-            /*rowTeamView.setOnClickListener {
+            rowView.setOnClickListener {
 
-                val intent = Intent(this@TournamentDetailTeamsActivity, ::class.java)
-
-                intent.putExtra("Team Name", teams[position].teamName)
+                val intent = Intent(this@TournamentDetailTeamsActivity, TeamDetailActivity::class.java)
+                intent.putExtra("Team ID", teams[position].teamID)
+                /*intent.putExtra("Team Name", teams[position].teamName)
                 intent.putExtra("Team Initials", teams[position].teamInitials)
                 intent.putExtra("Team City", teams[position].teamCity)
                 intent.putExtra("Primary Color", teams[position].teamPrimaryColor)
                 intent.putExtra("Secondary Color", teams[position].teamSecondaryColor)
                 intent.putExtra("Team Email", teams[position].teamContactEmail)
-                intent.putExtra("Team Phone", teams[position].teamContactPhone)
+                intent.putExtra("Team Phone", teams[position].teamContactPhone)*/
                 startActivity(intent)
-            }*/
+            }
 
-            return rowTeamView
+            return rowView
         }
 
         override fun getItem(position: Int): Any {
@@ -103,41 +133,6 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
         override fun getCount(): Int {
 
             return teams.size
-        }
-    }
-
-    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
-        super.onActivityResult(requestCode, resultCode, data)
-
-        if (resultCode === Activity.RESULT_OK) {
-
-            if (requestCode == 1002) {
-
-                data?.extras?.let {
-
-                    val teamName : String? = it.getString(TeamNewActivity.TEAM_NAME)
-                    val teamInitials = it.getString(TeamNewActivity.TEAM_INITIALS)
-                    val teamCity : String? = it.getString(TeamNewActivity.TEAM_CITY)
-                    val teamPrimaryColor = it.getString(TeamNewActivity.TEAM_PRIMARY_COLOR)
-                    val teamSecondaryColor = it.getString(TeamNewActivity.TEAM_SECONDARY_COLOR)
-                    val teamContactEmail = it.getString(TeamNewActivity.TEAM_CONTACT_EMAIL)
-                    val teamContactPhone = it.getString(TeamNewActivity.TEAM_CONTACT_PHONE)
-
-                    val team = TeamModel()
-
-                    team.teamName = teamName
-                    team.teamInitials = teamInitials
-                    team.teamCity = teamCity
-                    team.teamPrimaryColor = teamPrimaryColor
-                    team.teamSecondaryColor = teamSecondaryColor
-                    team.teamContactEmail = teamContactEmail
-                    //team.teamContactPhone = teamContactPhone
-
-                    teams.add(team)
-
-                    teamsAdapter?.notifyDataSetChanged()
-                }
-            }
         }
     }
 }

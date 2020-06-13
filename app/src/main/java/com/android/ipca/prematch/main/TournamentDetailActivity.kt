@@ -16,6 +16,7 @@ import org.json.JSONObject
 class TournamentDetailActivity : AppCompatActivity() {
 
     var tournamentID : Int? = null
+    //var teamsNumber : Int? = null
     var tournament : MutableList<TournamentModel> = ArrayList()
     var tournamentAdapter : TournamentAdapter? = null
 
@@ -30,6 +31,7 @@ class TournamentDetailActivity : AppCompatActivity() {
         bundle?.let {
 
             tournamentID = it.getInt("Tournament ID")
+            //teamsNumber = it.getInt("Teams Number")
         }
 
         VolleyHelper.instance.getTournamentByID(this, tournamentID!!.toInt()) {response ->
@@ -48,7 +50,8 @@ class TournamentDetailActivity : AppCompatActivity() {
         tournamentDetailTeamsButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
-            //intent.putExtra("Teams Number", TEAMS_NUMBER)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            //intent.putExtra("Teams Number", teamsNumber!!.toInt())
             startActivity(intent)
         }
     }

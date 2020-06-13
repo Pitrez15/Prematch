@@ -6,16 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.TournamentDetailActivity"
+    tools:context=".main.TeamDetailActivity"
     android:background="@color/colorDark">
 
     <TextView
-        android:id="@+id/detailTournamentTextView"
+        android:id="@+id/detailTeamTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_margin"
         android:fontFamily="@font/roboto_black"
-        android:text="DETAIL TOURNAMENT"
+        android:text="DETAIL TEAM"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/tournamentDetailsListView"
+        android:id="@+id/teamDetailsListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/normal_margin"
@@ -32,10 +32,10 @@
         android:layout_marginEnd="@dimen/normal_margin"
         android:paddingStart="@dimen/normal_margin"
         android:paddingEnd="@dimen/normal_margin"
-        app:layout_constraintBottom_toTopOf="@+id/tournamentDetailBottomMenuLayout"
+        app:layout_constraintBottom_toTopOf="@+id/teamDetailBottomMenuLayout"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/detailTournamentTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/detailTeamTextView" />
 
     <!--<LinearLayout
         android:id="@+id/linear1"
@@ -254,7 +254,7 @@
     </LinearLayout>-->
 
     <LinearLayout
-        android:id="@+id/tournamentDetailBottomMenuLayout"
+        android:id="@+id/teamDetailBottomMenuLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/normal_margin"
@@ -266,17 +266,17 @@
         app:layout_constraintEnd_toEndOf="parent">
 
         <ImageButton
-            android:id="@+id/tournamentDetailTeamsButton"
+            android:id="@+id/teamDetailPlayersButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
             android:layout_marginStart="5dp"
             android:layout_marginEnd="5dp"
             android:background="@drawable/button_border"
-            android:src="@drawable/ic_group_black_24dp" />
+            android:src="@drawable/ic_person_black_24dp" />
 
         <ImageButton
-            android:id="@+id/tournamentDetailGamesButton"
+            android:id="@+id/teamDetailGamesButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"
@@ -286,7 +286,7 @@
             android:src="@drawable/ic_baseline_today_24" />
 
         <ImageButton
-            android:id="@+id/tournamentDetailStatsButton"
+            android:id="@+id/teamDetailStatsButton"
             android:layout_width="match_parent"
             android:layout_height="60dp"
             android:layout_weight="1"

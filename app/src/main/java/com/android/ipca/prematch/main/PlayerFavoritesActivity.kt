@@ -41,12 +41,12 @@ class PlayerFavoritesActivity : AppCompatActivity() {
             }
         }
 
-        addPlayerButton.setOnClickListener {
+        /*addPlayerButton.setOnClickListener {
 
             val intent = Intent(this, PlayerNewActivity::class.java)
             intent.putExtra("Player ID", players.size)
             startActivityForResult(intent, 1002)
-        }
+        }*/
 
         tournamentHomePlayerButton.setOnClickListener {
 

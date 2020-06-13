@@ -246,6 +246,123 @@ class VolleyHelper {
     }
 
 
+    fun getTeamsByTournamentID (context: Context, tournamentID : Int, teamsEvent : ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_TEAMS_TOURNAMENT_ID + "/" + tournamentID,
+                Response.Listener {
+
+                    teamsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                    teamsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun getTeamByID (context: Context, teamID : Int, teamsEvent : ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_TEAM_TEAM_ID + "/" + teamID,
+                Response.Listener {
+
+                    teamsEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                    teamsEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun createNewTeam (context: Context, teamID : Int, teamName : String,
+                       teamInitials : String, teamCity : String, teamPrimaryColor : String,
+                       teamSecondaryColor : String, teamEmail : String, teamPhone : Int, tournamentID : Int,
+                       tournamentsEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+
+            jsonObject.put("TEAM_ID", teamID)
+            jsonObject.put("TEAM_NAME", teamName)
+            jsonObject.put("TEAM_INITIALS", teamInitials)
+            jsonObject.put("TEAM_CITY", teamCity)
+            jsonObject.put("TEAM_PRIMARY_COLOR", teamPrimaryColor)
+            jsonObject.put("TEAM_SECONDARY_COLOR", teamSecondaryColor)
+            jsonObject.put("TEAM_EMAIL", teamEmail)
+            jsonObject.put("TEAM_PHONE", teamPhone)
+            jsonObject.put("TOURNAMENT_ID", tournamentID)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.POST,
+                BASE_API + NEW_TEAM,
+                jsonObject,
+                Response.Listener {
+
+                    tournamentsEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(jsonObjectRequest)
+        }
+    }
+
+
     fun getPlayers (context: Context, playersEvent : ((JSONArray?) -> Unit)) {
 
         doAsync {
@@ -279,6 +396,7 @@ class VolleyHelper {
         }
     }
 
+
     companion object {
 
         const val BASE_API = "http://192.168.1.66:3000"
@@ -287,6 +405,9 @@ class VolleyHelper {
         const val GET_TOURNAMENTS = "/api/tournaments"
         const val NEW_TOURNAMENT = "/api/new_tournament"
         const val GET_TEAMS = "/api/teams"
+        const val GET_TEAMS_TOURNAMENT_ID = "/api/teams/tournament"
+        const val GET_TEAM_TEAM_ID = "/api/teams"
+        const val NEW_TEAM = "/api/new_team"
         const val GET_PLAYERS = "/api/players"
 
         var token = ""

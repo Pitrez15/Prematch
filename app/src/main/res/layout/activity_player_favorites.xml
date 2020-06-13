@@ -39,8 +39,8 @@
 
     <ImageButton
         android:id="@+id/searchPlayerButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
         android:background="@drawable/button_border"
@@ -50,8 +50,8 @@
 
     <ImageButton
         android:id="@+id/addPlayerButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
         android:layout_marginStart="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
         android:background="@drawable/button_border"

@@ -89,6 +89,7 @@ class TournamentFavoritesActivity : AppCompatActivity() {
 
                 val intent = Intent(this@TournamentFavoritesActivity, TournamentDetailActivity::class.java)
                 intent.putExtra("Tournament ID", position + 1)
+                //intent.putExtra("Teams Number", tournaments[position].teamsNumber.toString().toInt())
                 startActivity(intent)
             }
 
