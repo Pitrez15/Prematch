@@ -3,10 +3,9 @@
 <LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     android:orientation="vertical"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/colorDark" >
+    android:background="@color/colorDark">
 
     <ImageView
         android:id="@+id/playerImageView"
@@ -25,23 +24,23 @@
         android:layout_marginEnd="@dimen/normal_margin">
 
         <TextView
-            android:id="@+id/startDateTitleTextView"
+            android:id="@+id/playerHeightTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Start Date"
+            android:text="Height"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
 
         <TextView
-            android:id="@+id/finishDateTitleTextView"
+            android:id="@+id/playerAgeTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Finish Date"
+            android:text="Age"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -58,23 +57,23 @@
         android:layout_marginEnd="@dimen/normal_margin" >
 
         <TextView
-            android:id="@+id/startDateTextView"
+            android:id="@+id/playerHeightTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="dd/mm/yyyy"
+            android:text="XX"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
 
         <TextView
-            android:id="@+id/finishDateTextView"
+            android:id="@+id/playerAgeTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="dd/mm/yyyy"
+            android:text="XXXXX"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -91,23 +90,23 @@
         android:layout_marginEnd="@dimen/normal_margin" >
 
         <TextView
-            android:id="@+id/tournamentTypeTitleTextView"
+            android:id="@+id/playerPositionTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Type"
+            android:text="Position"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
 
         <TextView
-            android:id="@+id/teamsNumberTitleTextView"
+            android:id="@+id/playerTeamIDTitleTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Number of Teams"
+            android:text="Team ID"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -124,94 +123,26 @@
         android:layout_marginEnd="@dimen/normal_margin" >
 
         <TextView
-            android:id="@+id/tournamentTypeTextView"
+            android:id="@+id/playerPositionTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="type"
+            android:text="xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
 
         <TextView
-            android:id="@+id/teamsNumberTextView"
+            android:id="@+id/playerTeamIDTextView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="00"
-            android:textAlignment="center"
-            android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear5"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/big_margin"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin" >
-
-        <TextView
-            android:id="@+id/emailTitleTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto"
-            android:text="E-Mail"
-            android:textAlignment="center"
-            android:textColor="@color/colorLight"
-            android:textSize="@dimen/footer_size" />
-
-        <TextView
-            android:id="@+id/phoneNumberTitleTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto"
-            android:text="Phone"
-            android:textAlignment="center"
-            android:textColor="@color/colorLight"
-            android:textSize="@dimen/footer_size" />
-
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/linear6"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:layout_marginTop="@dimen/normal_margin"
-        android:layout_marginStart="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/normal_margin"
-        android:layout_marginBottom="@dimen/small_margin">
-
-        <TextView
-            android:id="@+id/contactEmailTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto"
-            android:text="text@text.com"
-            android:textAlignment="center"
-            android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
-
-        <TextView
-            android:id="@+id/contactPhoneTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:fontFamily="@font/roboto"
-            android:text="910 000 000"
+            android:text="xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
 
     </LinearLayout>
-
 </LinearLayout>

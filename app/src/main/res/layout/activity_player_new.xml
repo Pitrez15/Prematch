@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".main.PlayerNewActivity"
-    android:background="@color/colorDark">
+    android:background="@color/colorDark" >
 
     <TextView
         android:id="@+id/newPlayerTextView"
@@ -69,8 +70,8 @@
                 android:textColorHint="@color/colorLight"
                 android:textSize="@dimen/medium_size" />
 
-            <!--<EditText
-                android:id="@+id/enterPlayerImageEditText"
+            <EditText
+                android:id="@+id/enterPlayerHeightEditText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
                 android:layout_marginTop="@dimen/large_margin"
@@ -78,14 +79,28 @@
                 android:layout_marginEnd="@dimen/normal_margin"
                 android:background="@drawable/edit_text_border"
                 android:fontFamily="@font/roboto"
-                android:hint="Upload Image"
+                android:hint="Player Height"
                 android:textAlignment="center"
                 android:textColor="@color/colorLight"
                 android:textColorHint="@color/colorLight"
-                android:textSize="@dimen/medium_size" />-->
-
+                android:textSize="@dimen/medium_size" />
 
             <EditText
+                android:id="@+id/enterPlayerAgeEditText"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_marginTop="@dimen/large_margin"
+                android:layout_marginStart="@dimen/normal_margin"
+                android:layout_marginEnd="@dimen/normal_margin"
+                android:background="@drawable/edit_text_border"
+                android:fontFamily="@font/roboto"
+                android:hint="Player Age"
+                android:textAlignment="center"
+                android:textColor="@color/colorLight"
+                android:textColorHint="@color/colorLight"
+                android:textSize="@dimen/medium_size" />
+
+            <!--<EditText
                 android:id="@+id/enterBirthDateEditText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -128,7 +143,7 @@
                 android:textAlignment="center"
                 android:textColor="@color/colorLight"
                 android:textColorHint="@color/colorLight"
-                android:textSize="@dimen/medium_size" />
+                android:textSize="@dimen/medium_size" /> -->
 
             <EditText
                 android:id="@+id/enterPositionEditText"
@@ -145,7 +160,7 @@
                 android:textColorHint="@color/colorLight"
                 android:textSize="@dimen/medium_size" />
 
-            <EditText
+            <!--<EditText
                 android:id="@+id/enterTeamEditText"
                 android:layout_width="match_parent"
                 android:layout_height="40dp"
@@ -154,11 +169,11 @@
                 android:layout_marginEnd="@dimen/normal_margin"
                 android:background="@drawable/edit_text_border"
                 android:fontFamily="@font/roboto"
-                android:hint="Enter Team"
+                android:hint="Enter Team ID"
                 android:textAlignment="center"
                 android:textColor="@color/colorLight"
                 android:textColorHint="@color/colorLight"
-                android:textSize="@dimen/medium_size" />
+                android:textSize="@dimen/medium_size" />-->
 
         </LinearLayout>
     </ScrollView>

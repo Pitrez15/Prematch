@@ -1,5 +1,6 @@
 package com.android.ipca.prematch.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -43,6 +44,13 @@ class TeamDetailActivity : AppCompatActivity() {
                 }
                 teamAdapter?.notifyDataSetChanged()
             }
+        }
+
+        teamDetailPlayersButton.setOnClickListener {
+
+            val intent = Intent(this@TeamDetailActivity, TeamDetailPlayersActivity::class.java)
+            intent.putExtra("Team ID", teamID!!.toInt())
+            startActivity(intent)
         }
     }
 

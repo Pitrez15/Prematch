@@ -6,16 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.TournamentDetailTeamsActivity"
+    tools:context=".main.TeamDetailPlayersActivity"
     android:background="@color/colorDark">
 
     <TextView
-        android:id="@+id/tournamentDetailTeamsTextView"
+        android:id="@+id/teamDetailPlayersTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_margin"
         android:fontFamily="@font/roboto_black"
-        android:text="TOURNAMENT TEAMS"
+        android:text="TEAM PLAYERS"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/tournamentDetailTeamsListView"
+        android:id="@+id/teamDetailPlayersListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/normal_margin"
@@ -34,13 +34,13 @@
         android:paddingEnd="@dimen/normal_margin"
         android:dividerHeight="1dp"
         android:divider="@color/colorSecondary"
-        app:layout_constraintBottom_toTopOf="@+id/tournamentDetailAddTeamButton"
+        app:layout_constraintBottom_toTopOf="@+id/teamDetailAddPlayersButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tournamentDetailTeamsTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/teamDetailPlayersTextView" />
 
     <ImageButton
-        android:id="@+id/tournamentDetailSearchTeamButton"
+        android:id="@+id/teamDetailSearchTeamButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginEnd="@dimen/big_margin"
@@ -51,7 +51,7 @@
         app:layout_constraintEnd_toEndOf="parent" />
 
     <ImageButton
-        android:id="@+id/tournamentDetailAddTeamButton"
+        android:id="@+id/teamDetailAddPlayersButton"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="@dimen/big_margin"

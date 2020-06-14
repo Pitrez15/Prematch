@@ -1,6 +1,7 @@
 package com.android.ipca.prematch.main
 
 import android.content.Intent
+import android.os.BadParcelableException
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -11,24 +12,30 @@ import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.PlayerModel
 import com.android.ipca.prematch.models.TeamModel
-import kotlinx.android.synthetic.main.activity_player_favorites.*
+import kotlinx.android.synthetic.main.activity_team_detail_players.*
 import org.json.JSONObject
 
-class PlayerFavoritesActivity : AppCompatActivity() {
+class TeamDetailPlayersActivity : AppCompatActivity() {
 
+    var teamID : Int? = null
+    var allPlayers : MutableList<PlayerModel> = ArrayList()
     var players : MutableList<PlayerModel> = ArrayList()
-    var playerAdapter : PlayerFavoritesActivity.PlayerAdapter? = null
+    private var playerAdapter : TeamDetailPlayersActivity.PlayersAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_player_favorites)
+        setContentView(R.layout.activity_team_detail_players)
 
-        playerHomePlayerButton.setBackgroundResource(R.drawable.button_border_selected)
+        playerAdapter = PlayersAdapter()
+        teamDetailPlayersListView.adapter = playerAdapter
 
-        playerAdapter = PlayerAdapter()
-        favoritePlayersListView.adapter = playerAdapter
+        val bundle = intent.extras
+        bundle?.let {
 
-        VolleyHelper.instance.getPlayers(this) { response ->
+            teamID = it.getInt("Team ID")
+        }
+
+        VolleyHelper.instance.getPlayersByTeamID(this, teamID!!.toInt()) { response ->
 
             response?.let {
 
@@ -41,33 +48,29 @@ class PlayerFavoritesActivity : AppCompatActivity() {
             }
         }
 
-        /*addPlayerButton.setOnClickListener {
+        VolleyHelper.instance.getPlayers(this) { response ->
+
+            response?.let {
+
+                for (index in 0 until it.length()) {
+
+                    val playerJSON : JSONObject = it[index] as JSONObject
+                    allPlayers.add(PlayerModel.parseJSON(playerJSON))
+                }
+            }
+        }
+
+        teamDetailAddPlayersButton.setOnClickListener {
 
             val intent = Intent(this, PlayerNewActivity::class.java)
-            intent.putExtra("Player ID", players.size)
-            startActivityForResult(intent, 1002)
-        }*/
 
-        tournamentHomePlayerButton.setOnClickListener {
-
-            val intent = Intent(this, TournamentFavoritesActivity::class.java)
-            startActivity(intent)
-        }
-
-        teamHomePlayerButton.setOnClickListener {
-
-            val intent = Intent(this, TeamFavoritesActivity::class.java)
-            startActivity(intent)
-        }
-
-        settingsPlayerButton.setOnClickListener {
-
-            val intent = Intent(this, SettingsActivity::class.java)
+            intent.putExtra("Team ID", teamID!!.toInt())
+            intent.putExtra("Player ID", allPlayers.size)
             startActivity(intent)
         }
     }
 
-    inner class PlayerAdapter : BaseAdapter() {
+    inner class PlayersAdapter : BaseAdapter() {
 
         override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
 
@@ -75,28 +78,38 @@ class PlayerFavoritesActivity : AppCompatActivity() {
 
             val textViewPlayerName = rowView.findViewById<TextView>(R.id.playerNameRowTextView)
             val textViewPlayerPosition = rowView.findViewById<TextView>(R.id.playerPositionRowTextView)
-            val textViewPlayerTeamID = rowView.findViewById<TextView>(R.id.playerTeamRowTextView)
+            val textViewTeamID = rowView.findViewById<TextView>(R.id.playerTeamRowTextView)
             val textViewPlayerHeight = rowView.findViewById<TextView>(R.id.playerHeightRowTextView)
             val textViewPlayerAge = rowView.findViewById<TextView>(R.id.playerAgeRowTextView)
 
             textViewPlayerName.text = players[position].playerFirstName + " " + players[position].playerLastName
             textViewPlayerPosition.text = players[position].playerPosition
-            textViewPlayerTeamID.text = "Team" + " " + players[position].playerTeamID.toString()
+            textViewTeamID.text = "Team" + " " + players[position].playerTeamID.toString()
             textViewPlayerHeight.text = players[position].playerHeight.toString() + " " + "cm"
             textViewPlayerAge.text = players[position].playerAge.toString() + " " + "Years Old"
+
+            rowView.setOnClickListener {
+
+                val intent = Intent(this@TeamDetailPlayersActivity, PlayerDetailActivity::class.java)
+                intent.putExtra("Player ID", players[position].playerID)
+                startActivity(intent)
+            }
 
             return rowView
         }
 
         override fun getItem(position: Int): Any {
+
             return players[position]
         }
 
         override fun getItemId(position: Int): Long {
+
             return 0
         }
 
         override fun getCount(): Int {
+
             return players.size
         }
 

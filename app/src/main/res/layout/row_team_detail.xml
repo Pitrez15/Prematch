@@ -7,6 +7,13 @@
     android:orientation="vertical"
     android:background="@color/colorDark">
 
+    <ImageView
+        android:id="@+id/playerImageView"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:src="@drawable/logo"
+        android:layout_marginBottom="@dimen/normal_margin"/>
+
     <LinearLayout
         android:id="@+id/linear1"
         android:layout_width="match_parent"

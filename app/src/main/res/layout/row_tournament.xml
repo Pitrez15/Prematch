@@ -13,6 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+        android:layout_marginBottom="@dimen/small_margin"
         android:layout_marginStart="@dimen/normal_margin"
         android:layout_marginEnd="@dimen/normal_margin"
         android:layout_gravity="center_vertical" >
@@ -22,6 +23,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/small_margin"
+            android:layout_marginBottom="@dimen/small_margin"
             android:fontFamily="@font/roboto_black"
             android:text="Title"
             android:textColor="@color/colorSecondary"
@@ -32,7 +34,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_gravity="center_vertical" >
+            android:layout_gravity="center_vertical"
+            android:layout_marginBottom="@dimen/small_margin">
 
             <TextView
                 android:id="@+id/tournamentStartDateRowTextView"
