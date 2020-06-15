@@ -54,6 +54,13 @@ class TournamentDetailActivity : AppCompatActivity() {
             //intent.putExtra("Teams Number", teamsNumber!!.toInt())
             startActivity(intent)
         }
+
+        tournamentDetailGamesButton.setOnClickListener {
+
+            val intent = Intent(this, TournamentDetailGamesActivity::class.java)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            startActivity(intent)
+        }
     }
 
     inner class TournamentAdapter : BaseAdapter() {
