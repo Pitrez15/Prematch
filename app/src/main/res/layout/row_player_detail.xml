@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/playerImageView"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:src="@drawable/logo"
         android:layout_marginBottom="@dimen/normal_margin"/>
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Height"
+            android:text="@string/height"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Age"
+            android:text="@string/age"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="XX"
+            android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="XXXXX"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Position"
+            android:text="@string/position"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Team ID"
+            android:text="@string/team_id"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="xxxxx"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="xxxxx"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />

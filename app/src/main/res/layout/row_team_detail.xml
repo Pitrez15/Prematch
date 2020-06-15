@@ -10,7 +10,7 @@
     <ImageView
         android:id="@+id/playerImageView"
         android:layout_width="match_parent"
-        android:layout_height="150dp"
+        android:layout_height="100dp"
         android:src="@drawable/logo"
         android:layout_marginBottom="@dimen/normal_margin"/>
 
@@ -29,7 +29,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Initials"
+            android:text="@string/initials"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="City"
+            android:text="@string/city"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -62,7 +62,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="XX"
+            android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -73,7 +73,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="XXXXX"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -95,7 +95,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Primary Color"
+            android:text="@string/primary_color"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -106,7 +106,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Secondary Color"
+            android:text="@string/secondary_color"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -128,7 +128,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="xxxxx"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -139,7 +139,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="xxxxx"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -161,7 +161,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="E-Mail"
+            android:text="@string/E_mail"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -172,7 +172,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Phone"
+            android:text="@string/phone"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -195,7 +195,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="xxxxx"
+            android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />
@@ -206,7 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="910 000 000"
+            android:text="@string/_910_000_000"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/normal_size" />

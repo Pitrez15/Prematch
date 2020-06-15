@@ -20,17 +20,18 @@ class PlayerNewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_new)
 
-        /*backPlayerButton.setOnClickListener {
+        backPlayerButton.setOnClickListener {
 
             val intent = Intent(this, PlayerFavoritesActivity::class.java)
+
             startActivity(intent)
-        }*/
+        }
 
         confirmPlayerButton.setOnClickListener {
 
             if (enterPlayerFirstNameEditText.text.toString() == "" || enterPlayerLastNameEditText.text.toString() == "" ||
                 enterPositionEditText.text.toString() == "" ) {
-
+                intent.putExtra("Team ID", teamID!!.toInt())
                 Toast.makeText(applicationContext,"Player Information is Missing !", Toast.LENGTH_SHORT).show()
             }
 

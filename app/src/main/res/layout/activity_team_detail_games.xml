@@ -6,16 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".main.TournamentDetailGamesActivity"
+    tools:context=".main.TeamDetailGamesActivity"
     android:background="@color/colorDark">
 
     <TextView
-        android:id="@+id/tournamentDetailGamesTextView"
+        android:id="@+id/teamDetailGamesTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small_margin"
         android:fontFamily="@font/roboto_black"
-        android:text="@string/tournament_games"
+        android:text="Team Games"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,7 +23,7 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <ListView
-        android:id="@+id/tournamentDetailGamesListView"
+        android:id="@+id/teamDetailGamesListView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/normal_margin"
@@ -37,10 +37,10 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tournamentDetailGamesTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/teamDetailGamesTextView" />
 
     <ImageButton
-        android:id="@+id/tournamentDetailBackGamesButton"
+        android:id="@+id/teamDetailBackGamesButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginStart="@dimen/big_margin"
@@ -50,8 +50,8 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ImageButton
-        android:id="@+id/tournamentDetailAddGameButton"
+    <!--<ImageButton
+        android:id="@+id/teamDetailAddGameButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
         android:layout_marginEnd="@dimen/big_margin"
@@ -59,8 +59,6 @@
         android:background="@drawable/button_border"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-
-
+        app:layout_constraintEnd_toEndOf="parent" />-->
 
 </androidx.constraintlayout.widget.ConstraintLayout>

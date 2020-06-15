@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Prematch</string>
-    <string name="app_name_uppercase">PREMATCH</string>
-    <string name="app_name_lowercase">prematch</string>
-    <string name="company_name">Pro Evolution Programming</string>
-    <string name="company_name_year">Pro Evolution Programming 2020</string>
+    <string name="app_name" translatable="false">Prematch</string>
+    <string name="app_name_uppercase" translatable="false">PREMATCH</string>
+    <string name="app_name_lowercase" translatable="false">prematch</string>
+    <string name="company_name" translatable="false">Pro Evolution Programming</string>
+    <string name="company_name_year" translatable="false">Pro Evolution Programming 2020</string>
     <string name="application_logo_description">Application Logo</string>
     <string name="login">LOGIN</string>
     <string name="register">Register</string>
@@ -17,7 +17,7 @@
     <string name="password">Password</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="terms_and_conditions_title">TERMS AND CONDITIONS</string>
-    <string name="terms_and_conditions">1. TERMS OF USE
+    <string name="terms_and_conditions" translatable="false">1. TERMS OF USE
 \n\nBy downloading, browsing, accessing or using this Sample Store mobile application (“Mobile Application”),
         you agree to be bound by these Terms and Conditions of Use. We reserve the right to amend these terms and conditions at any time.
         If you disagree with any of these Terms and Conditions of Use, you must immediately discontinue your access to the
@@ -194,7 +194,6 @@
 
 \n\nWe are committed to conducting our business in accordance with these principles in order to ensure that the confidentiality of personal information is protected and maintained.\n</string>
 
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="terms_of_service">Terms of Service</string>
     <string name="i_have_read_and_agree_to_the">I have read and agree to the </string>
     <string name="favorites">Favorites</string>
@@ -203,4 +202,61 @@
     <string name="my_tournaments">My Tournaments</string>
     <string name="menu">Menu</string>
     <string name="create">Create</string>
+    <string name="tournaments">Tournaments</string>
+    <string name="players">Players</string>
+    <string name="teams">Teams</string>
+    <string name="settings">Settings</string>
+    <string name="tournament_name">Tournament Name</string>
+    <string name="start_date_yyyy_mm_dd">Start Date (yyyy/mm/dd)</string>
+    <string name="finish_date_yyyy_mm_dd">Finish Date (yyyy-mm-dd)</string>
+    <string name="contact_e_mail">Contact E-mail</string>
+    <string name="contact_phone">Contact Phone</string>
+    <string name="number_of_teams">Number of Teams</string>
+    <string name="select_brackets_league_or_mix">Select Brackets, League or Mix</string>
+    <string name="position">Position</string>
+    <string name="player_height">Player Height</string>
+    <string name="player_last_name">Player Last Name</string>
+    <string name="player_first_name">Player First Name</string>
+    <string name="new_player">New Player</string>
+    <string name="secondary_color">Secondary Color</string>
+    <string name="primary_color">Primary Color</string>
+    <string name="team_city">Team City</string>
+    <string name="team_initials">Team Initials</string>
+    <string name="team_name">Team Name</string>
+    <string name="detail_tournament">Detail Tournament</string>
+    <string name="tournament_teams">Tournament Teams</string>
+    <string name="tournament_games">Tournament Games</string>
+    <string name="detail_team">Detail Team</string>
+    <string name="team_players">Team Players</string>
+    <string name="if_you_don_t_have_an_account">If you don\'t have an account,</string>
+    <string name="register_now">Register Now!</string>
+    <string name="new_game">New Game</string>
+    <string name="home_team_id">Home Team ID</string>
+    <string name="away_team_id">Away Team ID</string>
+    <string name="home_team_goals">Home Team Goals</string>
+    <string name="away_team_goals">Away Team Goals</string>
+    <string name="title">Title</string>
+    <string name="player_name">Player Name</string>
+    <string name="player_age">Player Age</string>
+    <string name="player_position">Player Position</string>
+    <string name="team_a_vs_team_b">Team A vs Team B</string>
+    <string name="home_goals">Home Goals</string>
+    <string name="away_goals">Away Goals</string>
+    <string name="start_date">Start Date</string>
+    <string name="finish_date">Finish Date</string>
+    <string name="dd_mm_yyyy">dd/mm/yyyy</string>
+    <string name="yyyy_mm_dd">yyyy/mm/dd</string>
+    <string name="type">Type</string>
+    <string name="_00" translatable="false">00</string>
+    <string name="E_mail" translatable="false">E-Mail</string>
+    <string name="phone">Phone</string>
+    <string name="text_text_com" translatable="false">text@text.com</string>
+    <string name="_910_000_000" translatable="false">910 000 000</string>
+    <string name="initials">Initials</string>
+    <string name="city">City</string>
+    <string name="xx" translatable="false">XX</string>
+    <string name="xxxxx" translatable="false">XXXXX</string>
+    <string name="height">Height</string>
+    <string name="age">Age</string>
+    <string name="team_id">Team ID</string>
 </resources>

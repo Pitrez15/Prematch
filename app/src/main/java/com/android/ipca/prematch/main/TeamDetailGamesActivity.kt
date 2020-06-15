@@ -10,37 +10,38 @@ import android.widget.TextView
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.GameModel
+import kotlinx.android.synthetic.main.activity_team_detail_games.*
 import kotlinx.android.synthetic.main.activity_tournament_detail_games.*
 import org.json.JSONObject
 
-class TournamentDetailGamesActivity : AppCompatActivity() {
+class TeamDetailGamesActivity : AppCompatActivity() {
 
-    var tournamentID : Int? = null
+    var teamID: Int? = null
 
-    var allGames : MutableList<GameModel> = ArrayList()
-    var games : MutableList<GameModel> = ArrayList()
-    private var gamesAdapter : TournamentDetailGamesActivity.GamesAdapter? = null
+    var allGames: MutableList<GameModel> = ArrayList()
+    var games: MutableList<GameModel> = ArrayList()
+    private var gamesAdapter: GamesAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tournament_detail_games)
+        setContentView(R.layout.activity_team_detail_games)
 
         gamesAdapter = GamesAdapter()
-        tournamentDetailGamesListView.adapter = gamesAdapter
+        teamDetailGamesListView.adapter = gamesAdapter
 
         val bundle = intent.extras
         bundle?.let {
 
-            tournamentID = it.getInt("Tournament ID")
+            teamID = it.getInt("Team ID")
         }
 
-        VolleyHelper.instance.getGamesByTournamentID(this, tournamentID!!.toInt()) { response ->
+        VolleyHelper.instance.getGamesByTeamID(this, teamID!!.toInt()) { response ->
 
             response?.let {
 
                 for (index in 0 until it.length()) {
 
-                    val gameJSON : JSONObject = it[index] as JSONObject
+                    val gameJSON: JSONObject = it[index] as JSONObject
                     games.add(GameModel.parseJSON(gameJSON))
                 }
                 gamesAdapter?.notifyDataSetChanged()
@@ -53,25 +54,17 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
 
                 for (index in 0 until it.length()) {
 
-                    val gameJSON : JSONObject = it[index] as JSONObject
+                    val gameJSON: JSONObject = it[index] as JSONObject
                     allGames.add(GameModel.parseJSON(gameJSON))
                 }
             }
         }
 
-        tournamentDetailAddGameButton.setOnClickListener {
+        teamDetailBackGamesButton.setOnClickListener {
 
-            val intent = Intent(this, GameNewActivity::class.java)
+            val intent = Intent(this, TeamDetailActivity::class.java)
 
-            intent.putExtra("Tournament ID", tournamentID!!.toInt())
-            intent.putExtra("Game ID", allGames.size)
-            startActivity(intent)
-        }
-
-        tournamentDetailBackGamesButton.setOnClickListener {
-
-            val intent = Intent(this, TournamentDetailActivity::class.java)
-            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Team ID", teamID!!.toInt())
             startActivity(intent)
         }
     }

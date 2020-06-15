@@ -24,7 +24,7 @@
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginBottom="@dimen/small_margin"
             android:fontFamily="@font/roboto_black"
-            android:text="Player Name"
+            android:text="@string/player_name"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/medium_size"
             android:textAlignment="center"/>
@@ -43,7 +43,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Player Height"
+                android:text="@string/player_height"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Player Age"
+                android:text="@string/player_age"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -74,7 +74,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Player Position"
+                android:text="@string/player_position"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -85,7 +85,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Team ID"
+                android:text="@string/team_id"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 

@@ -13,9 +13,9 @@
         android:id="@+id/tournamentDetailTeamsTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/small_margin"
         android:fontFamily="@font/roboto_black"
-        android:text="TOURNAMENT TEAMS"
+        android:text="@string/tournament_teams"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -34,31 +34,31 @@
         android:paddingEnd="@dimen/normal_margin"
         android:dividerHeight="1dp"
         android:divider="@color/colorSecondary"
-        app:layout_constraintBottom_toTopOf="@+id/tournamentDetailAddTeamButton"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tournamentDetailTeamsTextView" />
 
     <ImageButton
-        android:id="@+id/tournamentDetailSearchTeamButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginEnd="@dimen/big_margin"
+        android:id="@+id/tournamentDetailBackTeamButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
         android:background="@drawable/button_border"
-        android:src="@drawable/ic_search_black_24dp"
+        android:src="@drawable/ic_arrow_back_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintStart_toStartOf="parent" />
 
     <ImageButton
         android:id="@+id/tournamentDetailAddTeamButton"
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:layout_marginStart="@dimen/big_margin"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/big_margin"
         android:layout_marginBottom="@dimen/normal_margin"
         android:background="@drawable/button_border"
         android:src="@drawable/ic_add_black_24dp"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

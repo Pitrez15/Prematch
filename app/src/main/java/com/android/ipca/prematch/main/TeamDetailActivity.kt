@@ -52,6 +52,13 @@ class TeamDetailActivity : AppCompatActivity() {
             intent.putExtra("Team ID", teamID!!.toInt())
             startActivity(intent)
         }
+
+        teamDetailGamesButton.setOnClickListener {
+
+            val intent = Intent(this@TeamDetailActivity, TeamDetailGamesActivity::class.java)
+            intent.putExtra("Team ID", teamID!!.toInt())
+            startActivity(intent)
+        }
     }
 
     inner class TeamAdapter : BaseAdapter() {

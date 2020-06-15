@@ -84,6 +84,14 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
                 startActivity(intent)
             }*/
         }
+
+        tournamentDetailBackTeamButton.setOnClickListener {
+
+            val intent = Intent(this, TournamentDetailActivity::class.java)
+
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            startActivity(intent)
+        }
     }
 
     inner class TeamsAdapter : BaseAdapter() {

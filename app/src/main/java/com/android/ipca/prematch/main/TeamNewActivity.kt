@@ -19,11 +19,12 @@ class TeamNewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_new)
 
-        /*backTeamButton.setOnClickListener {
+        backTeamButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
             startActivity(intent)
-        }*/
+        }
 
         confirmTeamButton.setOnClickListener {
 

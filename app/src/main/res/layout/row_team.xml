@@ -24,7 +24,7 @@
             android:layout_marginTop="@dimen/small_margin"
             android:layout_marginBottom="@dimen/small_margin"
             android:fontFamily="@font/roboto_black"
-            android:text="Team Name"
+            android:text="@string/team_name"
             android:textColor="@color/colorSecondary"
             android:textSize="@dimen/medium_size"
             android:textAlignment="center"/>
@@ -43,7 +43,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Team Initials"
+                android:text="@string/team_initials"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -54,7 +54,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Team City"
+                android:text="@string/team_city"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -74,7 +74,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Primary Color"
+                android:text="@string/primary_color"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -85,7 +85,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
-                android:text="Secondary Color"
+                android:text="@string/secondary_color"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
