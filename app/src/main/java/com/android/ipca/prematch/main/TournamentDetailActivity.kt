@@ -61,6 +61,13 @@ class TournamentDetailActivity : AppCompatActivity() {
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             startActivity(intent)
         }
+
+        tournamentDetailStatsButton.setOnClickListener {
+
+            val intent = Intent(this, TournamentDetailStatsActivity::class.java)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            startActivity(intent)
+        }
     }
 
     inner class TournamentAdapter : BaseAdapter() {

@@ -1,0 +1,401 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".main.TournamentDetailStatsActivity"
+    android:background="@color/colorDark">
+
+    <TextView
+        android:id="@+id/tournamentDetailStatsTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/small_margin"
+        android:fontFamily="@font/roboto_black"
+        android:text="@string/tournament_stats"
+        android:textColor="@color/colorPrimary"
+        android:textSize="@dimen/subtitle_size"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tournamentDetailStatsTextView">
+
+        <TextView
+            android:id="@+id/numberTeamsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Number of Teams"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/numberGamesTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Number of Games"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
+
+        <TextView
+            android:id="@+id/numberTeamsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/numberGamesTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear5"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear2">
+
+        <TextView
+            android:id="@+id/tournamentTotalGoalsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Total Goals"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/tournamentTotalHomeGoalsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Total Home Goals"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/tournamentTotalAwayGoalsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Total Away Goals"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear6"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear5">
+
+        <TextView
+            android:id="@+id/tournamentTotalGoalsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/tournamentTotalHomeGoalsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/tournamentTotalAwayGoalsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear6">
+
+        <TextView
+            android:id="@+id/tournamentAverageGoalsTeamTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Average Goals per Team"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/spacer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.9"
+            android:fontFamily="@font/roboto"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/tournamentAverageGoalsGameTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Average Goals per Game"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear3">
+
+        <TextView
+            android:id="@+id/tournamentAverageGoalsTeamTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/spacer2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.9"
+            android:fontFamily="@font/roboto"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/tournamentAverageGoalsGameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear7"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear4">
+
+        <TextView
+            android:id="@+id/tournamentAverageHomeGoalsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Average Home Goals"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/spacer3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.9"
+            android:fontFamily="@font/roboto"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/tournamentAverageAwayGoalsTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="Average Away Goals"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear8"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear7">
+
+        <TextView
+            android:id="@+id/tournamentAverageHomeGoalsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+        <TextView
+            android:id="@+id/spacer4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1.9"
+            android:fontFamily="@font/roboto"
+            android:text=""
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/tournamentAverageAwayGoalsTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/normal_size" />
+
+    </LinearLayout>
+
+    <ImageButton
+        android:id="@+id/tournamentDetailBackStatsButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
+        android:src="@drawable/ic_arrow_back_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <!--<ImageButton
+        android:id="@+id/tournamentDetailAddTeamButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:layout_marginEnd="@dimen/big_margin"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:background="@drawable/button_border"
+        android:src="@drawable/ic_add_black_24dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />-->
+
+</androidx.constraintlayout.widget.ConstraintLayout>
