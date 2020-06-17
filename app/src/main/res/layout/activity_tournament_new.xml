@@ -57,21 +57,6 @@
                 android:textColorHint="@color/colorLight"
                 android:textSize="@dimen/medium_size" />
 
-            <!--<EditText
-                android:id="@+id/enterTournamentImageEditText"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:hint="Upload Image"
-                android:textAlignment="center"
-                android:textColor="@color/colorLight"
-                android:textColorHint="@color/colorLight"
-                android:textSize="@dimen/medium_size" />-->
-
             <EditText
                 android:id="@+id/enterStartDateEditText"
                 android:layout_width="match_parent"
@@ -173,21 +158,6 @@
                 android:textColorHint="@color/colorLight"
                 android:textSize="@dimen/medium_size" />
 
-            <!--<EditText
-                android:id="@+id/enterSelectTeamsEditText"
-                android:layout_width="match_parent"
-                android:layout_height="40dp"
-                android:layout_marginTop="@dimen/large_margin"
-                android:layout_marginStart="@dimen/normal_margin"
-                android:layout_marginEnd="@dimen/normal_margin"
-                android:background="@drawable/edit_text_border"
-                android:fontFamily="@font/roboto"
-                android:hint="Select Teams"
-                android:textAlignment="center"
-                android:textColor="@color/colorLight"
-                android:textColorHint="@color/colorLight"
-                android:textSize="@dimen/medium_size" />-->
-
         </LinearLayout>
     </ScrollView>
 
@@ -197,7 +167,7 @@
         android:layout_height="50dp"
         android:src="@drawable/ic_arrow_back_black_24dp"
         android:layout_marginBottom="@dimen/normal_margin"
-        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginStart="@dimen/large_margin"
         android:background="@drawable/button_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -208,7 +178,7 @@
         android:layout_height="50dp"
         android:src="@drawable/ic_check_black_24dp"
         android:layout_marginBottom="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/large_margin"
         android:background="@drawable/button_border"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />

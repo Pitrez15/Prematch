@@ -18,7 +18,7 @@ import org.json.JSONObject
 class TournamentDetailTeamsActivity : AppCompatActivity() {
 
     var tournamentID : Int? = null
-    //var teamsNumber : Int? = null
+    var teamsNumber : Int? = null
 
     var allTeams : MutableList<TeamModel> = ArrayList()
     var teams : MutableList<TeamModel> = ArrayList()
@@ -35,7 +35,7 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
         bundle?.let {
 
             tournamentID = it.getInt("Tournament ID")
-            //teamsNumber = it.getInt("Team Number")
+            teamsNumber = it.getInt("Teams Number")
         }
 
         VolleyHelper.instance.getTeamsByTournamentID(this, tournamentID!!.toInt()) { response ->
@@ -65,13 +65,13 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
 
         tournamentDetailAddTeamButton.setOnClickListener {
 
-            val intent = Intent(this, TeamNewActivity::class.java)
+            /*val intent = Intent(this, TeamNewActivity::class.java)
 
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Team ID", allTeams.size)
-            startActivity(intent)
+            startActivity(intent)*/
 
-            /*if (teams.size >= teamsNumber!!) {
+            if (teams.size > teamsNumber!!) {
 
                 Toast.makeText(applicationContext,"You can't add more teams !",Toast.LENGTH_SHORT).show()
             }
@@ -81,15 +81,16 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
                 val intent = Intent(this, TeamNewActivity::class.java)
                 intent.putExtra("Tournament ID", tournamentID!!.toInt())
                 intent.putExtra("Team ID", allTeams.size)
+                intent.putExtra("Teams Number", teamsNumber!!.toInt())
                 startActivity(intent)
-            }*/
+            }
         }
 
         tournamentDetailBackTeamButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailActivity::class.java)
-
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Team ID", allTeams.size)
             startActivity(intent)
         }
     }
@@ -115,6 +116,7 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
             rowView.setOnClickListener {
 
                 val intent = Intent(this@TournamentDetailTeamsActivity, TeamDetailActivity::class.java)
+                intent.putExtra("Tournament ID", tournamentID!!.toInt())
                 intent.putExtra("Team ID", teams[position].teamID)
                 startActivity(intent)
             }

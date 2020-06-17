@@ -77,7 +77,7 @@ class TournamentDetailStatsActivity : AppCompatActivity() {
                     averageGoalsGame = totalGoals.toFloat() / allGames.size
                     averageHomeGoals = totalHomeGoals.toFloat() / allGames.size
                     averageAwayGoals = totalAwayGoals.toFloat() / allGames.size
-                    averageGoalsTeam = totalGoals.toFloat() / allTeams.size
+                    averageGoalsTeam = totalGoals.toFloat() / textViewTotalTeams.text.toString().toInt()
 
                     textViewTotalGames.text = allGames.size.toString()
                     textViewTotalGoals.text = totalGoals.toString()
@@ -94,7 +94,6 @@ class TournamentDetailStatsActivity : AppCompatActivity() {
         tournamentDetailBackStatsButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailActivity::class.java)
-
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             startActivity(intent)
         }

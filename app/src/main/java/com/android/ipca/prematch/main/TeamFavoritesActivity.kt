@@ -42,13 +42,6 @@ class TeamFavoritesActivity : AppCompatActivity() {
             }
         }
 
-        /*addTeamButton.setOnClickListener {
-
-            val intent = Intent(this, TeamNewActivity::class.java)
-            intent.putExtra("Team ID", teams.size)
-            startActivityForResult(intent, 1002)
-        }*/
-
         tournamentHomeTeamButton.setOnClickListener {
 
             val intent = Intent(this, TournamentFavoritesActivity::class.java)
@@ -90,13 +83,7 @@ class TeamFavoritesActivity : AppCompatActivity() {
 
                 val intent = Intent(this@TeamFavoritesActivity, TeamDetailActivity::class.java)
                 intent.putExtra("Team ID", teams[position].teamID)
-                /*intent.putExtra("Team Name", teams[position].teamName)
-                intent.putExtra("Team Initials", teams[position].teamInitials)
-                intent.putExtra("Team City", teams[position].teamCity)
-                intent.putExtra("Primary Color", teams[position].teamPrimaryColor)
-                intent.putExtra("Secondary Color", teams[position].teamSecondaryColor)
-                intent.putExtra("Team Email", teams[position].teamContactEmail)
-                intent.putExtra("Team Phone", teams[position].teamContactPhone)*/
+                intent.putExtra("Tournament ID", teams[position].teamTournamentID)
                 startActivity(intent)
             }
 

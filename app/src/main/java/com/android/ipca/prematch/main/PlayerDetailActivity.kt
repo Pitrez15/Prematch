@@ -1,5 +1,6 @@
 package com.android.ipca.prematch.main
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
@@ -16,6 +17,7 @@ import org.json.JSONObject
 class PlayerDetailActivity : AppCompatActivity() {
 
     var playerID : Int? = null
+    var teamID : Int? = null
 
     var player : MutableList<PlayerModel> = ArrayList()
     var playerAdapter : PlayerAdapter? = null
@@ -31,6 +33,7 @@ class PlayerDetailActivity : AppCompatActivity() {
         bundle?.let {
 
             playerID = it.getInt("Player ID")
+            teamID = it.getInt("Team ID")
         }
 
         VolleyHelper.instance.getPlayerByID(this, playerID!!.toInt()) { response ->
@@ -44,6 +47,13 @@ class PlayerDetailActivity : AppCompatActivity() {
                 }
                 playerAdapter?.notifyDataSetChanged()
             }
+        }
+
+        playerDetailBackButton.setOnClickListener {
+
+            val intent = Intent(this, TeamDetailPlayersActivity::class.java)
+            intent.putExtra("Team ID", teamID!!.toInt())
+            startActivity(intent)
         }
     }
 

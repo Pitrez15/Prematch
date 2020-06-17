@@ -88,8 +88,8 @@ class TournamentFavoritesActivity : AppCompatActivity() {
             rowView.setOnClickListener {
 
                 val intent = Intent(this@TournamentFavoritesActivity, TournamentDetailActivity::class.java)
-                intent.putExtra("Tournament ID", position + 1)
-                //intent.putExtra("Teams Number", tournaments[position].teamsNumber.toString().toInt())
+                intent.putExtra("Tournament ID", tournaments[position].tournamentID)
+                intent.putExtra("Teams Number", tournaments[position].teamsNumber)
                 startActivity(intent)
             }
 

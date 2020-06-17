@@ -19,6 +19,13 @@ class GameNewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_new)
 
+        backGameButton.setOnClickListener {
+
+            val intent = Intent(this, TournamentDetailGamesActivity::class.java)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            startActivity(intent)
+        }
+
         confirmGameButton.setOnClickListener {
 
             if (enterGameHomeTeamEditText.text.toString() == "" || enterGameAwayTeamEditText.text.toString() == "" ||

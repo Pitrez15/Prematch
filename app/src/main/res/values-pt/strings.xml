@@ -72,4 +72,14 @@
     <string name="city">Cidade</string>
     <string name="height">Altura</string>
     <string name="age">Idade</string>
+    <string name="tournament_stats">Estatisticas Torneio</string>
+    <string name="team_stats">Estatisticas Equipa</string>
+    <string name="number_of_games">Numero de Jogos</string>
+    <string name="total_goals">Total de Golos</string>
+    <string name="average_goals_per_team">Média de Golos por Equipa</string>
+    <string name="average_goals_per_game">Média de Golos por Jogo</string>
+    <string name="average_home_goals">Média de Golos em Casa</string>
+    <string name="average_away_goals">Média de Golos Fora</string>
+    <string name="total_home_goals">Total de Golos em Casa</string>
+    <string name="total_away_goals">Total de Golos Fora</string>
 </resources>

@@ -100,6 +100,7 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
 
                 val intent = Intent(this@TeamDetailPlayersActivity, PlayerDetailActivity::class.java)
                 intent.putExtra("Player ID", players[position].playerID)
+                intent.putExtra("Team ID", players[position].playerTeamID)
                 startActivity(intent)
             }
 

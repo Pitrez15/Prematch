@@ -16,6 +16,8 @@ import org.json.JSONObject
 class TeamDetailActivity : AppCompatActivity() {
 
     var teamID : Int? = null
+    var tournamentID : Int? = null
+    var teamsNumber : Int? = null
 
     var team : MutableList<TeamModel> = ArrayList()
     var teamAdapter : TeamAdapter? = null
@@ -31,6 +33,8 @@ class TeamDetailActivity : AppCompatActivity() {
         bundle?.let {
 
             teamID = it.getInt("Team ID")
+            tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
         }
 
         VolleyHelper.instance.getTeamByID(this, teamID!!.toInt()) { response ->
@@ -64,6 +68,14 @@ class TeamDetailActivity : AppCompatActivity() {
 
             val intent = Intent(this@TeamDetailActivity, TeamDetailStatsActivity::class.java)
             intent.putExtra("Team ID", teamID!!.toInt())
+            startActivity(intent)
+        }
+
+        teamDetailBackButton.setOnClickListener {
+
+            val intent = Intent(this@TeamDetailActivity, TournamentDetailActivity::class.java)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
             startActivity(intent)
         }
     }
@@ -107,7 +119,5 @@ class TeamDetailActivity : AppCompatActivity() {
 
             return team.size
         }
-
-
     }
 }

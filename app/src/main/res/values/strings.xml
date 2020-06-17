@@ -261,4 +261,12 @@
     <string name="team_id">Team ID</string>
     <string name="tournament_stats">Tournament Stats</string>
     <string name="team_stats">Team Stats</string>
+    <string name="number_of_games">Number of Games</string>
+    <string name="total_goals">Total Goals</string>
+    <string name="total_home_goals">Total Home Goals</string>
+    <string name="total_away_goals">Total Away Goals</string>
+    <string name="average_goals_per_team">Average Goals per Team</string>
+    <string name="average_goals_per_game">Average Goals per Game</string>
+    <string name="average_home_goals">Average Home Goals</string>
+    <string name="average_away_goals">Average Away Goals</string>
 </resources>

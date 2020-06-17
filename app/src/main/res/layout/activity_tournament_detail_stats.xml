@@ -40,7 +40,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Number of Teams"
+            android:text="@string/number_of_teams"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -51,7 +51,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Number of Games"
+            android:text="@string/number_of_games"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -112,7 +112,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Total Goals"
+            android:text="@string/total_goals"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -123,7 +123,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Total Home Goals"
+            android:text="@string/total_home_goals"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -134,7 +134,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Total Away Goals"
+            android:text="@string/total_away_goals"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -206,7 +206,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Average Goals per Team"
+            android:text="@string/average_goals_per_team"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -228,7 +228,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Average Goals per Game"
+            android:text="@string/average_goals_per_game"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -300,7 +300,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Average Home Goals"
+            android:text="@string/average_home_goals"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -322,7 +322,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:fontFamily="@font/roboto"
-            android:text="Average Away Goals"
+            android:text="@string/average_away_goals"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
             android:textSize="@dimen/footer_size" />
@@ -380,7 +380,7 @@
         android:id="@+id/tournamentDetailBackStatsButton"
         android:layout_width="50dp"
         android:layout_height="50dp"
-        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginStart="@dimen/large_margin"
         android:layout_marginBottom="@dimen/normal_margin"
         android:background="@drawable/button_border"
         android:src="@drawable/ic_arrow_back_black_24dp"

@@ -185,7 +185,7 @@
         android:src="@drawable/ic_arrow_back_black_24dp"
         android:background="@drawable/button_border"
         android:layout_marginBottom="@dimen/normal_margin"
-        android:layout_marginStart="@dimen/big_margin"
+        android:layout_marginStart="@dimen/large_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
@@ -196,7 +196,7 @@
         android:src="@drawable/ic_check_black_24dp"
         android:background="@drawable/button_border"
         android:layout_marginBottom="@dimen/normal_margin"
-        android:layout_marginEnd="@dimen/big_margin"
+        android:layout_marginEnd="@dimen/large_margin"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 

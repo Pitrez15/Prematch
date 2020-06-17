@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_team_new.*
 
 private var teamID : Int? = 2
 private var tournamentID : Int? = null
+private var teamsNumber : Int? = null
 
 class TeamNewActivity : AppCompatActivity() {
 
@@ -19,10 +20,19 @@ class TeamNewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_new)
 
+        val bundle = intent.extras
+        bundle?.let {
+
+            teamID = it.getInt("Team ID")
+            tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+        }
+
         backTeamButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
             startActivity(intent)
         }
 
@@ -48,13 +58,6 @@ class TeamNewActivity : AppCompatActivity() {
                 var teamEmail = findViewById<EditText>(R.id.enterTeamContactEmailEditText)
                 var teamPhone = findViewById<EditText>(R.id.enterTeamContactPhoneEditText)
 
-                val bundle = intent.extras
-                bundle?.let {
-
-                    teamID = it.getInt("Team ID")
-                    tournamentID = it.getInt("Tournament ID")
-                }
-
                 VolleyHelper.instance.createNewTeam (
 
                     this@TeamNewActivity,
@@ -66,6 +69,7 @@ class TeamNewActivity : AppCompatActivity() {
 
                             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
                             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+                            intent.putExtra("Teams Number", teamsNumber!!.toInt())
                             Toast.makeText(applicationContext,"Team Created !",Toast.LENGTH_SHORT).show()
                             startActivity(intent)
                         }
