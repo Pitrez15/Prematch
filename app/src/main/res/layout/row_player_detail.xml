@@ -65,7 +65,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/playerAgeTextView"
@@ -76,7 +76,7 @@
             android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 
@@ -131,7 +131,7 @@
             android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/playerTeamIDTextView"
@@ -142,7 +142,7 @@
             android:text="@string/xxxxx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 </LinearLayout>

@@ -6,7 +6,9 @@ import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
+import android.widget.ImageButton
 import android.widget.TextView
+import android.widget.Toast
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.GameModel
@@ -25,14 +27,14 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_detail_games)
 
-        gamesAdapter = GamesAdapter()
-        tournamentDetailGamesListView.adapter = gamesAdapter
-
         val bundle = intent.extras
         bundle?.let {
 
             tournamentID = it.getInt("Tournament ID")
         }
+
+        gamesAdapter = GamesAdapter()
+        tournamentDetailGamesListView.adapter = gamesAdapter
 
         VolleyHelper.instance.getGamesByTournamentID(this, tournamentID!!.toInt()) { response ->
 
@@ -78,17 +80,39 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
 
     inner class GamesAdapter : BaseAdapter() {
 
-        override fun getView(position: Int, convertView: View?, parent: ViewGroup?): View {
+        override fun getView(position: Int, convertView: View?, parent: ViewGroup?) : View {
 
             val rowView = layoutInflater.inflate(R.layout.row_game, parent, false)
 
             val gameTeams = rowView.findViewById<TextView>(R.id.gameTeamsRowTextView)
             val gameHomeGoals = rowView.findViewById<TextView>(R.id.gameHomeGoalsRowTextView)
             val gameAwayGoals = rowView.findViewById<TextView>(R.id.gameAwayGoalsRowTextView)
+            val gameStage = rowView.findViewById<TextView>(R.id.gameStageRowTextView)
+            val deleteGameButton = rowView.findViewById<ImageButton>(R.id.gameDeleteRowButton)
 
-            gameTeams.text = games[position].homeTeamID.toString()!! + " vs " + games[position].awayTeamID.toString()!!
+            gameTeams.text = games[position].homeTeamName + " vs " + games[position].awayTeamName
             gameHomeGoals.text = games[position].goalsHomeTeam.toString()
             gameAwayGoals.text = games[position].goalsAwayTeam.toString()
+            gameStage.text = games[position].gameStage.toString()
+
+            deleteGameButton.setOnClickListener {
+
+                val intent = Intent(this@TournamentDetailGamesActivity, TournamentDetailGamesActivity::class.java)
+                intent.putExtra("Tournament ID", tournamentID!!.toInt())
+
+                VolleyHelper.instance.deleteGameByID(this@TournamentDetailGamesActivity, games[position].gameID!!) {
+
+                    if (it) {
+
+                        Toast.makeText(applicationContext,"Game Deleted !", Toast.LENGTH_SHORT).show()
+                    }
+                    else {
+
+                        Toast.makeText(applicationContext,"Failed to Delete Game !", Toast.LENGTH_SHORT).show()
+                    }
+                }
+                startActivity(intent)
+            }
 
             return rowView
         }

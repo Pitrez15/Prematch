@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import android.widget.Toast
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.TournamentModel
@@ -74,6 +75,61 @@ class TournamentDetailActivity : AppCompatActivity() {
             val intent = Intent(this, TournamentFavoritesActivity::class.java)
             startActivity(intent)
         }
+
+        tournamentDetailDeleteButton.setOnClickListener {
+
+            val intent = Intent(this@TournamentDetailActivity, TournamentFavoritesActivity::class.java)
+
+            VolleyHelper.instance.deleteGameByTournamentID(this@TournamentDetailActivity, tournamentID!!.toInt()) {
+
+                if (it) {
+
+                    Toast.makeText(applicationContext,"Games Deleted !", Toast.LENGTH_SHORT).show()
+                }
+                else {
+
+                    Toast.makeText(applicationContext,"Failed to Delete Games !", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            VolleyHelper.instance.deletePlayerByTournamentID(this@TournamentDetailActivity, tournamentID!!.toInt()) {
+
+                if (it) {
+
+                    Toast.makeText(applicationContext,"Players Deleted !", Toast.LENGTH_SHORT).show()
+                }
+                else {
+
+                    Toast.makeText(applicationContext,"Failed to Delete Players !", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            VolleyHelper.instance.deleteTeamByTournamentID(this@TournamentDetailActivity, tournamentID!!.toInt()) {
+
+                if (it) {
+
+                    Toast.makeText(applicationContext,"Teams Deleted !", Toast.LENGTH_SHORT).show()
+                }
+                else {
+
+                    Toast.makeText(applicationContext,"Failed to Delete Teams !", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            VolleyHelper.instance.deleteTournamentByID(this@TournamentDetailActivity, tournamentID!!.toInt()) {
+
+                if (it) {
+
+                    Toast.makeText(applicationContext,"Tournament Deleted !", Toast.LENGTH_SHORT).show()
+                }
+                else {
+
+                    Toast.makeText(applicationContext,"Failed to Delete Tournament !", Toast.LENGTH_SHORT).show()
+                }
+            }
+
+            startActivity(intent)
+        }
     }
 
     inner class TournamentAdapter : BaseAdapter() {
@@ -89,7 +145,6 @@ class TournamentDetailActivity : AppCompatActivity() {
             val teamsNumber = rowTournamentDetail.findViewById<TextView>(R.id.teamsNumberTextView)
             val contactEmail = rowTournamentDetail.findViewById<TextView>(R.id.contactEmailTextView)
             val contactPhone = rowTournamentDetail.findViewById<TextView>(R.id.contactPhoneTextView)
-
 
             tournamentName.text = tournament[position].tournamentName
             startDate.text = tournament[position].startDate

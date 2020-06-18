@@ -41,9 +41,21 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginStart="@dimen/normal_margin"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
                 android:text="@string/home_goals"
+                android:textColor="@color/colorLight"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:id="@+id/gameVsRowTextView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1.6"
+                android:fontFamily="@font/roboto"
+                android:textSize="@dimen/footer_size"
+                android:text=":"
                 android:textColor="@color/colorLight"
                 android:textAlignment="center"/>
 
@@ -52,6 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:layout_marginEnd="@dimen/normal_margin"
                 android:fontFamily="@font/roboto"
                 android:textSize="@dimen/footer_size"
                 android:text="@string/away_goals"
@@ -59,10 +72,21 @@
                 android:textAlignment="center"/>
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/gameStageRowTextView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fontFamily="@font/roboto"
+            android:textSize="@dimen/footer_size"
+            android:text="@string/stage"
+            android:textColor="@color/colorLight"
+            android:textAlignment="center"/>
+
     </LinearLayout>
 
     <ImageButton
-        android:id="@+id/tournamentDetailDeleteButton"
+        android:id="@+id/gameDeleteRowButton"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/normal_margin"

@@ -66,7 +66,7 @@
             android:text="@string/yyyy_mm_dd"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/finishDateTextView"
@@ -77,7 +77,7 @@
             android:text="@string/yyyy_mm_dd"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 
@@ -132,7 +132,7 @@
             android:text="type"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/teamsNumberTextView"
@@ -143,7 +143,7 @@
             android:text="@string/_00"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 
@@ -199,7 +199,7 @@
             android:text="@string/text_text_com"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/contactPhoneTextView"
@@ -210,7 +210,7 @@
             android:text="@string/_910_000_000"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 

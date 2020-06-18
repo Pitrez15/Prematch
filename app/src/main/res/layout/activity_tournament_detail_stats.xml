@@ -79,7 +79,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/numberGamesTextView"
@@ -90,7 +90,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 
@@ -162,7 +162,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/tournamentTotalHomeGoalsTextView"
@@ -173,7 +173,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/tournamentTotalAwayGoalsTextView"
@@ -184,7 +184,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 
@@ -256,7 +256,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/spacer2"
@@ -267,7 +267,7 @@
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/footer_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/tournamentAverageGoalsGameTextView"
@@ -278,7 +278,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 
@@ -350,7 +350,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/spacer4"
@@ -361,7 +361,7 @@
             android:text=""
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/footer_size" />
+            android:textSize="@dimen/medium_size" />
 
         <TextView
             android:id="@+id/tournamentAverageAwayGoalsTextView"
@@ -372,7 +372,7 @@
             android:text="@string/xx"
             android:textAlignment="center"
             android:textColor="@color/colorLight"
-            android:textSize="@dimen/normal_size" />
+            android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
 

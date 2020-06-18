@@ -29,7 +29,7 @@ class LoginActivity : AppCompatActivity() {
                 if (it) {
 
                     val intent = Intent(this, TournamentFavoritesActivity::class.java)
-                    //intent.putExtra("USERNAME", username.text.toString())
+                    intent.putExtra("Username", username.text.toString())
                     startActivity(intent)
                 }
                 else {

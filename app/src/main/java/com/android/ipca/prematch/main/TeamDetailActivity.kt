@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.BaseAdapter
 import android.widget.TextView
+import android.widget.Toast
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.TeamModel
@@ -54,6 +55,8 @@ class TeamDetailActivity : AppCompatActivity() {
 
             val intent = Intent(this@TeamDetailActivity, TeamDetailPlayersActivity::class.java)
             intent.putExtra("Team ID", teamID!!.toInt())
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
             startActivity(intent)
         }
 
@@ -76,6 +79,27 @@ class TeamDetailActivity : AppCompatActivity() {
             val intent = Intent(this@TeamDetailActivity, TournamentDetailActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            startActivity(intent)
+        }
+
+        teamDetailDeleteButton.setOnClickListener {
+
+            val intent = Intent(this@TeamDetailActivity, TournamentDetailActivity::class.java)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+
+            VolleyHelper.instance.deleteTeamByID(this@TeamDetailActivity, teamID!!.toInt()) {
+
+                if (it) {
+
+                    Toast.makeText(applicationContext,"Team Deleted !", Toast.LENGTH_SHORT).show()
+                }
+                else {
+
+                    Toast.makeText(applicationContext,"Failed to Delete Team !", Toast.LENGTH_SHORT).show()
+                }
+            }
+
             startActivity(intent)
         }
     }

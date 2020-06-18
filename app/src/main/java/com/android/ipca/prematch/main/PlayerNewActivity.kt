@@ -14,11 +14,20 @@ import kotlinx.android.synthetic.main.activity_team_new.*
 class PlayerNewActivity : AppCompatActivity() {
 
     private var teamID : Int? = null
+    private var tournamentID : Int? = null
     private var playerID : Int? = 2
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_new)
+
+        val bundle = intent.extras
+        bundle?.let {
+
+            teamID = it.getInt("Team ID")
+            playerID = it.getInt("Player ID")
+            tournamentID = it.getInt("Tournament ID")
+        }
 
         backPlayerButton.setOnClickListener {
 
@@ -45,18 +54,11 @@ class PlayerNewActivity : AppCompatActivity() {
                 var playerHeight = findViewById<EditText>(R.id.enterPlayerHeightEditText)
                 var playerAge = findViewById<EditText>(R.id.enterPlayerAgeEditText)
 
-                val bundle = intent.extras
-                bundle?.let {
-
-                    teamID = it.getInt("Team ID")
-                    playerID = it.getInt("Player ID")
-                }
-
                 VolleyHelper.instance.createNewPlayer (
 
                     this@PlayerNewActivity,
                     playerID!!.plus(1), playerFirstName.text.toString(), playerLastName.text.toString(),
-                    playerPosition.text.toString(), teamID!!.toInt(), playerHeight.text.toString().toInt(), playerAge.text.toString().toInt()) { response ->
+                    playerPosition.text.toString(), teamID!!.toInt(), playerHeight.text.toString().toInt(), playerAge.text.toString().toInt(), tournamentID!!.toInt()) { response ->
 
                     if (response) {
 

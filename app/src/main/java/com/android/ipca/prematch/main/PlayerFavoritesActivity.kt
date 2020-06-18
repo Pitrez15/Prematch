@@ -16,12 +16,20 @@ import org.json.JSONObject
 
 class PlayerFavoritesActivity : AppCompatActivity() {
 
+    var username : String? = null
+
     var players : MutableList<PlayerModel> = ArrayList()
     var playerAdapter : PlayerFavoritesActivity.PlayerAdapter? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_player_favorites)
+
+        val bundle = intent.extras
+        bundle?.let {
+
+            username = it.getString("Username")
+        }
 
         playerHomePlayerButton.setBackgroundResource(R.drawable.button_border_selected)
 
@@ -51,18 +59,21 @@ class PlayerFavoritesActivity : AppCompatActivity() {
         tournamentHomePlayerButton.setOnClickListener {
 
             val intent = Intent(this, TournamentFavoritesActivity::class.java)
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
         teamHomePlayerButton.setOnClickListener {
 
             val intent = Intent(this, TeamFavoritesActivity::class.java)
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
         settingsPlayerButton.setOnClickListener {
 
             val intent = Intent(this, SettingsActivity::class.java)
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
     }

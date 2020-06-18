@@ -103,6 +103,40 @@ class VolleyHelper {
     }
 
 
+    fun getUserByUsername (context: Context, username : String, usersEvent: ((JSONArray?) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.GET,
+                BASE_API + GET_USER + "/" + username,
+                Response.Listener {
+
+                    usersEvent.invoke(JSONArray(it))
+                },
+                Response.ErrorListener {
+
+                    Log.d("Volley Helper", it.toString())
+                    usersEvent.invoke(null)
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue?.add(stringRequest)
+        }
+    }
+
+
     //---------------Tournaments--------------
 
     fun getTournaments (context: Context, tournamentsEvent : ((JSONArray?) -> Unit)) {
@@ -220,6 +254,38 @@ class VolleyHelper {
         }
     }
 
+
+    fun deleteTournamentByID (context: Context, tournamentID : Int, tournamentEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_TOURNAMENT + "/" + tournamentID,
+                Response.Listener {
+
+                    tournamentEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
 
     //---------------Teams--------------
 
@@ -374,6 +440,72 @@ class VolleyHelper {
     }
 
 
+    fun deleteTeamByID (context: Context, teamID : Int, teamEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_TEAM + "/" + teamID,
+                Response.Listener {
+
+                    teamEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun deleteTeamByTournamentID (context: Context, tournamentID : Int, teamEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_TEAM_TOURNAMENT + "/" + tournamentID,
+                Response.Listener {
+
+                    teamEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
     //---------------Players--------------
 
     fun getPlayers (context: Context, playersEvent : ((JSONArray?) -> Unit)) {
@@ -479,7 +611,7 @@ class VolleyHelper {
 
 
     fun createNewPlayer (context: Context, playerID : Int, playerFirstName : String,
-                       playerLastName : String, playerPosition : String, teamID : Int, playerHeight : Int, playerAge : Int, playerEvent : ((Boolean) -> Unit)) {
+                       playerLastName : String, playerPosition : String, teamID : Int, playerHeight : Int, playerAge : Int,tournamentID: Int, playerEvent : ((Boolean) -> Unit)) {
 
         doAsync {
 
@@ -494,6 +626,7 @@ class VolleyHelper {
             jsonObject.put("TEAM_ID", teamID)
             jsonObject.put("PLAYER_HEIGHT", playerHeight)
             jsonObject.put("PLAYER_AGE", playerAge)
+            jsonObject.put("TOURNAMENT_ID", tournamentID)
 
             val jsonObjectRequest = object : JsonObjectRequest(
 
@@ -522,6 +655,71 @@ class VolleyHelper {
         }
     }
 
+
+    fun deletePlayerByID (context: Context, playerID : Int, gamesEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_PLAYER + "/" + playerID,
+                Response.Listener {
+
+                    gamesEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun deletePlayerByTournamentID (context: Context, tournamentID : Int, gamesEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_PLAYER_TOURNAMENT + "/" + tournamentID,
+                Response.Listener {
+
+                    gamesEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
 
     //---------------Games--------------
 
@@ -662,7 +860,7 @@ class VolleyHelper {
 
 
     fun createNewGame (context: Context, gameID : Int, homeTeamID : Int, awayTeamID : Int,
-                       tournamentID: Int, goalsHomeTeam : Int, goalsAwayTeam : Int, gamesEvent : ((Boolean) -> Unit)) {
+                       tournamentID: Int, goalsHomeTeam : Int, goalsAwayTeam : Int, gameStage : String, gamesEvent : ((Boolean) -> Unit)) {
 
         doAsync {
 
@@ -676,6 +874,7 @@ class VolleyHelper {
             jsonObject.put("TOURNAMENT_ID", tournamentID)
             jsonObject.put("GOALS_HOME_TEAM", goalsHomeTeam)
             jsonObject.put("GOALS_AWAY_TEAM", goalsAwayTeam)
+            jsonObject.put("STAGE", gameStage)
 
             val jsonObjectRequest = object : JsonObjectRequest(
 
@@ -705,31 +904,105 @@ class VolleyHelper {
     }
 
 
+    fun deleteGameByID (context: Context, gameID : Int, gamesEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_GAME + "/" + gameID,
+                Response.Listener {
+
+                    gamesEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
+    fun deleteGameByTournamentID (context: Context, tournamentID : Int, gamesEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val stringRequest = object : StringRequest(
+
+                Method.DELETE,
+                BASE_API + DELETE_GAME_TOURNAMENT + "/" + tournamentID,
+                Response.Listener {
+
+                    gamesEvent.invoke(true)
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ) {
+
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type", "application/json")
+                    return map
+                }
+            }
+
+            queue!!.add(stringRequest)
+        }
+    }
+
+
     companion object {
 
         const val BASE_API = "http://192.168.1.66:3000"
 
         const val REGISTER = "/user/registry"
         const val LOGIN = "/user/login"
+        const val GET_USER = "/user/username"
 
         const val GET_TOURNAMENTS = "/api/tournaments"
         const val NEW_TOURNAMENT = "/api/new_tournament"
+        const val DELETE_TOURNAMENT = "/api/delete_tournament"
 
         const val GET_TEAMS = "/api/teams"
         const val GET_TEAMS_TOURNAMENT_ID = "/api/teams/tournament"
         const val GET_TEAM_TEAM_ID = "/api/teams"
         const val NEW_TEAM = "/api/new_team"
+        const val DELETE_TEAM = "/api/delete_team"
+        const val DELETE_TEAM_TOURNAMENT = "/api/delete_team/tournament"
 
         const val GET_PLAYERS = "/api/players"
         const val GET_PLAYERS_TEAM_ID = "/api/players/teams"
         const val GET_PLAYER_PLAYER_ID = "/api/players"
         const val NEW_PLAYER = "/api/new_player"
+        const val DELETE_PLAYER = "/api/delete_player"
+        const val DELETE_PLAYER_TOURNAMENT = "/api/delete_player/tournament"
 
         const val GET_GAMES = "/api/games"
         const val GET_GAME_GAME_ID = "/api/games"
         const val GET_GAMES_TOURNAMENT_ID = "/api/games/tournament"
         const val GET_GAMES_TEAM_ID = "/api/games/team"
         const val NEW_GAME = "/api/new_game"
+        const val DELETE_GAME = "/api/delete_game"
+        const val DELETE_GAME_TOURNAMENT = "/api/delete_game/tournament"
 
         var token = ""
 

@@ -29,7 +29,8 @@ class GameNewActivity : AppCompatActivity() {
         confirmGameButton.setOnClickListener {
 
             if (enterGameHomeTeamEditText.text.toString() == "" || enterGameAwayTeamEditText.text.toString() == "" ||
-                enterHomeTeamGoalsEditText.text.toString() == ""  || enterAwayTeamGoalsEditText.text.toString() == "") {
+                enterHomeTeamGoalsEditText.text.toString() == ""  || enterAwayTeamGoalsEditText.text.toString() == "" ||
+                    enterStageEditText.text.toString() == "") {
 
                 Toast.makeText(applicationContext,"Game Information is Missing !", Toast.LENGTH_SHORT).show()
             }
@@ -42,6 +43,7 @@ class GameNewActivity : AppCompatActivity() {
                 var gameAwayTeamID = findViewById<EditText>(R.id.enterGameAwayTeamEditText)
                 var gameHomeGoals = findViewById<EditText>(R.id.enterHomeTeamGoalsEditText)
                 var gameAwayGoals = findViewById<EditText>(R.id.enterAwayTeamGoalsEditText)
+                var gameStage = findViewById<EditText>(R.id.enterStageEditText)
 
                 val bundle = intent.extras
                 bundle?.let {
@@ -54,7 +56,7 @@ class GameNewActivity : AppCompatActivity() {
 
                     this@GameNewActivity,
                     gameID!!.plus(1), gameHomeTeamID!!.text.toString().toInt(), gameAwayTeamID!!.text.toString().toInt(),
-                    tournamentID!!.toInt(), gameHomeGoals!!.text.toString().toInt(), gameAwayGoals!!.text.toString().toInt()) { response ->
+                    tournamentID!!.toInt(), gameHomeGoals!!.text.toString().toInt(), gameAwayGoals!!.text.toString().toInt(), gameStage!!.text.toString()) { response ->
 
                     if (response) {
 

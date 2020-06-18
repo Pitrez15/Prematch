@@ -82,4 +82,6 @@
     <string name="average_away_goals">Média de Golos Fora</string>
     <string name="total_home_goals">Total de Golos em Casa</string>
     <string name="total_away_goals">Total de Golos Fora</string>
+    <string name="logout">Sair</string>
+    <string name="update">Atualizar</string>
 </resources>

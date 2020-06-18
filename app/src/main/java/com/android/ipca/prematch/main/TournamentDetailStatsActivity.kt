@@ -47,7 +47,6 @@ class TournamentDetailStatsActivity : AppCompatActivity() {
         var averageHomeGoals : Float = 0.2F
         var averageAwayGoals : Float = 0.2F
 
-
         VolleyHelper.instance.getTeamsByTournamentID(this, tournamentID!!) { response ->
 
             response?.let {

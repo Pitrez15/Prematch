@@ -65,12 +65,6 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
 
         tournamentDetailAddTeamButton.setOnClickListener {
 
-            /*val intent = Intent(this, TeamNewActivity::class.java)
-
-            intent.putExtra("Tournament ID", tournamentID!!.toInt())
-            intent.putExtra("Team ID", allTeams.size)
-            startActivity(intent)*/
-
             if (teams.size > teamsNumber!!) {
 
                 Toast.makeText(applicationContext,"You can't add more teams !",Toast.LENGTH_SHORT).show()

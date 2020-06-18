@@ -5,13 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.view.ViewGroup
-import android.widget.BaseAdapter
-import android.widget.TextView
+import android.widget.*
 import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import com.android.ipca.prematch.models.GameModel
 import kotlinx.android.synthetic.main.activity_team_detail_games.*
-import kotlinx.android.synthetic.main.activity_tournament_detail_games.*
 import org.json.JSONObject
 
 class TeamDetailGamesActivity : AppCompatActivity() {
@@ -28,6 +26,8 @@ class TeamDetailGamesActivity : AppCompatActivity() {
 
         gamesAdapter = GamesAdapter()
         teamDetailGamesListView.adapter = gamesAdapter
+
+
 
         val bundle = intent.extras
         bundle?.let {
@@ -78,10 +78,14 @@ class TeamDetailGamesActivity : AppCompatActivity() {
             val gameTeams = rowView.findViewById<TextView>(R.id.gameTeamsRowTextView)
             val gameHomeGoals = rowView.findViewById<TextView>(R.id.gameHomeGoalsRowTextView)
             val gameAwayGoals = rowView.findViewById<TextView>(R.id.gameAwayGoalsRowTextView)
+            val gameStage = rowView.findViewById<TextView>(R.id.gameStageRowTextView)
+            val buttonDeleteGame = rowView.findViewById<ImageButton>(R.id.gameDeleteRowButton)
 
-            gameTeams.text = games[position].homeTeamID.toString()!! + " vs " + games[position].awayTeamID.toString()!!
+            buttonDeleteGame.visibility = View.GONE
+            gameTeams.text = games[position].homeTeamName + " vs " + games[position].awayTeamName
             gameHomeGoals.text = games[position].goalsHomeTeam.toString()
             gameAwayGoals.text = games[position].goalsAwayTeam.toString()
+            gameStage.text = games[position].gameStage.toString()
 
             return rowView
         }

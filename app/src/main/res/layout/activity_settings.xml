@@ -22,6 +22,202 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <LinearLayout
+        android:id="@+id/linear1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/settingsTextView">
+
+        <TextView
+            android:id="@+id/userFirstNameTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/first_name"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/userLastNameTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/last_name"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear1">
+
+        <TextView
+            android:id="@+id/userFirstNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xxxxx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/medium_size" />
+
+        <TextView
+            android:id="@+id/userLastNameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xxxxx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/medium_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear3"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear2">
+
+        <TextView
+            android:id="@+id/userUsernameTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/username"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+        <TextView
+            android:id="@+id/userEmailTitleTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/E_mail"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/footer_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linear4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linear3">
+
+        <TextView
+            android:id="@+id/userUsernameTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xxxxx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/medium_size" />
+
+        <TextView
+            android:id="@+id/userEmailTextView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/xxxxx"
+            android:textAlignment="center"
+            android:textColor="@color/colorLight"
+            android:textSize="@dimen/medium_size" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/settingsMenu"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:layout_marginStart="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/normal_margin"
+        app:layout_constraintBottom_toTopOf="@+id/bottomMenuLayout">
+
+        <Button
+            android:id="@+id/settingsUpdateButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginEnd="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/update"
+            android:textColor="@color/colorDark"
+            android:textSize="@dimen/medium_size"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/settingsChangePasswordButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/password"
+            android:textColor="@color/colorDark"
+            android:textSize="@dimen/medium_size"
+            android:textAlignment="center" />
+
+        <Button
+            android:id="@+id/settingsLogoutButton"
+            android:layout_width="120dp"
+            android:layout_height="50dp"
+            android:layout_weight="1"
+            android:layout_marginStart="10dp"
+            android:background="@drawable/button_border"
+            android:fontFamily="@font/roboto_black"
+            android:text="@string/logout"
+            android:textColor="@color/colorDark"
+            android:textSize="@dimen/medium_size"
+            android:textAlignment="center" />
+
+    </LinearLayout>
+
+    <LinearLayout
         android:id="@+id/bottomMenuLayout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -74,5 +270,4 @@
             />
 
     </LinearLayout>
-
 </androidx.constraintlayout.widget.ConstraintLayout>

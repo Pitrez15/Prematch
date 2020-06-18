@@ -11,6 +11,7 @@ class PlayerModel {
     var playerTeamID : Int? = null
     var playerHeight : Int? = null
     var playerAge : Int? = null
+    var playerTournamentID : Int? = null
 
     companion object {
 
@@ -25,6 +26,7 @@ class PlayerModel {
             player.playerTeamID = jsonArticle.getInt("TEAM_ID")
             player.playerHeight = jsonArticle.getInt("PLAYER_HEIGHT")
             player.playerAge = jsonArticle.getInt("PLAYER_AGE")
+            player.playerTournamentID = jsonArticle.getInt("TOURNAMENT_ID")
 
             return player
         }
