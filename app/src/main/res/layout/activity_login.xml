@@ -87,9 +87,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="@dimen/normal_margin"
+        android:layout_marginTop="@dimen/large_margin"
         android:layout_marginBottom="@dimen/big_margin"
-        app:layout_constraintBottom_toTopOf="@+id/companyTextView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/loginButton">
@@ -113,6 +112,21 @@
             android:textSize="@dimen/medium_size" />
 
     </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/recoverPasswordClickableTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/large_margin"
+        android:fontFamily="@font/roboto"
+        android:text="@string/recover_password"
+        android:textColor="@color/colorSecondary"
+        android:textSize="@dimen/medium_size"
+        app:layout_constraintBottom_toTopOf="@+id/companyTextView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/RegisterLinearLayout" />
 
     <TextView
         android:id="@+id/companyTextView"

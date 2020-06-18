@@ -20,6 +20,8 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
     var teamID : Int? = null
     var tournamentID : Int? = null
     var teamsNumber : Int? = null
+    var username : String? = null
+
     var allPlayers : MutableList<PlayerModel> = ArrayList()
     var players : MutableList<PlayerModel> = ArrayList()
     private var playerAdapter : TeamDetailPlayersActivity.PlayersAdapter? = null
@@ -28,16 +30,17 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_team_detail_players)
 
-        playerAdapter = PlayersAdapter()
-        teamDetailPlayersListView.adapter = playerAdapter
-
         val bundle = intent.extras
         bundle?.let {
 
             teamID = it.getInt("Team ID")
             tournamentID = it.getInt("Tournament ID")
             teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
+
+        playerAdapter = PlayersAdapter()
+        teamDetailPlayersListView.adapter = playerAdapter
 
         VolleyHelper.instance.getPlayersByTeamID(this, teamID!!.toInt()) { response ->
 
@@ -72,6 +75,7 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
             intent.putExtra("Player ID", allPlayers.size)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -81,6 +85,8 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
 
             intent.putExtra("Team ID", teamID!!.toInt())
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
     }
@@ -108,6 +114,9 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
                 val intent = Intent(this@TeamDetailPlayersActivity, PlayerDetailActivity::class.java)
                 intent.putExtra("Player ID", players[position].playerID)
                 intent.putExtra("Team ID", players[position].playerTeamID)
+                intent.putExtra("Tournament ID", tournamentID!!.toInt())
+                intent.putExtra("Teams Number", teamsNumber!!.toInt())
+                intent.putExtra("Username", username!!)
                 startActivity(intent)
             }
 

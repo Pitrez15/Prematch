@@ -90,13 +90,13 @@ class TeamFavoritesActivity : AppCompatActivity() {
             textViewTeamPrimaryColor.text = teams[position].teamPrimaryColor
             textViewTeamSecondaryColor.text = teams[position].teamSecondaryColor
 
-            rowView.setOnClickListener {
+            /*rowView.setOnClickListener {
 
                 val intent = Intent(this@TeamFavoritesActivity, TeamDetailActivity::class.java)
                 intent.putExtra("Team ID", teams[position].teamID)
                 intent.putExtra("Tournament ID", teams[position].teamTournamentID)
                 startActivity(intent)
-            }
+            }*/
 
             return rowView
         }

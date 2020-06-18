@@ -12,17 +12,30 @@ import kotlinx.android.synthetic.main.activity_game_new.*
 
 class GameNewActivity : AppCompatActivity() {
 
-    private var tournamentID : Int? = null
-    private var gameID : Int? = 2
+    var gameID : Int? = 2
+    var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_game_new)
 
+        val bundle = intent.extras
+        bundle?.let {
+
+            gameID = it.getInt("Game ID")
+            tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
+        }
+
         backGameButton.setOnClickListener {
 
             val intent = Intent(this, TournamentDetailGamesActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -45,13 +58,6 @@ class GameNewActivity : AppCompatActivity() {
                 var gameAwayGoals = findViewById<EditText>(R.id.enterAwayTeamGoalsEditText)
                 var gameStage = findViewById<EditText>(R.id.enterStageEditText)
 
-                val bundle = intent.extras
-                bundle?.let {
-
-                    tournamentID = it.getInt("Tournament ID")
-                    gameID = it.getInt("Game ID")
-                }
-
                 VolleyHelper.instance.createNewGame (
 
                     this@GameNewActivity,
@@ -60,10 +66,12 @@ class GameNewActivity : AppCompatActivity() {
 
                     if (response) {
 
-                        val intent = Intent(this, TournamentDetailGamesActivity::class.java)
-
-                        intent.putExtra("Tournament ID", tournamentID!!.toInt())
                         Toast.makeText(applicationContext,"Game Created !", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this, TournamentDetailGamesActivity::class.java)
+                        intent.putExtra("Tournament ID", tournamentID!!.toInt())
+                        intent.putExtra("Teams Number", teamsNumber!!.toInt())
+                        intent.putExtra("Username", username!!)
                         startActivity(intent)
                     }
 

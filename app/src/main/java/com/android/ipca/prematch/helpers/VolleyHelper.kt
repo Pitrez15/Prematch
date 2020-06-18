@@ -137,6 +137,43 @@ class VolleyHelper {
     }
 
 
+    fun recoverUserPassword (context: Context, username: String, password: String, recoverEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+            jsonObject.put("PASSWORD", password)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.PUT,
+                BASE_API + RECOVER + "/" + username,
+                jsonObject,
+                Response.Listener {
+
+                    recoverEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ){
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type","application/json")
+
+                    return map
+                }
+            }
+            queue!!.add(jsonObjectRequest)
+        }
+    }
+
+
     //---------------Tournaments--------------
 
     fun getTournaments (context: Context, tournamentsEvent : ((JSONArray?) -> Unit)) {
@@ -977,6 +1014,7 @@ class VolleyHelper {
         const val REGISTER = "/user/registry"
         const val LOGIN = "/user/login"
         const val GET_USER = "/user/username"
+        const val RECOVER = "/user/recover"
 
         const val GET_TOURNAMENTS = "/api/tournaments"
         const val NEW_TOURNAMENT = "/api/new_tournament"

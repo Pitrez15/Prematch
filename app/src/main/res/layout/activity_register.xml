@@ -159,7 +159,7 @@
         android:id="@+id/createAccountButton"
         android:layout_width="200dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginBottom="@dimen/large_margin"
         android:background="@drawable/button_border"
         android:fontFamily="@font/roboto_black"
         android:text="@string/create_account"

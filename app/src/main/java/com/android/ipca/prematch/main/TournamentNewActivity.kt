@@ -11,6 +11,7 @@ import com.android.ipca.prematch.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_tournament_new.*
 
 private var tournamentID : Int? = 2
+private var username : String? = null
 
 class TournamentNewActivity : AppCompatActivity() {
 
@@ -18,9 +19,17 @@ class TournamentNewActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_new)
 
+        val bundle = intent.extras
+        bundle?.let {
+
+            tournamentID = it.getInt("Tournament ID")
+            username = it.getString("Username")
+        }
+
         backTournamentButton.setOnClickListener {
 
             val intent = Intent(this, TournamentFavoritesActivity::class.java)
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -46,12 +55,6 @@ class TournamentNewActivity : AppCompatActivity() {
                 var teamsNumber = findViewById<EditText>(R.id.enterTeamNumberEditText)
                 var tournamentType = findViewById<EditText>(R.id.enterTournamentTypeEditText)
 
-                val bundle = intent.extras
-                bundle?.let {
-
-                    tournamentID = it.getInt("Tournament ID")
-                }
-
                 VolleyHelper.instance.createNewTournament(
 
                     this@TournamentNewActivity,
@@ -62,6 +65,7 @@ class TournamentNewActivity : AppCompatActivity() {
                         if (response) {
 
                             val intent = Intent(this, TournamentFavoritesActivity::class.java)
+                            intent.putExtra("Username", username!!)
                             Toast.makeText(applicationContext,"Tournament Created !",Toast.LENGTH_SHORT).show()
                             startActivity(intent)
                         }

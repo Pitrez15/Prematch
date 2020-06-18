@@ -9,6 +9,7 @@ import com.android.ipca.prematch.R
 import com.android.ipca.prematch.main.TournamentFavoritesActivity
 
 class IntroActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_intro)

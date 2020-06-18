@@ -15,6 +15,8 @@ import org.json.JSONObject
 class TournamentDetailStatsActivity : AppCompatActivity() {
 
     var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     var allTeams : MutableList<TeamModel> = ArrayList()
     var allGames : MutableList<GameModel> = ArrayList()
@@ -27,6 +29,8 @@ class TournamentDetailStatsActivity : AppCompatActivity() {
         bundle?.let {
 
             tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
 
         val textViewTotalTeams = findViewById<TextView>(R.id.numberTeamsTextView)
@@ -76,16 +80,21 @@ class TournamentDetailStatsActivity : AppCompatActivity() {
                     averageGoalsGame = totalGoals.toFloat() / allGames.size
                     averageHomeGoals = totalHomeGoals.toFloat() / allGames.size
                     averageAwayGoals = totalAwayGoals.toFloat() / allGames.size
-                    averageGoalsTeam = totalGoals.toFloat() / textViewTotalTeams.text.toString().toInt()
+                    averageGoalsTeam = totalGoals.toFloat() / allTeams.size
 
                     textViewTotalGames.text = allGames.size.toString()
                     textViewTotalGoals.text = totalGoals.toString()
                     textViewTotalHomeGoals.text = totalHomeGoals.toString()
                     textViewTotalAwayGoals.text = totalAwayGoals.toString()
-                    textViewAverageGoalsGame.text = averageGoalsGame.toString()
-                    textViewAverageHomeGoals.text = averageHomeGoals.toString()
-                    textViewAverageAwayGoals.text = averageAwayGoals.toString()
-                    textViewAverageGoalsTeam.text = averageGoalsTeam.toString()
+                    //textViewAverageGoalsGame.text = averageGoalsGame.toString()
+                    //textViewAverageHomeGoals.text = averageHomeGoals.toString()
+                    //textViewAverageAwayGoals.text = averageAwayGoals.toString()
+                    //textViewAverageGoalsTeam.text = averageGoalsTeam.toString()
+
+                    textViewAverageGoalsGame.text = "%.2f".format(averageGoalsGame)
+                    textViewAverageHomeGoals.text = "%.2f".format(averageHomeGoals)
+                    textViewAverageAwayGoals.text = "%.2f".format(averageAwayGoals)
+                    textViewAverageGoalsTeam.text = "%.2f".format(averageGoalsTeam)
                 }
             }
         }
@@ -94,6 +103,8 @@ class TournamentDetailStatsActivity : AppCompatActivity() {
 
             val intent = Intent(this, TournamentDetailActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!)
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
     }

@@ -18,6 +18,8 @@ import org.json.JSONObject
 class TournamentDetailGamesActivity : AppCompatActivity() {
 
     var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     var allGames : MutableList<GameModel> = ArrayList()
     var games : MutableList<GameModel> = ArrayList()
@@ -31,6 +33,8 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
         bundle?.let {
 
             tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
 
         gamesAdapter = GamesAdapter()
@@ -64,9 +68,10 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
         tournamentDetailAddGameButton.setOnClickListener {
 
             val intent = Intent(this, GameNewActivity::class.java)
-
-            intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Game ID", allGames.size)
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -74,6 +79,8 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
 
             val intent = Intent(this, TournamentDetailActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
     }
@@ -99,6 +106,8 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
 
                 val intent = Intent(this@TournamentDetailGamesActivity, TournamentDetailGamesActivity::class.java)
                 intent.putExtra("Tournament ID", tournamentID!!.toInt())
+                intent.putExtra("Teams Number", teamsNumber!!.toInt())
+                intent.putExtra("Username", username!!)
 
                 VolleyHelper.instance.deleteGameByID(this@TournamentDetailGamesActivity, games[position].gameID!!) {
 

@@ -18,6 +18,8 @@ class TournamentDetailActivity : AppCompatActivity() {
 
     var tournamentID : Int? = null
     var teamsNumber : Int? = null
+    var username : String? = null
+
     var tournament : MutableList<TournamentModel> = ArrayList()
     var tournamentAdapter : TournamentAdapter? = null
 
@@ -25,15 +27,16 @@ class TournamentDetailActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_tournament_detail)
 
-        tournamentAdapter = TournamentAdapter()
-        tournamentDetailsListView.adapter = tournamentAdapter
-
         val bundle = intent.extras
         bundle?.let {
 
             tournamentID = it.getInt("Tournament ID")
             teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
+
+        tournamentAdapter = TournamentAdapter()
+        tournamentDetailsListView.adapter = tournamentAdapter
 
         VolleyHelper.instance.getTournamentByID(this, tournamentID!!.toInt()) {response ->
 
@@ -53,6 +56,7 @@ class TournamentDetailActivity : AppCompatActivity() {
             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -60,6 +64,8 @@ class TournamentDetailActivity : AppCompatActivity() {
 
             val intent = Intent(this, TournamentDetailGamesActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -67,18 +73,22 @@ class TournamentDetailActivity : AppCompatActivity() {
 
             val intent = Intent(this, TournamentDetailStatsActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
         tournamentDetailBackButton.setOnClickListener {
 
             val intent = Intent(this, TournamentFavoritesActivity::class.java)
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
         tournamentDetailDeleteButton.setOnClickListener {
 
             val intent = Intent(this@TournamentDetailActivity, TournamentFavoritesActivity::class.java)
+            intent.putExtra("Username", username!!)
 
             VolleyHelper.instance.deleteGameByTournamentID(this@TournamentDetailActivity, tournamentID!!.toInt()) {
 

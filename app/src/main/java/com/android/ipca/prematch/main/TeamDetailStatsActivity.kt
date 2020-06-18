@@ -15,6 +15,9 @@ import org.json.JSONObject
 class TeamDetailStatsActivity : AppCompatActivity() {
 
     var teamID : Int? = null
+    var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     var allGames : MutableList<GameModel> = ArrayList()
 
@@ -26,6 +29,9 @@ class TeamDetailStatsActivity : AppCompatActivity() {
         bundle?.let {
 
             teamID = it.getInt("Team ID")
+            tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
 
         val textViewTotalGames = findViewById<TextView>(R.id.numberGamesTeamTextView)
@@ -64,9 +70,9 @@ class TeamDetailStatsActivity : AppCompatActivity() {
                     textViewTotalGoals.text = totalGoals.toString()
                     textViewTotalHomeGoals.text = totalHomeGoals.toString()
                     textViewTotalAwayGoals.text = totalAwayGoals.toString()
-                    textViewAverageGoalsGame.text = averageGoalsGame.toString()
-                    textViewAverageHomeGoals.text = averageHomeGoals.toString()
-                    textViewAverageAwayGoals.text = averageAwayGoals.toString()
+                    textViewAverageGoalsGame.text = "%.2f".format(averageGoalsGame)
+                    textViewAverageHomeGoals.text = "%.2f".format(averageHomeGoals)
+                    textViewAverageAwayGoals.text = "%.2f".format(averageAwayGoals)
                 }
             }
         }
@@ -76,6 +82,9 @@ class TeamDetailStatsActivity : AppCompatActivity() {
             val intent = Intent(this, TeamDetailActivity::class.java)
 
             intent.putExtra("Team ID", teamID!!.toInt())
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
     }

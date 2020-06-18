@@ -10,11 +10,12 @@ import com.android.ipca.prematch.R
 import com.android.ipca.prematch.helpers.VolleyHelper
 import kotlinx.android.synthetic.main.activity_team_new.*
 
-private var teamID : Int? = 2
-private var tournamentID : Int? = null
-private var teamsNumber : Int? = null
-
 class TeamNewActivity : AppCompatActivity() {
+
+    var teamID : Int? = null
+    var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -26,6 +27,7 @@ class TeamNewActivity : AppCompatActivity() {
             teamID = it.getInt("Team ID")
             tournamentID = it.getInt("Tournament ID")
             teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
 
         backTeamButton.setOnClickListener {
@@ -33,6 +35,7 @@ class TeamNewActivity : AppCompatActivity() {
             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -67,10 +70,12 @@ class TeamNewActivity : AppCompatActivity() {
 
                         if (response) {
 
+                            Toast.makeText(applicationContext,"Team Created !",Toast.LENGTH_SHORT).show()
+
                             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
                             intent.putExtra("Tournament ID", tournamentID!!.toInt())
                             intent.putExtra("Teams Number", teamsNumber!!.toInt())
-                            Toast.makeText(applicationContext,"Team Created !",Toast.LENGTH_SHORT).show()
+                            intent.putExtra("Username", username!!)
                             startActivity(intent)
                         }
 

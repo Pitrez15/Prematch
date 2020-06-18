@@ -13,9 +13,11 @@ import kotlinx.android.synthetic.main.activity_team_new.*
 
 class PlayerNewActivity : AppCompatActivity() {
 
-    private var teamID : Int? = null
-    private var tournamentID : Int? = null
-    private var playerID : Int? = 2
+    var teamID : Int? = null
+    var playerID : Int? = 2
+    var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -27,12 +29,17 @@ class PlayerNewActivity : AppCompatActivity() {
             teamID = it.getInt("Team ID")
             playerID = it.getInt("Player ID")
             tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
 
         backPlayerButton.setOnClickListener {
 
-            val intent = Intent(this, PlayerFavoritesActivity::class.java)
-
+            val intent = Intent(this, TeamDetailPlayersActivity::class.java)
+            intent.putExtra("Team ID", teamID!!.toInt())
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
 
@@ -40,7 +47,7 @@ class PlayerNewActivity : AppCompatActivity() {
 
             if (enterPlayerFirstNameEditText.text.toString() == "" || enterPlayerLastNameEditText.text.toString() == "" ||
                 enterPositionEditText.text.toString() == "" ) {
-                intent.putExtra("Team ID", teamID!!.toInt())
+
                 Toast.makeText(applicationContext,"Player Information is Missing !", Toast.LENGTH_SHORT).show()
             }
 
@@ -58,14 +65,18 @@ class PlayerNewActivity : AppCompatActivity() {
 
                     this@PlayerNewActivity,
                     playerID!!.plus(1), playerFirstName.text.toString(), playerLastName.text.toString(),
-                    playerPosition.text.toString(), teamID!!.toInt(), playerHeight.text.toString().toInt(), playerAge.text.toString().toInt(), tournamentID!!.toInt()) { response ->
+                    playerPosition.text.toString(), teamID!!.toInt(), playerHeight.text.toString().toInt(),
+                    playerAge.text.toString().toInt(), tournamentID!!.toInt()) { response ->
 
                     if (response) {
 
-                        val intent = Intent(this, TeamDetailPlayersActivity::class.java)
-
-                        intent.putExtra("Team ID", teamID!!.toInt())
                         Toast.makeText(applicationContext,"Player Created !", Toast.LENGTH_SHORT).show()
+
+                        val intent = Intent(this, TeamDetailPlayersActivity::class.java)
+                        intent.putExtra("Team ID", teamID!!.toInt())
+                        intent.putExtra("Tournament ID", tournamentID!!.toInt())
+                        intent.putExtra("Teams Number", teamsNumber!!.toInt())
+                        intent.putExtra("Username", username!!)
                         startActivity(intent)
                     }
 

@@ -52,8 +52,9 @@ class TournamentFavoritesActivity : AppCompatActivity() {
         addTournamentButton.setOnClickListener {
 
             val intent = Intent(this, TournamentNewActivity::class.java)
-            intent.putExtra("Tournament ID", tournaments.size)
-            startActivityForResult(intent, 1002)
+            intent.putExtra("Tournament ID", tournaments[tournaments.size.minus(1)].tournamentID!!)
+            intent.putExtra("Username", username!!)
+            startActivity(intent)
         }
 
         teamHomeTournamentButton.setOnClickListener {
@@ -101,6 +102,7 @@ class TournamentFavoritesActivity : AppCompatActivity() {
                 val intent = Intent(this@TournamentFavoritesActivity, TournamentDetailActivity::class.java)
                 intent.putExtra("Tournament ID", tournaments[position].tournamentID)
                 intent.putExtra("Teams Number", tournaments[position].teamsNumber)
+                intent.putExtra("Username", username!!)
                 startActivity(intent)
             }
 

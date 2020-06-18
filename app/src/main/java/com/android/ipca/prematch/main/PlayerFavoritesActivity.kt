@@ -96,13 +96,13 @@ class PlayerFavoritesActivity : AppCompatActivity() {
             textViewPlayerHeight.text = players[position].playerHeight.toString() + " " + "cm"
             textViewPlayerAge.text = players[position].playerAge.toString() + " " + "Years Old"
 
-            rowView.setOnClickListener {
+            /*rowView.setOnClickListener {
 
                 val intent = Intent(this@PlayerFavoritesActivity, PlayerDetailActivity::class.java)
                 intent.putExtra("Team ID", players[position].playerTeamID)
                 intent.putExtra("Player ID", players[position].playerID)
                 startActivity(intent)
-            }
+            }*/
 
             return rowView
         }

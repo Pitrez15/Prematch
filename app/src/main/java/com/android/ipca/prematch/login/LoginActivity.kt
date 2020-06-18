@@ -11,6 +11,7 @@ import com.android.ipca.prematch.main.TournamentFavoritesActivity
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_login)
@@ -42,6 +43,12 @@ class LoginActivity : AppCompatActivity() {
         createAccountClickableTextView.setOnClickListener {
 
             val intent = Intent(this, RegisterActivity::class.java)
+            startActivity(intent)
+        }
+
+        recoverPasswordClickableTextView.setOnClickListener {
+
+            val intent = Intent(this, RecoverPasswordActivity::class.java)
             startActivity(intent)
         }
     }

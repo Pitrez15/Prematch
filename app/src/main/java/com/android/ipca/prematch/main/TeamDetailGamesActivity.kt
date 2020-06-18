@@ -15,6 +15,9 @@ import org.json.JSONObject
 class TeamDetailGamesActivity : AppCompatActivity() {
 
     var teamID: Int? = null
+    var tournamentID : Int? = null
+    var teamsNumber : Int? = null
+    var username : String? = null
 
     var allGames: MutableList<GameModel> = ArrayList()
     var games: MutableList<GameModel> = ArrayList()
@@ -33,6 +36,9 @@ class TeamDetailGamesActivity : AppCompatActivity() {
         bundle?.let {
 
             teamID = it.getInt("Team ID")
+            tournamentID = it.getInt("Tournament ID")
+            teamsNumber = it.getInt("Teams Number")
+            username = it.getString("Username")
         }
 
         VolleyHelper.instance.getGamesByTeamID(this, teamID!!.toInt()) { response ->
@@ -65,6 +71,9 @@ class TeamDetailGamesActivity : AppCompatActivity() {
             val intent = Intent(this, TeamDetailActivity::class.java)
 
             intent.putExtra("Team ID", teamID!!.toInt())
+            intent.putExtra("Tournament ID", tournamentID!!.toInt())
+            intent.putExtra("Teams Number", teamsNumber!!.toInt())
+            intent.putExtra("Username", username!!)
             startActivity(intent)
         }
     }
