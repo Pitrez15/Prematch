@@ -6,16 +6,16 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".login.RecoverPasswordActivity"
+    tools:context=".main.SettingsUpdateActivity"
     android:background="@color/colorDark">
 
     <TextView
-        android:id="@+id/newAccountTextView"
+        android:id="@+id/settingsUpdateUserTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/normal_margin"
         android:fontFamily="@font/roboto_black"
-        android:text="@string/recover_password"
+        android:text="@string/update_account"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
         app:layout_constraintEnd_toEndOf="parent"
@@ -23,13 +23,13 @@
         app:layout_constraintTop_toTopOf="parent" />
 
     <EditText
-        android:id="@+id/enterUsernameEditText"
+        android:id="@+id/enterNewFirstNameEditText"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/large_margin"
         android:background="@drawable/edit_text_border"
         android:fontFamily="@font/roboto"
-        android:hint="@string/username"
+        android:hint="@string/first_name"
         android:singleLine="true"
         android:textAlignment="center"
         android:textColor="@color/colorLight"
@@ -37,16 +37,16 @@
         android:textSize="@dimen/medium_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/newAccountTextView" />
+        app:layout_constraintTop_toBottomOf="@+id/settingsUpdateUserTextView" />
 
     <EditText
-        android:id="@+id/enterPasswordEditText"
+        android:id="@+id/enterNewLastNameEditText"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/large_margin"
         android:background="@drawable/edit_text_border"
         android:fontFamily="@font/roboto"
-        android:hint="@string/new_password"
+        android:hint="@string/last_name"
         android:singleLine="true"
         android:textAlignment="center"
         android:textColor="@color/colorLight"
@@ -54,46 +54,35 @@
         android:textSize="@dimen/medium_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterUsernameEditText" />
+        app:layout_constraintTop_toBottomOf="@+id/enterNewFirstNameEditText" />
 
-    <!--<EditText
-        android:id="@+id/enterRepeatPasswordEditText"
+    <EditText
+        android:id="@+id/enterNewEmailEditText"
         android:layout_width="270dp"
         android:layout_height="40dp"
         android:layout_marginTop="@dimen/large_margin"
         android:background="@drawable/edit_text_border"
         android:fontFamily="@font/roboto"
-        android:hint="@string/repeat_password"
+        android:hint="@string/e_mail"
+        android:singleLine="true"
         android:textAlignment="center"
         android:textColor="@color/colorLight"
         android:textColorHint="@color/colorLight"
         android:textSize="@dimen/medium_size"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/enterPasswordEditText" /> -->
+        app:layout_constraintTop_toBottomOf="@+id/enterNewLastNameEditText" />
 
     <Button
-        android:id="@+id/recoverPasswordButton"
-        android:layout_width="200dp"
+        android:id="@+id/settingsUpdateAccountButton"
+        android:layout_width="wrap_content"
         android:layout_height="45dp"
         android:layout_marginBottom="@dimen/large_margin"
         android:background="@drawable/button_border"
         android:fontFamily="@font/roboto_black"
-        android:text="@string/recover"
+        android:text="@string/update_account"
         android:textColor="@color/colorDark"
         android:textSize="@dimen/normal_size"
-        app:layout_constraintBottom_toTopOf="@+id/companyTextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <TextView
-        android:id="@+id/companyTextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="@dimen/normal_margin"
-        android:text="@string/company_name_year"
-        android:textColor="@color/colorSecondary"
-        android:textSize="@dimen/footer_size"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />

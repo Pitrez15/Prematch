@@ -275,6 +275,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
 
+    <ImageButton
+        android:id="@+id/tournamentDetailShareButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_share_24"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:background="@drawable/button_border"
+        app:layout_constraintBottom_toTopOf="@+id/tournamentDetailBottomMenuLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
+
     <LinearLayout
         android:id="@+id/tournamentDetailBottomMenuLayout"
         android:layout_width="match_parent"

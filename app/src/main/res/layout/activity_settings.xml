@@ -185,7 +185,7 @@
             android:fontFamily="@font/roboto_black"
             android:text="@string/update"
             android:textColor="@color/colorDark"
-            android:textSize="@dimen/medium_size"
+            android:textSize="@dimen/footer_size"
             android:textAlignment="center" />
 
         <Button
@@ -199,7 +199,7 @@
             android:fontFamily="@font/roboto_black"
             android:text="@string/password"
             android:textColor="@color/colorDark"
-            android:textSize="@dimen/medium_size"
+            android:textSize="@dimen/footer_size"
             android:textAlignment="center" />
 
         <Button
@@ -212,7 +212,7 @@
             android:fontFamily="@font/roboto_black"
             android:text="@string/logout"
             android:textColor="@color/colorDark"
-            android:textSize="@dimen/medium_size"
+            android:textSize="@dimen/footer_size"
             android:textAlignment="center" />
 
     </LinearLayout>

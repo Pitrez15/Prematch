@@ -174,6 +174,45 @@ class VolleyHelper {
     }
 
 
+    fun updateUser (context: Context, firstName: String, lastName: String, email: String, username: String, recoverEvent : ((Boolean) -> Unit)) {
+
+        doAsync {
+
+            queue = Volley.newRequestQueue(context)
+
+            val jsonObject = JSONObject()
+            jsonObject.put("FIRST_NAME", firstName)
+            jsonObject.put("LAST_NAME", lastName)
+            jsonObject.put("EMAIL", email)
+
+            val jsonObjectRequest = object : JsonObjectRequest(
+
+                Method.PUT,
+                BASE_API + UPDATE_USER + "/" + username,
+                jsonObject,
+                Response.Listener {
+
+                    recoverEvent.invoke(true)
+                    Log.d("VolleyHelper", it.toString())
+                },
+                Response.ErrorListener {
+
+                    Log.d("VolleyHelper", it.toString())
+                }
+            ){
+                override fun getHeaders(): MutableMap<String, String> {
+
+                    val map : MutableMap<String, String> = mutableMapOf()
+                    map.put("Content-Type","application/json")
+
+                    return map
+                }
+            }
+            queue!!.add(jsonObjectRequest)
+        }
+    }
+
+
     //---------------Tournaments--------------
 
     fun getTournaments (context: Context, tournamentsEvent : ((JSONArray?) -> Unit)) {
@@ -323,6 +362,7 @@ class VolleyHelper {
             queue!!.add(stringRequest)
         }
     }
+
 
     //---------------Teams--------------
 
@@ -758,6 +798,7 @@ class VolleyHelper {
         }
     }
 
+
     //---------------Games--------------
 
     fun getGames (context: Context, gamesEvent : ((JSONArray?) -> Unit)) {
@@ -1015,6 +1056,7 @@ class VolleyHelper {
         const val LOGIN = "/user/login"
         const val GET_USER = "/user/username"
         const val RECOVER = "/user/recover"
+        const val UPDATE_USER = "/user/update_user"
 
         const val GET_TOURNAMENTS = "/api/tournaments"
         const val NEW_TOURNAMENT = "/api/new_tournament"

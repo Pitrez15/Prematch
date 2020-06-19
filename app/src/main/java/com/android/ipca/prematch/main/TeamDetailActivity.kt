@@ -103,11 +103,11 @@ class TeamDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,"Team Deleted !", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,getString(R.string.team_deleted), Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,"Failed to Delete Team !", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_team), Toast.LENGTH_SHORT).show()
                 }
             }
 
