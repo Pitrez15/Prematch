@@ -297,7 +297,6 @@
     <string name="failed_to_delete_tournament">Failed to Delete Tournament !</string>
     <string name="change_confirmed">Change Confirmed!</string>
     <string name="change_failed">Change Failed !</string>
-    <string name="registry_confirmed">Registry Confirmed!</string>
     <string name="faield_registration">Failed Registration!</string>
     <string name="player_created">Player Created !</string>
     <string name="failed_to_create_player">Failed to Create Player !</string>

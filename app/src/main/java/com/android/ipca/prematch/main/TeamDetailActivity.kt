@@ -85,7 +85,7 @@ class TeamDetailActivity : AppCompatActivity() {
 
         teamDetailBackButton.setOnClickListener {
 
-            val intent = Intent(this@TeamDetailActivity, TournamentDetailActivity::class.java)
+            val intent = Intent(this@TeamDetailActivity, TournamentDetailTeamsActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Teams Number", teamsNumber!!.toInt())
             intent.putExtra("Username", username!!)
