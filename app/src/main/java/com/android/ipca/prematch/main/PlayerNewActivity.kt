@@ -48,7 +48,7 @@ class PlayerNewActivity : AppCompatActivity() {
             if (enterPlayerFirstNameEditText.text.toString() == "" || enterPlayerLastNameEditText.text.toString() == "" ||
                 enterPositionEditText.text.toString() == "" ) {
 
-                Toast.makeText(applicationContext,"Player Information is Missing !", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,getString(R.string.missing_information), Toast.LENGTH_SHORT).show()
             }
 
             else {
@@ -70,7 +70,7 @@ class PlayerNewActivity : AppCompatActivity() {
 
                     if (response) {
 
-                        Toast.makeText(applicationContext,"Player Created !", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,getString(R.string.player_created), Toast.LENGTH_SHORT).show()
 
                         val intent = Intent(this, TeamDetailPlayersActivity::class.java)
                         intent.putExtra("Team ID", teamID!!.toInt())
@@ -82,7 +82,7 @@ class PlayerNewActivity : AppCompatActivity() {
 
                     else {
 
-                        Toast.makeText(applicationContext,"Failed to Create Player !", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,getString(R.string.failed_to_create_player), Toast.LENGTH_SHORT).show()
                     }
                 }
 

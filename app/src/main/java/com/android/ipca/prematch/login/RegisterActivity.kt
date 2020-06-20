@@ -27,7 +27,7 @@ class RegisterActivity : AppCompatActivity() {
             if (firstName.text.toString() == "" || lastName.text.toString() == "" || username.text.toString() == "" ||
                 userEmail.text.toString() == "" || userPassword.text.toString() == "" || !termsCheckBox.isChecked) {
 
-                Toast.makeText(applicationContext,"Missing Information or Terms unchecked!",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,getString(R.string.missing_info_terms),Toast.LENGTH_SHORT).show()
             }
 
             else {
@@ -41,12 +41,12 @@ class RegisterActivity : AppCompatActivity() {
                     if (it) {
 
                         val intent = Intent(this, LoginActivity::class.java)
-                        Toast.makeText(applicationContext, "Registry Confirmed!", Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, getString(R.string.registry_confirmed), Toast.LENGTH_LONG).show()
                         startActivity(intent)
                     }
                     else {
 
-                        Toast.makeText(applicationContext,"Failed Registration!",Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,getString(R.string.failed_registration),Toast.LENGTH_SHORT).show()
                     }
                 }
             }

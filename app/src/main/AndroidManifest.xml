@@ -13,7 +13,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme"
         android:usesCleartextTraffic="true">
-        <activity android:name=".login.RecoverPasswordActivity"></activity>
+        <activity android:name=".main.SettingsChangePasswordActivity"></activity>
+        <activity android:name=".main.SettingsUpdateActivity" />
+        <activity android:name=".login.RecoverPasswordActivity" />
         <activity android:name=".main.TeamDetailStatsActivity" />
         <activity android:name=".main.TournamentDetailStatsActivity" />
         <activity android:name=".main.TeamDetailGamesActivity" />
