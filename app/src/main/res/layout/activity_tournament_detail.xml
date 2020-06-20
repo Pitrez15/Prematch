@@ -11,13 +11,14 @@
 
     <TextView
         android:id="@+id/detailTournamentTextView"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/small_margin"
         android:fontFamily="@font/roboto_black"
         android:text="@string/detail_tournament"
         android:textColor="@color/colorPrimary"
         android:textSize="@dimen/subtitle_size"
+        android:textAlignment="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -274,6 +275,17 @@
         app:layout_constraintBottom_toTopOf="@+id/tournamentDetailBottomMenuLayout"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/tournamentDetailShareButton"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        android:src="@drawable/ic_baseline_share_24"
+        android:layout_marginBottom="@dimen/normal_margin"
+        android:layout_marginEnd="@dimen/large_margin"
+        android:background="@drawable/button_border"
+        app:layout_constraintBottom_toTopOf="@+id/tournamentDetailBottomMenuLayout"
+        app:layout_constraintEnd_toEndOf="parent" />
 
     <LinearLayout
         android:id="@+id/tournamentDetailBottomMenuLayout"
