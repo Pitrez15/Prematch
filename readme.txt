@@ -1,6 +1,5 @@
-PreMatch - Aplicação gestora de torneios desenvolvida pela Pro Evolution Programming (Grupo 1) em resposta à proposta efetuada pelos docentes de Aplicações Móveis. Esta aplicação consiste num gestor de torneiros de futebol conectado a 
-uma API e a uma base de dados, que permite ao utilizador realizar várias tarefas que o ajudam na organização de um torneio. O mesmo é projetado para os organizadores de torneio, para toda a administração pertencente a esta área e para
-um indivíduo que apenas quer consultar as informações de um ou mais torneios.
+PreMatch - Aplicação gestora de torneios desenvolvida pela Pro Evolution Programming (Grupo 1) em resposta à proposta efetuada pelos docentes de Aplicações Móveis. 
+Esta aplicação consiste num gestor de torneiros de futebol conectado a uma API e a uma base de dados, que permite ao utilizador realizar várias tarefas que o ajudam na organização de um torneio. O mesmo é projetado para os organizadores de torneio, para toda a administração pertencente a esta área e para um indivíduo que apenas quer consultar as informações de um ou mais torneios.
 
 
 Este documento serve para orientar na navegação da aplicação e para informar as funcionalidades da mesma.
@@ -36,22 +35,18 @@ na primeira página da aplicação, tendo as seguintes ordens de trabalho:
 
 -> Equipas:
 
-	- Na página de Equipas, irão aparecer todas as equipas registadas em todos os torneios presentes na aplicação associados ao utilizador em questão. Carregando em uma das equipas, serão visíveis os detalhes da equipa, como a inicial
-	a cidade correspondente, as cores primária e secundária, o email e o número de telemóvel/telefone. Nesta mesma página é possível apagar a equipa, consultar os jogadores dessa equipa, consultar os jogos dessa equipa e as estatísticas
-	da equipa. 
+	- Na página de Equipas, irão aparecer todas as equipas registadas em todos os torneios presentes na aplicação associados ao utilizador em questão. Carregando em uma das equipas, serão visíveis os detalhes da equipa, como a inicial a cidade correspondente, as cores primária e secundária, o email e o número de telemóvel/telefone. Nesta mesma página é possível apagar a equipa, consultar os jogadores dessa equipa, consultar os jogos dessa equipa e as estatísticas da equipa. 
 
 	- Nas estatísticas da equipa é possível ver o número de jogos, o total de golos marcados em casa e fora e a média de golos por jogo em casa e fora.
 
 -> Jogadores:
 
-	- Na página de jogadores é onde se encontram todos os jogadores de todos os torneios, onde podemos consultar as informações de cada jogar individualmente. Aqui tem informações como o nome, altura do jogador, idade, posição relativamente
-	ao jogo e a equipa à qual o jogador pertence.
+	- Na página de jogadores é onde se encontram todos os jogadores de todos os torneios, onde podemos consultar as informações de cada jogar individualmente. Aqui tem informações como o nome, altura do jogador, idade, posição relativamente ao jogo e a equipa à qual o jogador pertence.
 
 -> Definições:
 
 	- As definições servem para gerir o utilizador à qual tem sessão iniciada na aplicação. Aqui pode se consultar as informações do utilizador em questão, assim como possui 3 botões que permitem fazer 3 funções bastante uteis e importantes.
-	Esses 3 botões são o botão de atualizar, que serve para atualizar os dados do utilizador se pretender alterar os dados; o botão de alterar password, onde permite alterar a palavra-passe; e o botão de logout, que serve para terminar sessão
-	caso pretenda iniciar sessão com uma outra conta.
+	Esses 3 botões são o botão de atualizar, que serve para atualizar os dados do utilizador se pretender alterar os dados; o botão de alterar password, onde permite alterar a palavra-passe; e o botão de logout, que serve para terminar sessão caso pretenda iniciar sessão com uma outra conta.
 
 
 Espero que aproveite ao máximo de todos os serviços que a PreMatch tem para oferecer e que goste da experiência de utilização!
