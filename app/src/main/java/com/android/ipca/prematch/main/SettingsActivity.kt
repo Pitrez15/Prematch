@@ -54,6 +54,12 @@ class SettingsActivity : AppCompatActivity() {
             }
         }
 
+        settingsLogoutButton.setOnClickListener {
+
+            val intent = Intent(this, LoginActivity::class.java)
+            startActivity(intent)
+        }
+
         tournamentHomeSettingsButton.setOnClickListener {
 
             val intent = Intent(this, TournamentFavoritesActivity::class.java)
@@ -71,25 +77,6 @@ class SettingsActivity : AppCompatActivity() {
         playerHomeSettingsButton.setOnClickListener {
 
             val intent = Intent(this, PlayerFavoritesActivity::class.java)
-            intent.putExtra("Username", username!!)
-            startActivity(intent)
-        }
-
-        settingsLogoutButton.setOnClickListener {
-
-            val intent = Intent(this, LoginActivity::class.java)
-            startActivity(intent)
-        }
-
-        settingsUpdateButton.setOnClickListener {
-
-            val intent = Intent(this, SettingsUpdateActivity::class.java)
-            intent.putExtra("Username", username!!)
-            startActivity(intent)
-        }
-        settingsChangePasswordButton.setOnClickListener {
-
-            val intent = Intent(this, SettingsChangePasswordActivity::class.java)
             intent.putExtra("Username", username!!)
             startActivity(intent)
         }

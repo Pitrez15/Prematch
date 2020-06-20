@@ -86,13 +86,13 @@ class PlayerFavoritesActivity : AppCompatActivity() {
 
             val textViewPlayerName = rowView.findViewById<TextView>(R.id.playerNameRowTextView)
             val textViewPlayerPosition = rowView.findViewById<TextView>(R.id.playerPositionRowTextView)
-            val textViewPlayerTeamName = rowView.findViewById<TextView>(R.id.playerTeamRowTextView)
+            val textViewPlayerTeamID = rowView.findViewById<TextView>(R.id.playerTeamRowTextView)
             val textViewPlayerHeight = rowView.findViewById<TextView>(R.id.playerHeightRowTextView)
             val textViewPlayerAge = rowView.findViewById<TextView>(R.id.playerAgeRowTextView)
 
             textViewPlayerName.text = players[position].playerFirstName + " " + players[position].playerLastName
             textViewPlayerPosition.text = players[position].playerPosition
-            textViewPlayerTeamName.text = players[position].playerTeamName
+            textViewPlayerTeamID.text = "Team" + " " + players[position].playerTeamID.toString()
             textViewPlayerHeight.text = players[position].playerHeight.toString() + " " + "cm"
             textViewPlayerAge.text = players[position].playerAge.toString() + " " + "Years Old"
 

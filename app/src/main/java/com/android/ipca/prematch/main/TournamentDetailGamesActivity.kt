@@ -113,11 +113,11 @@ class TournamentDetailGamesActivity : AppCompatActivity() {
 
                     if (it) {
 
-                        Toast.makeText(applicationContext,getString(R.string.game_deleted), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,"Game Deleted !", Toast.LENGTH_SHORT).show()
                     }
                     else {
 
-                        Toast.makeText(applicationContext,getString(R.string.failed_to_delete_game), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,"Failed to Delete Game !", Toast.LENGTH_SHORT).show()
                     }
                 }
                 startActivity(intent)

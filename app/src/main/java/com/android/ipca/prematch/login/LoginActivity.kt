@@ -35,7 +35,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.incorrect_login), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Incorrect Login!", Toast.LENGTH_SHORT).show()
                 }
             }
         }

@@ -85,7 +85,7 @@ class TeamDetailActivity : AppCompatActivity() {
 
         teamDetailBackButton.setOnClickListener {
 
-            val intent = Intent(this@TeamDetailActivity, TournamentDetailTeamsActivity::class.java)
+            val intent = Intent(this@TeamDetailActivity, TournamentDetailActivity::class.java)
             intent.putExtra("Tournament ID", tournamentID!!.toInt())
             intent.putExtra("Teams Number", teamsNumber!!.toInt())
             intent.putExtra("Username", username!!)
@@ -103,11 +103,11 @@ class TeamDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,getString(R.string.team_deleted), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Team Deleted !", Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_team), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Failed to Delete Team !", Toast.LENGTH_SHORT).show()
                 }
             }
 

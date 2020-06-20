@@ -38,8 +38,6 @@ class TournamentDetailActivity : AppCompatActivity() {
         tournamentAdapter = TournamentAdapter()
         tournamentDetailsListView.adapter = tournamentAdapter
 
-        var tournamentName : String? = null
-
         VolleyHelper.instance.getTournamentByID(this, tournamentID!!.toInt()) {response ->
 
             response?.let {
@@ -48,7 +46,6 @@ class TournamentDetailActivity : AppCompatActivity() {
 
                     val tournamentsJSON : JSONObject = it[index] as JSONObject
                     tournament.add(TournamentModel.parseJSON(tournamentsJSON))
-                    tournamentName = tournament[index].tournamentName
                 }
                 tournamentAdapter?.notifyDataSetChanged()
             }
@@ -97,11 +94,11 @@ class TournamentDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,getString(R.string.game_deleted), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Games Deleted !", Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_game), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Failed to Delete Games !", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -109,11 +106,11 @@ class TournamentDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,getString(R.string.player_deleted), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Players Deleted !", Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_player), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Failed to Delete Players !", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -121,11 +118,11 @@ class TournamentDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,getString(R.string.team_deleted), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Teams Deleted !", Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_team), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Failed to Delete Teams !", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -133,24 +130,15 @@ class TournamentDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,getString(R.string.tournament_deleted), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Tournament Deleted !", Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_tournament), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Failed to Delete Tournament !", Toast.LENGTH_SHORT).show()
                 }
             }
 
             startActivity(intent)
-        }
-
-        tournamentDetailShareButton.setOnClickListener {
-
-            val intent = Intent(Intent.ACTION_SEND)
-            intent.type = "text/plain"
-            intent.putExtra(Intent.EXTRA_SUBJECT, tournamentID!!)
-            intent.putExtra(Intent.EXTRA_TEXT, "Go Follow Tournament " + tournamentName + " at Prematch App!")
-            startActivity(Intent.createChooser(intent, "Tournament Share"))
         }
     }
 

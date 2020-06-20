@@ -13,29 +13,6 @@
     <string name="password">Palavra Passe</string>
     <string name="repeat_password">Repetir Palavra Passe</string>
     <string name="terms_and_conditions_title">TERMOS E CONDIÇÕES</string>
-    <string name="terms_and_conditions">\nCláusula 1.ª : Designação
-        \nOs presentes termos e condições gerais são destinados a utilizadores que utilizem em ocasiões regulares o acesso e a utilização da aplicação Prematch, criado pela empresa denominada Pro Evolution Programming e prestado ao utilizador em serviço da empresa PEP.
-        \n\nCláusula 2.ª : Descrição e funções da Aplicação\n
-        \n1. A Aplicação Prematch consiste em uma aplicação para aplicativos android, esta desenvolvida pela PEP , contem autenticação ou registo necessário de uma conta para a utilização da aplicação e dos serviços oferecidos pelo mesmo.
-        \n2. Os diversos serviços oferecidos pela aplicação Prematch são a consulta e gestão de torneios dentro ou fora de Portugal.
-        \n3. A autenticação do utilizador e efetuado através de nome de utilizador com password, se o mesmo não tiver os mesmos terá de efetuar registro dentro da aplicação com cadenciais validas.
-        \n\nCláusula 3.ª : Acesso e execução\n
-        \n1. O utilizador pode aceder através da aplicação Prematch aos serviços que são oferecidos de acordo com o seu nível de permissão, ficando apto a utilizar as funcionalidades que são disponibilizadas ao mesmo depende.
-        \n2. O utilizador para conseguir um diferente nível de acesso do já tido, terá de contactar a PEP para a alteração do mesmo com a respetiva confirmação que pode obter esse respetivo nível de acesso.
-        \n3. Em caso de futuras atualizações do Prematch, o utilizador será notificado acerca das mesmas, se o utilizador decidir não atualizar irá ter não acesso a novas futuras funcionalidades.
-        \n4. A utilização da Prematch implica a confirmação pelos utilizadores que aceita todos os presentes Termos e Condições Gerais.
-        \n5. O utilizador é responsável por manter e não transmitir as informações pessoais confidenciais tais como password, email e informações não disponíveis para outros utilizadores e terceiros.
-        \n6. Quaisquer danos ou roubo de informações que possam vir a emergir de eventual transmissão a outros utilizadores e a terceiros das informações pessoais, passwords, etc… são da responsabilidade exclusiva do Utilizador.
-        \n\nCláusula 4.ª : Utilização da aplicação\n
-        \n1. A qualidade de utilização da aplicação Prematch depende do equipamento Android utilizado para acesso da APP, compete ao utilizador verificar se o dispositivo está em estado adequado para a utilização da aplicação.
-        \n2. O utilizador deverá reportar á PEP de quaisquer anomalias que sejam detetadas relativamente a aplicação Prematch que possam interferir com a utilização básica da aplicação, também o utilizador deve reportar acerca de quaisquer aplicações fraudulentas feitas por terceiros que tenham com intenções de manipular o código da aplicação ou descobrir informações pessoais de acesso a aplicação tais como passwords.
-        \n3. Se por implementação futura, a PEP reserva-se o direito de colocar publicidade na aplicação Prematch.
-        \n\nCláusula 5.ª : Responsabilidade do Utilizador\n
-        \n1. A PEP não se responsabilizará de quaisquer danos diretos ou indiretos feitos pelo utilizador na alteração do código base da aplicação.
-        \n2. A utilizador reconhece que o acesso e a utilização à aplicação Prematch só e possível com recurso a sistemas informáticos e redes de comunicações que podem por ora apresentar erros ou falhas no funcionamento.
-        \n3. A PEP não se responsabiliza nem responderá a quaisquer danos que fora causados ao utilizador, diretamente ou indiretamente, por causa do incumprimento de obrigações tais como a de não partilhar informações pessoais com terceiros.
-        \n\nCláusula 6.ª : Dados pessoais\n
-        \n1.  A entidade PEP é responsável pelo tratamento de dados pessoais recolhidos e gerados pelos utilizadores no uso da aplicação Prematch , bem como o armazenamento dos mesmos.</string>
     <string name="terms_of_service">Termos de Serviço</string>
     <string name="i_have_read_and_agree_to_the">"Eu li e concordo com os "</string>
     <string name="favorites">Favoritos</string>
@@ -107,35 +84,4 @@
     <string name="total_away_goals">Total de Golos Fora</string>
     <string name="logout">Sair</string>
     <string name="update">Atualizar</string>
-    <string name="stage">Fase</string>
-    <string name="recover_password">Recuperar Palavra Chave</string>
-    <string name="new_password">Nova Palavra Chave</string>
-    <string name="recover">Recuperar</string>
-    <string name="update_account">Atualizar Conta</string>
-    <string name="change_password">Mudar Palavra Chave</string>
-    <string name="incorrect_login">Login Incorreto!</string>
-    <string name="missing_info_terms">Informacao em falta ou termos desmarcados</string>
-    <string name="registry_confirmed">Registo Confirmado!</string>
-    <string name="failed_registration">Registo Falhado!</string>
-    <string name="missing_information">Informacao em falta!</string>
-    <string name="password_recovered">Palavra Chave Recuperada!</string>
-    <string name="failed_recover">Falhar ao Recuperar!</string>
-    <string name="tournament_created">Torneio Criado!</string>
-    <string name="creation_failed">Falha ao criar um Torneio!</string>
-    <string name="cant_add_teams">Nao pode adicionar mais equipas!</string>
-    <string name="game_deleted">Jogo Apagado !</string>
-    <string name="failed_to_delete_game">Falha ao apagar o jogo!</string>
-    <string name="team_created">Equipa criada!</string>
-    <string name="failed_to_create_team">Falha ao Criar Equipa!</string>
-    <string name="team_deleted">Equipa Apagada!</string>
-    <string name="failed_to_delete_team">Falha ao apagar Equipa!</string>
-    <string name="tournament_deleted">Torneio Apagado!</string>
-    <string name="failed_to_delete_tournament">Falhar ao Apagar Torneio!</string>
-    <string name="change_confirmed">Mudança Confimada!</string>
-    <string name="change_failed">Falhar na mudança!</string>
-    <string name="faield_registration">Falha ao Registar!</string>
-    <string name="player_created">Jogador Criado</string>
-    <string name="failed_to_create_player">Falha ao Criar Jogador</string>
-    <string name="player_deleted">Jogador Apagado!</string>
-    <string name="failed_to_delete_player">Falhar ao Apagar Jogador</string>
 </resources>

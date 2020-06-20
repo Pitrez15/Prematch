@@ -17,7 +17,7 @@
     <string name="password">Password</string>
     <string name="repeat_password">Repeat Password</string>
     <string name="terms_and_conditions_title">TERMS AND CONDITIONS</string>
-    <string name="terms_and_conditions">1. TERMS OF USE
+    <string name="terms_and_conditions" translatable="false">1. TERMS OF USE
 \n\nBy downloading, browsing, accessing or using this Sample Store mobile application (“Mobile Application”),
         you agree to be bound by these Terms and Conditions of Use. We reserve the right to amend these terms and conditions at any time.
         If you disagree with any of these Terms and Conditions of Use, you must immediately discontinue your access to the
@@ -275,31 +275,4 @@
     <string name="recover_password">Recover Password</string>
     <string name="new_password">New Password</string>
     <string name="recover">Recover</string>
-    <string name="update_account">Update Account</string>
-    <string name="change_password">Change Password</string>
-    <string name="incorrect_login">Incorrect Login!</string>
-    <string name="missing_info_terms">Missing Information or Terms unchecked!</string>
-    <string name="registry_confirmed">Registry Confirmed!</string>
-    <string name="failed_registration">Failed Registration!</string>
-    <string name="missing_information">Missing Information !</string>
-    <string name="password_recovered">Password Recovered !</string>
-    <string name="failed_recover">Failed to Recover!</string>
-    <string name="tournament_created">Tournament Created !</string>
-    <string name="creation_failed">Failed to Create Tournament !</string>
-    <string name="cant_add_teams">You can\'t add more teams !</string>
-    <string name="game_deleted">Game Deleted !</string>
-    <string name="failed_to_delete_game">Failed to Delete Game !</string>
-    <string name="team_created">Team Created !</string>
-    <string name="failed_to_create_team">Failed to Create Team !</string>
-    <string name="team_deleted">Team Deleted !</string>
-    <string name="failed_to_delete_team">Failed to Delete Team !</string>
-    <string name="tournament_deleted">Tournament Deleted !</string>
-    <string name="failed_to_delete_tournament">Failed to Delete Tournament !</string>
-    <string name="change_confirmed">Change Confirmed!</string>
-    <string name="change_failed">Change Failed !</string>
-    <string name="faield_registration">Failed Registration!</string>
-    <string name="player_created">Player Created !</string>
-    <string name="failed_to_create_player">Failed to Create Player !</string>
-    <string name="player_deleted">Player Deleted !</string>
-    <string name="failed_to_delete_player">Failed to Delete Player !</string>
 </resources>

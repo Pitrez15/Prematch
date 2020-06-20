@@ -78,11 +78,11 @@ class PlayerDetailActivity : AppCompatActivity() {
 
                 if (it) {
 
-                    Toast.makeText(applicationContext,getString(R.string.player_deleted), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Team Deleted !", Toast.LENGTH_SHORT).show()
                 }
                 else {
 
-                    Toast.makeText(applicationContext,getString(R.string.failed_to_delete_player), Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext,"Failed to Delete Team !", Toast.LENGTH_SHORT).show()
                 }
             }
 
@@ -106,7 +106,7 @@ class PlayerDetailActivity : AppCompatActivity() {
             textViewPlayerHeight.text = player[position].playerHeight.toString()
             textViewPlayerAge.text = player[position].playerAge.toString()
             textViewPlayerPosition.text = player[position].playerPosition
-            textViewPlayerTeamID.text = player[position].playerTeamName
+            textViewPlayerTeamID.text = player[position].playerTeamID.toString()
 
             return rowView
         }

@@ -46,7 +46,7 @@ class TeamNewActivity : AppCompatActivity() {
                 enterSecondaryColorEditText.text.toString() == "" || enterTeamContactEmailEditText.text.toString() == "" ||
                 enterTeamContactPhoneEditText.text.toString() == "") {
 
-                Toast.makeText(applicationContext,getString(R.string.missing_information), Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Team Information is Missing !", Toast.LENGTH_SHORT).show()
             }
 
             else {
@@ -70,7 +70,7 @@ class TeamNewActivity : AppCompatActivity() {
 
                         if (response) {
 
-                            Toast.makeText(applicationContext,getString(R.string.team_created),Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext,"Team Created !",Toast.LENGTH_SHORT).show()
 
                             val intent = Intent(this, TournamentDetailTeamsActivity::class.java)
                             intent.putExtra("Tournament ID", tournamentID!!.toInt())
@@ -81,7 +81,7 @@ class TeamNewActivity : AppCompatActivity() {
 
                         else {
 
-                            Toast.makeText(applicationContext,getString(R.string.failed_to_create_team),Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext,"Failed to Create Team !",Toast.LENGTH_SHORT).show()
                         }
                     }
 

@@ -22,7 +22,7 @@ class RecoverPasswordActivity : AppCompatActivity() {
 
             if (username.text.toString() == "" || userNewPassword.text.toString() == "") {
 
-                Toast.makeText(applicationContext,getString(R.string.missing_information), Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Missing Information !", Toast.LENGTH_SHORT).show()
             }
             else {
 
@@ -33,12 +33,12 @@ class RecoverPasswordActivity : AppCompatActivity() {
                     if (it) {
 
                         val intent = Intent(this, LoginActivity::class.java)
-                        Toast.makeText(applicationContext, getString(R.string.password_recovered), Toast.LENGTH_LONG).show()
+                        Toast.makeText(applicationContext, "Password Recovered !", Toast.LENGTH_LONG).show()
                         startActivity(intent)
                     }
                     else {
 
-                        Toast.makeText(applicationContext,getString(R.string.failed_recover),Toast.LENGTH_SHORT).show()
+                        Toast.makeText(applicationContext,"Failed to Recover!",Toast.LENGTH_SHORT).show()
                     }
                 }
             }

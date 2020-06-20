@@ -40,7 +40,7 @@ class TournamentNewActivity : AppCompatActivity() {
                 tournamentContactPhoneEditText.text.toString() == "" || enterTeamNumberEditText.text.toString() == "" ||
                 enterTournamentTypeEditText.text.toString() == "") {
 
-                Toast.makeText(applicationContext,getString(R.string.missing_information),Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,"Tournament Information is Missing !",Toast.LENGTH_SHORT).show()
             }
 
             else {
@@ -66,13 +66,13 @@ class TournamentNewActivity : AppCompatActivity() {
 
                             val intent = Intent(this, TournamentFavoritesActivity::class.java)
                             intent.putExtra("Username", username!!)
-                            Toast.makeText(applicationContext,getString(R.string.tournament_created),Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext,"Tournament Created !",Toast.LENGTH_SHORT).show()
                             startActivity(intent)
                         }
 
                         else {
 
-                            Toast.makeText(applicationContext,getString(R.string.creation_failed),Toast.LENGTH_SHORT).show()
+                            Toast.makeText(applicationContext,"Failed to Create Tournament !",Toast.LENGTH_SHORT).show()
                         }
                     }
 

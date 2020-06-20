@@ -105,7 +105,7 @@ class TeamDetailPlayersActivity : AppCompatActivity() {
 
             textViewPlayerName.text = players[position].playerFirstName + " " + players[position].playerLastName
             textViewPlayerPosition.text = players[position].playerPosition
-            textViewTeamID.text = players[position].playerTeamName
+            textViewTeamID.text = "Team" + " " + players[position].playerTeamID.toString()
             textViewPlayerHeight.text = players[position].playerHeight.toString() + " " + "cm"
             textViewPlayerAge.text = players[position].playerAge.toString() + " " + "Years Old"
 
