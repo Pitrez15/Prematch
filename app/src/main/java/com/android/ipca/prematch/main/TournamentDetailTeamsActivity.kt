@@ -69,7 +69,7 @@ class TournamentDetailTeamsActivity : AppCompatActivity() {
 
             if (teams.size >= teamsNumber!!) {
 
-                Toast.makeText(applicationContext,"You can't add more teams !",Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext,getString(R.string.cant_add_teams),Toast.LENGTH_SHORT).show()
             }
 
             else {
